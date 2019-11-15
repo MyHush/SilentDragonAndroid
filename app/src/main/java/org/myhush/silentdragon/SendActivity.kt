@@ -134,6 +134,7 @@ class SendActivity : AppCompatActivity() {
 
         btnSend.setOnClickListener { view ->
             doValidationsThenConfirm()
+            showErrorDialog(DataModel.currencyValues) // TODO: Show Json Values
         }
     }
 

@@ -5,7 +5,10 @@ import android.util.Log
 import com.beust.klaxon.json
 import okhttp3.*
 import okio.ByteString
+import java.lang.Exception
 import java.net.ConnectException
+import java.net.HttpURLConnection
+import java.net.URL
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -19,8 +22,9 @@ object ConnectionManager {
      */
     fun refreshAllData() {
         // First, try to make a connection.
-
         makeConnection()
+        // Refresh Currrencies
+        refreshCurrencies()
     }
 
     // Attempt a connection to the server. If there is no saved connection, we'll set the connection status
@@ -104,6 +108,21 @@ object ConnectionManager {
         i.putExtra("msg", msg)
         i.putExtra("doDisconnect", doDisconnect)
         SilentDragonApp.appContext?.sendBroadcast(i)
+    }
+
+    private fun refreshCurrencies() {
+        Thread{
+            val url = URL("https://api.coingecko.com/api/v3/simple/price?ids=hush&vs_currencies=btc,usd,eur")
+            val connection = url.openConnection() as HttpURLConnection
+            try {
+                connection.connect()
+                DataModel.currencyValues = connection.inputStream.use { it.reader().use { reader -> reader.readText() } }
+            }catch (e: Exception){
+                DataModel.currencyValues = e.toString()
+            }finally {
+                connection.disconnect()
+            }
+        }
     }
 
 
