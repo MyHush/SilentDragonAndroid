@@ -5,12 +5,10 @@ import android.util.Log
 import com.beust.klaxon.json
 import okhttp3.*
 import okio.ByteString
-import java.lang.Exception
 import java.net.ConnectException
-import java.net.HttpURLConnection
-import java.net.URL
 import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.collections.HashMap
 
 
 object ConnectionManager {
@@ -23,8 +21,7 @@ object ConnectionManager {
     fun refreshAllData() {
         // First, try to make a connection.
         makeConnection()
-        // Refresh Currrencies
-        refreshCurrencies()
+        initCurrencies()
     }
 
     // Attempt a connection to the server. If there is no saved connection, we'll set the connection status
@@ -109,23 +106,19 @@ object ConnectionManager {
         i.putExtra("doDisconnect", doDisconnect)
         SilentDragonApp.appContext?.sendBroadcast(i)
     }
+    fun initCurrencies(){
+        var values: HashMap<String, Double?> = HashMap()
+        values["USD"] = DataModel.mainResponseData?.zecprice
+        values["EUR"] = DataModel.mainResponseData?.eurprice
+        values["BTC"] = DataModel.mainResponseData?.btcprice
+        DataModel.currencyValues = values
 
-    private fun refreshCurrencies() {
-        Thread{
-            val url = URL("https://api.coingecko.com/api/v3/simple/price?ids=hush&vs_currencies=btc,usd,eur")
-            val connection = url.openConnection() as HttpURLConnection
-            try {
-                connection.connect()
-                DataModel.currencyValues = connection.inputStream.use { it.reader().use { reader -> reader.readText() } }
-            }catch (e: Exception){
-                DataModel.currencyValues = e.toString()
-            }finally {
-                connection.disconnect()
-            }
-
-        }
+        var symbols: HashMap<String, String> = HashMap()
+        symbols["USD"] = "$"
+        symbols["EUR"] = "€"
+        symbols["BTC"] = "BTC"
+        DataModel.currencySymbols = symbols
     }
-
 
     private class WebsocketClient (directConn: Boolean) : WebSocketListener() {
         val m_directConn = directConn

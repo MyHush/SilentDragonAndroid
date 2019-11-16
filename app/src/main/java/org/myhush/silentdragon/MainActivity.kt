@@ -19,7 +19,6 @@ import android.widget.Button
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
-import com.android.volley.RequestQueue
 import com.beust.klaxon.Klaxon
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -90,7 +89,6 @@ class MainActivity : AppCompatActivity(),
                 }
             }
         }
-
         updateUI(false)
     }
 
@@ -103,6 +101,7 @@ class MainActivity : AppCompatActivity(),
 
     @SuppressLint("SetTextI18n")
     private fun updateUI(updateTxns: Boolean) {
+
         runOnUiThread {
             Log.i(TAG, "Updating UI $updateTxns")
 
@@ -151,18 +150,22 @@ class MainActivity : AppCompatActivity(),
                 ConnectionStatus.CONNECTED -> {
                     scrollViewTxns.visibility = ScrollView.VISIBLE
                     layoutConnect.visibility = ConstraintLayout.GONE
+                    ConnectionManager.initCurrencies()
 
                     if (DataModel.mainResponseData == null) {
                         setMainStatus("Loading...")
                     } else {
+                        val cur = DataModel.selectedCurrency
+                        val price = DataModel.currencyValues[cur]?: 0.0
                         val bal = DataModel.mainResponseData?.balance ?: 0.0
-                        val zPrice = DataModel.mainResponseData?.zecprice ?: 0.0
-
                         val balText = DecimalFormat("#0.00000000").format(bal)
 
                         lblBalance.text = "Balance"
                         txtMainBalance.text = balText.substring(0, balText.length - 4) + " ${DataModel.mainResponseData?.tokenName} "
-                        txtMainBalanceUSD.text =  "$ " + DecimalFormat("#,##0.00").format(bal * zPrice)
+                        if(cur == "BTC")
+                            txtMainBalanceUSD.text =  "${DataModel.currencySymbols[cur]} " + DecimalFormat("0.00000000").format(bal * price)
+                        else
+                            txtMainBalanceUSD.text =  "${DataModel.currencySymbols[cur]} " + DecimalFormat("#,##0.00").format(bal * price)
 
                         // Enable the send and recieve buttons
                         bottomNav.menu.findItem(R.id.action_recieve).isEnabled = true
