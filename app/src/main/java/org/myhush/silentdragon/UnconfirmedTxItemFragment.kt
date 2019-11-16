@@ -56,7 +56,7 @@ class UnconfirmedTxItemFragment : Fragment() {
 
         val txt = view.findViewById<TextView>(R.id.txtUnconfirmedTx)
         txt.text = (if (tx?.type == "send") "Sending" else "Receiving") +
-                    " ${DataModel.mainResponseData?.tokenName} " + DecimalFormat("#0.00########").format(kotlin.math.abs(tx?.amount?.toDoubleOrNull() ?: 0.0))
+                    DecimalFormat("#0.00########").format(kotlin.math.abs(tx?.amount?.toDoubleOrNull() ?: 0.0)) +  " ${DataModel.mainResponseData?.tokenName} "
 
         return view
     }

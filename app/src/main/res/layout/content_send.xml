@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_send"
-        tools:context="org.myhush.silentdragon.SendActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_send"
+    tools:context="org.myhush.silentdragon.SendActivity">
 
     <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
-                                                     android:layout_height="wrap_content"
-                                                     android:orientation="vertical" android:id="@+id/linearLayout3">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" android:id="@+id/linearLayout3">
             <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/toLayout"
-                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="16dp" android:layout_marginStart="16dp"
-                    app:layout_constraintBottom_toTopOf="@id/AmountLayout"
-                    android:layout_marginBottom="8dp" app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="16dp"
-            >
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toLayout"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp" android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toTopOf="@id/AmountLayout"
+                android:layout_marginBottom="8dp" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp"
+                >
 
                 <TextView
                     android:id="@+id/textView7"
@@ -61,14 +61,14 @@
                     tools:layout_conversion_absoluteHeight="45dp"
                     tools:layout_conversion_absoluteWidth="0dp" />
                 <ImageButton
-                        android:layout_width="37dp"
-                        android:layout_height="41dp" app:srcCompat="@android:drawable/ic_menu_camera"
-                        android:id="@+id/imageButton"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7"
-                        tools:layout_conversion_absoluteHeight="51dp"
-                        tools:layout_conversion_absoluteWidth="56dp" android:layout_marginTop="16dp"
-                        android:background="@android:color/transparent"/>
+                    android:layout_width="37dp"
+                    android:layout_height="41dp" app:srcCompat="@android:drawable/ic_menu_camera"
+                    android:id="@+id/imageButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"
+                    tools:layout_conversion_absoluteHeight="51dp"
+                    tools:layout_conversion_absoluteWidth="56dp" android:layout_marginTop="16dp"
+                    android:background="@android:color/transparent"/>
 
                 <TextView
                     android:id="@+id/txtValidAddress"
@@ -100,7 +100,7 @@
                     android:layout_width="173dp"
                     android:layout_height="66dp"
                     android:layout_marginTop="16dp"
-                    android:hint="HUSH 0.00"
+                    android:hint="0.00 Hush"
                     android:inputType="numberDecimal"
                     android:maxLength="14"
                     android:selectAllOnFocus="true"
@@ -136,11 +136,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/txtSendCurrencySymbol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="32dp"
                     android:text="HUSH"
                     android:textSize="27sp"
                     app:layout_constraintStart_toEndOf="@+id/amountHUSH"
@@ -148,14 +147,14 @@
 
             </android.support.constraint.ConstraintLayout>
             <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="218dp"
-                    android:id="@+id/MemoLayout" android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@id/AmountLayout" app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/btnSend">
+                android:layout_width="match_parent"
+                android:layout_height="218dp"
+                android:id="@+id/MemoLayout" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/AmountLayout" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnSend">
 
                 <EditText
                     android:id="@+id/txtSendMemo"
@@ -187,32 +186,32 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
                 <TextView
-                        android:text="0 / 512"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txtMemoSize" android:layout_marginEnd="8dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/txtSendMemoTitle"/>
-            </android.support.constraint.ConstraintLayout>
-            <Button
-                    android:text="Send"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/btnSend"
-                    android:background="@color/colorAccent"
-                    android:textColor="@android:color/white" tools:layout_conversion_absoluteHeight="48dp"
-                    tools:layout_conversion_absoluteWidth="88dp"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintTop_toBottomOf="@+id/chkIncludeReplyTo" android:layout_marginTop="8dp"/>
-            <CheckBox
-                    android:text="Include ReplyTo Address"
+                    android:text="0 / 512"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/chkIncludeReplyTo"
-                    app:layout_constraintTop_toBottomOf="@+id/MemoLayout"
-                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
+                    android:id="@+id/txtMemoSize" android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/txtSendMemoTitle"/>
+            </android.support.constraint.ConstraintLayout>
+            <Button
+                android:text="Send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/btnSend"
+                android:background="@color/colorAccent"
+                android:textColor="@android:color/white" tools:layout_conversion_absoluteHeight="48dp"
+                tools:layout_conversion_absoluteWidth="88dp"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintTop_toBottomOf="@+id/chkIncludeReplyTo" android:layout_marginTop="8dp"/>
+            <CheckBox
+                android:text="Include ReplyTo Address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/chkIncludeReplyTo"
+                app:layout_constraintTop_toBottomOf="@+id/MemoLayout"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"/>
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

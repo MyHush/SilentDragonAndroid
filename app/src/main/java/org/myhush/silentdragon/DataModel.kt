@@ -20,7 +20,8 @@ object DataModel {
                           val addr: String, val txid: String?, val confirmations: Long)
 
     var mainResponseData : MainResponse? = null
-    var transactions : List<TransactionItem> ?= null
+    var transactions : List<TransactionItem>? = null
+    var currencyValues: String = ""
 
     fun isTestnet(): Boolean {
         return mainResponseData?.tokenName != "HUSH"

@@ -37,6 +37,7 @@ class SendActivity : AppCompatActivity() {
 
         // Clear the valid address prompt
         txtValidAddress.text = ""
+        txtSendCurrencySymbol.text = ""
 
         if (intent.getStringExtra("address") != null)
             sendAddress.setText(intent.getStringExtra("address"), TextView.BufferType.EDITABLE)
@@ -95,11 +96,18 @@ class SendActivity : AppCompatActivity() {
                 val hush = s.toString().toDoubleOrNull()
                 val zprice = DataModel.mainResponseData?.zecprice
 
-                if (hush == null || zprice == null)
+                if (hush == null) {
+                    txtSendCurrencySymbol.text = "" // Let the placeholder show the "$" sign
+                } else {
+                    txtSendCurrencySymbol.text = "HUSH"
+
+
+                    if (hush == null || zprice == null)
                     amountUSD.text = "$ 0.0"
                 else
                     amountUSD.text =
-                        "$ " + DecimalFormat("#.########").format(hush * zprice)
+                         " $"   + DecimalFormat("#.########").format(hush * zprice)
+            }
             }
         })
 
@@ -126,6 +134,7 @@ class SendActivity : AppCompatActivity() {
 
         btnSend.setOnClickListener { view ->
             doValidationsThenConfirm()
+            showErrorDialog(DataModel.currencyValues) // TODO: Show Json Values
         }
     }
 
@@ -223,8 +232,8 @@ class SendActivity : AppCompatActivity() {
     private fun Double.format(digits: Int): String? = java.lang.String.format("%.${digits}f", this)
 
     private fun setAmountHUSH(amt: Double) {
-        amountHUSH.setText(amt.format(2))
-        setAmount(amt * (DataModel.mainResponseData?.zecprice ?: 0.0))
+        amountHUSH.setText((DecimalFormat("#.########").format(amt) + "${DataModel.mainResponseData?.tokenName}"))
+        setAmount(amt)
     }
 
     private fun setAmountUSD(amt: Double?) {
@@ -235,20 +244,20 @@ class SendActivity : AppCompatActivity() {
         // Since there is a text-change listner on the USD field, we set the USD first, then override the
         // HUSH field manually.
         val zprice = DataModel.mainResponseData?.zecprice ?: 0.0
-        amountHUSH.setText( (zprice / amt).format(2))
+        amountHUSH.setText((DecimalFormat("#.########").format(amt) + "${DataModel.mainResponseData?.tokenName}"))
 
         amountUSD.text =
-            "${DataModel.mainResponseData?.tokenName} " + DecimalFormat("#.########").format(amt)
+             "$" + DecimalFormat("#.########").format(amt)
     }
 
     private fun setAmount(amt: Double?) {
         val zprice = DataModel.mainResponseData?.zecprice
 
         if (amt == null || zprice == null)
-            amountUSD.text = "${DataModel.mainResponseData?.tokenName} 0.0"
+            amountUSD.text = "0.0 $"
         else
             amountUSD.text =
-                "${DataModel.mainResponseData?.tokenName} " + DecimalFormat("#.########").format(amt)
+                "$" + DecimalFormat("#.########").format(amt)
 
     }
 

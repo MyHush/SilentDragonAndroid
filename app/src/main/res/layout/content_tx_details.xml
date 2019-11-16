@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="HUSH 2.1234"
+                    android:text="2.1234 HUSH"
                     android:textAlignment="textEnd"
                     android:textAllCaps="false"
                     android:textSize="24sp"
