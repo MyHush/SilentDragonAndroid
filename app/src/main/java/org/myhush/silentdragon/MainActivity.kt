@@ -2,10 +2,7 @@ package org.myhush.silentdragon
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
@@ -45,6 +42,7 @@ class MainActivity : AppCompatActivity(),
 
         // When creating, clear all the data first
         setMainStatus("")
+
 
         DataModel.init()
 
@@ -89,7 +87,15 @@ class MainActivity : AppCompatActivity(),
                 }
             }
         }
+
+        loadSharedPref()
         updateUI(false)
+    }
+
+    private fun loadSharedPref() {
+        var ref: SharedPreferences = getSharedPreferences("MainFile", 0)
+
+        DataModel.selectedCurrency = ref.getString("currency", "USD")
     }
 
     private fun setMainStatus(status: String) {
@@ -356,4 +362,5 @@ class MainActivity : AppCompatActivity(),
 
 
     private val TAG = "MainActivity"
+
 }

@@ -1,5 +1,6 @@
 package org.myhush.silentdragon
 
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -40,6 +41,14 @@ class SettingsActivity : AppCompatActivity() {
                 var cur = parent.adapter.getItem(pos).toString() // Set selected currency
 
                 DataModel.selectedCurrency = cur // Set cur as selected
+
+                // Save currency
+                var pref: SharedPreferences = getSharedPreferences("MainFile",0)
+
+                var editor: SharedPreferences.Editor = pref.edit()
+                editor.putString("currency", DataModel.selectedCurrency)
+
+                editor.commit()
             }
 
             override fun onNothingSelected(parent: AdapterView<out Adapter>?) {}

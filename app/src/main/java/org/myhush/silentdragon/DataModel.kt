@@ -25,7 +25,7 @@ object DataModel {
 
     var currencyValues: HashMap<String, Double?> = HashMap()
     var currencySymbols: HashMap<String, String> = HashMap()
-    var selectedCurrency: String = "USD"
+    var selectedCurrency: String = ""
 
     fun isTestnet(): Boolean {
         return mainResponseData?.tokenName != "HUSH"
