@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.provider.ContactsContract
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
@@ -16,6 +17,7 @@ import android.text.TextWatcher
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import android.widget.Toast
 import com.beust.klaxon.Klaxon
 import kotlinx.android.synthetic.main.activity_send.*
 import kotlinx.android.synthetic.main.content_send.*
@@ -58,6 +60,12 @@ class SendActivity : AppCompatActivity() {
             )
         }
 
+        if (DataModel.currencyValues["USD"] == null)
+            ConnectionManager.initCurrencies()
+
+        amountUSD.text = "${DataModel.currencySymbols[DataModel.selectedCurrency]} 0.00"
+        textViewFee.text = "0.0001 HUSH"
+
         sendAddress.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable?) {}
@@ -70,7 +78,7 @@ class SendActivity : AppCompatActivity() {
                         R.color.white_selected
                     ))
                 } else {
-                    txtValidAddress.text = "Not a valid HUSH address!"
+                    txtValidAddress.text = "Not a valid Hush address!"
                     txtValidAddress.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
                 }
 
@@ -78,7 +86,7 @@ class SendActivity : AppCompatActivity() {
                     txtSendMemo.isEnabled       = false
                     chkIncludeReplyTo.isEnabled = false
                     txtSendMemo.text            = SpannableStringBuilder("")
-                    txtSendMemoTitle.text       = "(No Memo for TADDR)"
+                    txtSendMemoTitle.text       = "(No Memo for t-Addresses)"
                 } else {
                     txtSendMemo.isEnabled = true
                     chkIncludeReplyTo.isEnabled = true
@@ -94,20 +102,19 @@ class SendActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val hush = s.toString().toDoubleOrNull()
-                val zprice = DataModel.mainResponseData?.zecprice
+                val price = DataModel.currencyValues[DataModel.selectedCurrency]
+                val symbol = DataModel.currencySymbols[DataModel.selectedCurrency]
 
-                if (hush == null) {
-                    txtSendCurrencySymbol.text = "" // Let the placeholder show the "$" sign
-                }
-                else
-                {
+                if (hush == null)
+                    txtSendCurrencySymbol.text = "" // Let the placeholder show
+                else {
                     txtSendCurrencySymbol.text = "HUSH"
-
-                    if (hush == null || zprice == null)
-                    amountUSD.text = "$0.0"
-                        else
-                    amountUSD.text = "$" + DecimalFormat("###,###,##0.00").format(hush * zprice)
                 }
+
+                if (hush == null || price == null)
+                    amountUSD.text = "$symbol 0.0"
+                else
+                    amountUSD.text = "$symbol " + DecimalFormat("#.########").format(hush * price)
             }
         })
 
@@ -141,7 +148,7 @@ class SendActivity : AppCompatActivity() {
         // First, check if the address is correct.
         val toAddr = sendAddress.text.toString()
         if (!DataModel.isValidAddress(toAddr)) {
-            showErrorDialog("Invalid destination HUSH address!")
+            showErrorDialog("Invalid destination Hush address!")
             return
         }
 
@@ -162,8 +169,8 @@ class SendActivity : AppCompatActivity() {
                 amt.toDouble() <= DataModel.mainResponseData?.maxspendable ?: Double.MAX_VALUE) {
 
                 val alertDialog = AlertDialog.Builder(this@SendActivity)
-                alertDialog.setTitle("Send from TADDR ?")
-                alertDialog.setMessage("$amt ${DataModel.mainResponseData?.tokenName} is more than the balance in " +
+                alertDialog.setTitle("Send from t-addr?")
+                alertDialog.setMessage("${DataModel.mainResponseData?.tokenName} $amt is more than the balance in " +
                         "your shielded address. This Tx will have to be sent from a transparent address, and will" +
                         " not be private.\n\nAre you absolutely sure?")
                 alertDialog.apply {
@@ -232,29 +239,19 @@ class SendActivity : AppCompatActivity() {
 
     private fun setAmountHUSH(amt: Double) {
         amountHUSH.setText((DecimalFormat("#.########").format(amt) + "${DataModel.mainResponseData?.tokenName}"))
-        setAmount(amt)
+        setAmountUSD(amt)
     }
 
     private fun setAmountUSD(amt: Double?) {
         if (amt == null) {
-            return;
+            return
         }
-
         // Since there is a text-change listner on the USD field, we set the USD first, then override the
         // HUSH field manually.
-        val zprice = DataModel.mainResponseData?.zecprice ?: 0.0
         amountHUSH.setText((DecimalFormat("#.########").format(amt) + "${DataModel.mainResponseData?.tokenName}"))
-
-        amountUSD.text = "$" + DecimalFormat("###,###,##0.00").format(amt)
-    }
-
-    private fun setAmount(amt: Double?) {
-        val zprice = DataModel.mainResponseData?.zecprice
-
-        if (amt == null || zprice == null)
-            amountUSD.text = "$0.0"
-        else
-            amountUSD.text = "$" + DecimalFormat("###,###,##0.00").format(amt)
+        Toast.makeText(this.applicationContext, amt.toString(), Toast.LENGTH_SHORT).show()
+        amountUSD.text =
+             "${DataModel.currencySymbols[DataModel.selectedCurrency]} " + DecimalFormat("#.########").format(amt)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -296,8 +293,6 @@ class SendActivity : AppCompatActivity() {
 
                         finish()
                     }
-                } else {
-                    // Cancel
                 }
             }
         }

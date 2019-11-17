@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="Receiving 0.12345678 HUSH"
+            android:text="Recieving HUSH 0.12345678"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/prgUnconfirmed"
             app:layout_constraintTop_toTopOf="parent" />

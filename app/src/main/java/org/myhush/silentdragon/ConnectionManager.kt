@@ -2,12 +2,17 @@ package org.myhush.silentdragon
 
 import android.content.Intent
 import android.util.Log
+import com.beust.klaxon.Json
+import com.beust.klaxon.JsonObject
 import com.beust.klaxon.json
 import okhttp3.*
 import okio.ByteString
+import org.json.JSONObject
+import java.lang.Exception
 import java.net.ConnectException
 import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.collections.HashMap
 
 
 object ConnectionManager {
@@ -19,8 +24,8 @@ object ConnectionManager {
      */
     fun refreshAllData() {
         // First, try to make a connection.
-
         makeConnection()
+        initCurrencies()
     }
 
     // Attempt a connection to the server. If there is no saved connection, we'll set the connection status
@@ -105,7 +110,35 @@ object ConnectionManager {
         i.putExtra("doDisconnect", doDisconnect)
         SilentDragonApp.appContext?.sendBroadcast(i)
     }
+    fun initCurrencies(){
+        try {
+            DataModel.currencySymbols["USD"] = "$"
+            DataModel.currencySymbols["EUR"] = "€"
+            DataModel.currencySymbols["JPY"] = "¥"
 
+            Thread {
+                val client = OkHttpClient()
+                val request: Request = Request.Builder()
+                    .url("https://api.coingecko.com/api/v3/simple/price?ids=hush&vs_currencies=usd,eur,jpy,btc")
+                    .build()
+                val response: Response = client.newCall(request).execute()
+                val json: JSONObject = JSONObject(response.body()?.string())["hush"] as JSONObject
+
+                if (json.length() > 0){
+                    for (cur: String in json.keys()){
+                        DataModel.currencyValues[cur.toUpperCase()] = json.getDouble(cur)
+                        if(!DataModel.currencySymbols.containsKey(cur.toUpperCase()))
+                            DataModel.currencySymbols[cur.toUpperCase()] = cur.toUpperCase()
+                    }
+                }
+            }.start()
+
+
+
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
+    }
 
     private class WebsocketClient (directConn: Boolean) : WebSocketListener() {
         val m_directConn = directConn

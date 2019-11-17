@@ -13,14 +13,19 @@ import java.math.BigInteger
 
 object DataModel {
     class MainResponse(val balance: Double, val maxspendable: Double, val maxzspendable: Double? = null,
-                       val saplingAddress: String, val tAddress: String, val zecprice: Double, val tokenName: String,
+                       val saplingAddress: String, val tAddress: String, val tokenName: String,
                        val serverversion: String)
 
     class TransactionItem(val type: String, val datetime: Long, val amount: String, val memo: String?,
                           val addr: String, val txid: String?, val confirmations: Long)
 
     var mainResponseData : MainResponse? = null
-    var transactions : List<TransactionItem> ?= null
+    var transactions : List<TransactionItem>? = null
+
+    val fee: Double = 0.0001
+    var currencyValues: HashMap<String, Double?> = HashMap()
+    var currencySymbols: HashMap<String, String> = HashMap()
+    var selectedCurrency: String = ""
 
     fun isTestnet(): Boolean {
         return mainResponseData?.tokenName != "HUSH"

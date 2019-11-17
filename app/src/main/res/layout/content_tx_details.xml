@@ -122,7 +122,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
                 <TextView
-                        android:text="$45.23"
+                        android:text="$ 45.23"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" android:id="@+id/txtAmtUSD"
                         android:layout_marginTop="8dp"
