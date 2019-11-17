@@ -2,9 +2,13 @@ package org.myhush.silentdragon
 
 import android.content.Intent
 import android.util.Log
+import com.beust.klaxon.Json
+import com.beust.klaxon.JsonObject
 import com.beust.klaxon.json
 import okhttp3.*
 import okio.ByteString
+import org.json.JSONObject
+import java.lang.Exception
 import java.net.ConnectException
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -107,17 +111,31 @@ object ConnectionManager {
         SilentDragonApp.appContext?.sendBroadcast(i)
     }
     fun initCurrencies(){
-        var values: HashMap<String, Double?> = HashMap()
-        values["USD"] = DataModel.mainResponseData?.zecprice
-        values["EUR"] = DataModel.mainResponseData?.eurprice
-        values["BTC"] = DataModel.mainResponseData?.btcprice
-        DataModel.currencyValues = values
+        try {
+            Thread {
+                val client = OkHttpClient()
+                val request: Request = Request.Builder()
+                    .url("https://api.coingecko.com/api/v3/simple/price?ids=hush&vs_currencies=btc,usd,eur")
+                    .build()
+                val response: Response = client.newCall(request).execute()
+                val json: JSONObject = JSONObject(response.body()?.string())["hush"] as JSONObject
 
-        var symbols: HashMap<String, String> = HashMap()
-        symbols["USD"] = "$"
-        symbols["EUR"] = "€"
-        symbols["BTC"] = "BTC"
-        DataModel.currencySymbols = symbols
+                if (json.length() > 0){
+                    for (cur: String in json.keys()){
+                        DataModel.currencyValues[cur.toUpperCase()] = json.getDouble(cur)
+                    }
+                }
+            }.start()
+
+            var symbols: HashMap<String, String> = HashMap()
+            symbols["USD"] = "$"
+            symbols["EUR"] = "€"
+            symbols["BTC"] = "BTC"
+
+            DataModel.currencySymbols = symbols
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
     }
 
     private class WebsocketClient (directConn: Boolean) : WebSocketListener() {

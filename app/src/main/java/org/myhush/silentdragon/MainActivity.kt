@@ -6,6 +6,7 @@ import android.content.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.os.StrictMode
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build()) // TESTING
 
         super.onCreate(savedInstanceState)
 
@@ -65,8 +67,8 @@ class MainActivity : AppCompatActivity(),
         }
 
         txtMainBalanceUSD.setOnClickListener {
-            Toast.makeText(applicationContext, "1 HUSH = $${DecimalFormat("#.##")
-                .format(DataModel.mainResponseData?.zecprice)}", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "1 HUSH = ${DataModel.currencySymbols[DataModel.selectedCurrency]}${DecimalFormat("#.##")
+                .format(DataModel.currencyValues[DataModel.selectedCurrency])}", Toast.LENGTH_LONG).show()
         }
 
         bottomNav.setOnNavigationItemSelectedListener {

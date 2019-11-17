@@ -13,8 +13,7 @@ import java.math.BigInteger
 
 object DataModel {
     class MainResponse(val balance: Double, val maxspendable: Double, val maxzspendable: Double? = null,
-                       val saplingAddress: String, val tAddress: String, val zecprice: Double,
-                       val eurprice: Double, val btcprice: Double, val tokenName: String,
+                       val saplingAddress: String, val tAddress: String, val tokenName: String,
                        val serverversion: String)
 
     class TransactionItem(val type: String, val datetime: Long, val amount: String, val memo: String?,

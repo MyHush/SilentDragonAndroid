@@ -238,7 +238,7 @@ class SendActivity : AppCompatActivity() {
 
     private fun setAmountHUSH(amt: Double) {
         amountHUSH.setText((DecimalFormat("#.########").format(amt) + "${DataModel.mainResponseData?.tokenName}"))
-        setAmount(amt)
+        setAmountUSD(amt)
     }
 
     private fun setAmountUSD(amt: Double?) {
@@ -251,17 +251,6 @@ class SendActivity : AppCompatActivity() {
         Toast.makeText(this.applicationContext, amt.toString(), Toast.LENGTH_SHORT).show()
         amountUSD.text =
              "${DataModel.currencySymbols[DataModel.selectedCurrency]} " + DecimalFormat("#.########").format(amt)
-    }
-
-    private fun setAmount(amt: Double?) {
-        val zprice = DataModel.mainResponseData?.zecprice
-
-        if (amt == null || zprice == null)
-            amountUSD.text = "0.0 $"
-        else
-            amountUSD.text =
-                "$" + DecimalFormat("#.########").format(amt)
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
