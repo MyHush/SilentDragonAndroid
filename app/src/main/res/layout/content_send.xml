@@ -106,7 +106,7 @@
                     android:id="@+id/amountHUSH"
                     android:layout_width="173dp"
                     android:layout_height="66dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="17dp"
                     android:hint="0.00 Hush"
                     android:inputType="numberDecimal"
                     android:maxLength="14"
@@ -156,21 +156,23 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="3dp"
                     android:text="Fee:"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewFee"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textViewFee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="0.00 HUSH"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView12" />
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="0.0001 HUSH"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
             <android.support.constraint.ConstraintLayout
