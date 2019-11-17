@@ -170,7 +170,7 @@ class MainActivity : AppCompatActivity(),
 
                         lblBalance.text = "Balance"
                         txtMainBalance.text = balText.substring(0, balText.length - 4) + " ${DataModel.mainResponseData?.tokenName} "
-                        if(cur == "BTC")
+                        if(cur.length > 1)
                             txtMainBalanceUSD.text =  "${DataModel.currencySymbols[cur]} " + DecimalFormat("0.00000000").format(bal * price)
                         else
                             txtMainBalanceUSD.text =  "${DataModel.currencySymbols[cur]} " + DecimalFormat("#,##0.00").format(bal * price)

@@ -112,6 +112,9 @@ object ConnectionManager {
     }
     fun initCurrencies(){
         try {
+            DataModel.currencySymbols["USD"] = "$"
+            DataModel.currencySymbols["EUR"] = "€"
+
             Thread {
                 val client = OkHttpClient()
                 val request: Request = Request.Builder()
@@ -123,16 +126,14 @@ object ConnectionManager {
                 if (json.length() > 0){
                     for (cur: String in json.keys()){
                         DataModel.currencyValues[cur.toUpperCase()] = json.getDouble(cur)
+                        if(!DataModel.currencySymbols.containsKey(cur.toUpperCase()))
+                            DataModel.currencySymbols[cur.toUpperCase()] = cur.toUpperCase()
                     }
                 }
             }.start()
 
-            var symbols: HashMap<String, String> = HashMap()
-            symbols["USD"] = "$"
-            symbols["EUR"] = "€"
-            symbols["BTC"] = "BTC"
 
-            DataModel.currencySymbols = symbols
+
         }catch (e: Exception){
             e.printStackTrace()
         }
