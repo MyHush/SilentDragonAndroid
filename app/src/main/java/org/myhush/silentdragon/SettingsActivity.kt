@@ -59,6 +59,7 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun fillSpinner(){
         val items = DataModel.currencyValues.keys.toMutableList()
+<<<<<<< HEAD
         var selectedIndex = 0
         items.sort()
 
@@ -68,12 +69,17 @@ class SettingsActivity : AppCompatActivity() {
             selectedIndex++
         }
 
+=======
+>>>>>>> master
 
         var adapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerCurrency.adapter = adapter
+<<<<<<< HEAD
         spinnerCurrency.setSelection(selectedIndex)
+=======
+>>>>>>> master
     }
 
     fun updateUI() {
