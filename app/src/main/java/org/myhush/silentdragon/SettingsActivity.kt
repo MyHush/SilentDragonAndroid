@@ -80,10 +80,10 @@ class SettingsActivity : AppCompatActivity() {
     fun updateUI() {
         fillSpinner()
         txtSettingsConnString.text = DataModel.getConnString(SilentDragonApp.appContext!!)
-            ?: "Not Connected"
+            ?: getString(R.string.not_connected)
 
         chkDisallowInternet.isChecked = !DataModel.getGlobalAllowInternet()
 
-        lblServerVersion.text = DataModel.mainResponseData?.serverversion ?: "Not Connected"
+        lblServerVersion.text = DataModel.mainResponseData?.serverversion ?: getString(R.string.not_connected)
     }
 }

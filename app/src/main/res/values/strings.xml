@@ -1,8 +1,119 @@
 <resources>
+ <!-- For later
+        <string name="text_english" translatable="false">English</string>
+        <string name="text_spanish" translatable="false">"Español"</string>
+        <string name="text_french" translatable="false">"Français"</string>
+ -->
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s is not a valid connection string</string>
+    <string name="valid_address">Valid Address</string>
+    <string name="balance">Balance</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="send">Send</string>
+    <string name="address">Address</string>
+    <string name="cancel">Cancel</string>
+    <string name="amount">Amount</string>
+
+   <!-- TxDetailsActivity.kt -->
+   <string name="reply">Reply</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Past Transactions</string>
+    <string name="or">OR</string>
+    <string name="reconnect">Reconnect</string>
+
+    <!-- MainActivity.kt -->
     <string name="app_name">SilentDragon</string>
+    <string name="no_connection">No Connection</string>
+    <string name="connecting">Connecting&#8230;</string>
+    <string name="loading">Loading&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Memo contents</string>
+    <string name="view_on_block_explorer">View on Block Explorer</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Date</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Unconfirmed Transaction</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Share</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">View</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Refresh</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Go to "Apps" -> "Connect mobile app" on your desktop and scan the QR Code to connect</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Disconnect</string>
+    <string name="silentDragon_connection_address">SilentDragon connection address</string>
+    <string name="disallow_routing_over_external_service">Disallow routing over external service/internet</string>
+    <string name="only_attempts_direct_connection">If checked, the app will only attempt a direct connection to SilentDragon, and not route traffic over the internet via the WormHole service at wormhole.myhush.org . Please see the https://myhush.org/silentdragon for more details</string>
+    <string name="currency">Currency</string>
+    <string name="silentdragon_version">SilentDragon version</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Visit our website</string>
+    <string name="discord">Join our Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Credits</string>
+    <string name="license">License</string>
+    <string name="sda_version">SilentDragonAndroid version</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Not Connected</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Paste the code here manually</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s is not a valid HUSH address!></string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Receive</string>
+    <string name="no_address">No address!</string>
+    <string name="hush_address">Hush address</string>
+    <string name="copied_address_to_clipboard">Copied address to clipboard</string>
+    <string name="your_hush_transparent_address">Your Hush transparent address</string>
+    <string name="your_hush_shielded_address">Your Hush shielded address</string>
+
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Send Transaction</string>
+    <string name="not_a_valid_hush_address">Not a valid Hush address!</string>
+    <string name="no_memo_for_taddresses">(No Memo for t-Addresses)</string>
+    <string name="memo_optional">Memo (Optional)</string>
+    <string name="send_anyway">Send Anyway</string>
+    <string name="invalid_amount">Invalid amount!</string>
+    <string name="invalid_destination_Hush_address">Invalid destination Hush address!</string>
+    <string name="send_from_taddr">Send from t-addr?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Can\'t send a memo to a transparent address</string>
+    <string name="error_sending_transaction">Error Sending Transaction!</string>
+
+    <!-- content_send -->
+    <string name="to">To</string>
+    <string name="fee">Fee:</string>
+    <string name="include_reply_to_address">Include ReplyTo Address</string>
+
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
+
+
+
+
+    <string name="transaction_details">Transaction Details</string>
+
 
     <string name="title_activity_receive">ReceiveActivity</string>
     <string name="title_activity_send">SendActivity</string>

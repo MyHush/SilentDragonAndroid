@@ -31,7 +31,7 @@ class TxDetailsActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        title = "Transaction Details"
+        title = resources.getString(R.string.transaction_details)
 
         tx = Klaxon().parse(StringReader(intent.getStringExtra("EXTRA_TXDETAILS")))
 
@@ -50,7 +50,7 @@ class TxDetailsActivity : AppCompatActivity() {
 
             // Check if there is a reply-to address
             if (getReplyToAddress(tx?.memo) != null) {
-                btnExternal.text = "Reply"
+                btnExternal.text = "@string/reply"
             } else {
                 btnExternal.visibility = View.GONE
             }

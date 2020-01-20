@@ -3,11 +3,11 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="org.myhush.silentdragon.MainActivity">
     <item android:id="@+id/action_send"
-          android:title="Send"
+          android:title="@string/send"
           android:orderInCategory="300"
           app:showAsAction="never" android:icon="@drawable/send_selector"/>
-    <item android:title="Balance" android:id="@+id/action_bal" android:icon="@drawable/balance_selector"
+    <item android:title="@string/balance" android:id="@+id/action_bal" android:icon="@drawable/balance_selector"
           android:orderInCategory="200"/>
-    <item android:title="Receive" android:id="@+id/action_recieve" android:icon="@drawable/receive_selector"
+    <item android:title="@string/receive" android:id="@+id/action_recieve" android:icon="@drawable/receive_selector"
           android:orderInCategory="100"/>
 </menu>

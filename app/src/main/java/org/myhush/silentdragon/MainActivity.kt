@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity(),
             bottomNav.menu.findItem(R.id.action_bal)?.isChecked = true
             when (connStatus) {
                 ConnectionStatus.DISCONNECTED -> {
-                    setMainStatus("No Connection")
+                    setMainStatus(resources.getString(R.string.no_connection))
 
                     scrollViewTxns.visibility = ScrollView.GONE
                     layoutConnect.visibility = ConstraintLayout.VISIBLE
@@ -154,7 +154,7 @@ class MainActivity : AppCompatActivity(),
                     }
                 }
                 ConnectionStatus.CONNECTING -> {
-                    setMainStatus("Connecting...")
+                    setMainStatus(resources.getString(R.string.connecting))
                     scrollViewTxns.visibility = ScrollView.GONE
                     layoutConnect.visibility = ConstraintLayout.GONE
                     swiperefresh.isRefreshing = true
@@ -169,14 +169,14 @@ class MainActivity : AppCompatActivity(),
                     ConnectionManager.initCurrencies()
 
                     if (DataModel.mainResponseData == null) {
-                        setMainStatus("Loading...")
+                        setMainStatus(resources.getString(R.string.loading))
                     } else {
                         val cur = DataModel.selectedCurrency
                         val price = DataModel.currencyValues[cur]?: 0.0
                         val bal = DataModel.mainResponseData?.balance ?: 0.0
                         val balText = DecimalFormat("#0.00000000").format(bal)
 
-                        lblBalance.text = "Balance"
+                        lblBalance.text = resources.getString(R.string.balance)
                         txtMainBalance.text = balText + " ${DataModel.mainResponseData?.tokenName} "
                         if(cur == "BTC")
                             txtMainBalanceUSD.text =  "${DataModel.currencySymbols[cur]} " + DecimalFormat("0.00000000").format(bal * price)
@@ -334,14 +334,14 @@ class MainActivity : AppCompatActivity(),
                     // Check to make sure that the result is an actual address
                     if (!(data?.dataString ?: "").startsWith("ws")) {
                         Toast.makeText(applicationContext,
-                            "${data?.dataString} is not a valid connection string!", Toast.LENGTH_SHORT).show()
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString), Toast.LENGTH_SHORT).show()
                         return
                     }
 
                     val conComponents = data?.dataString?.split(",")
                     if (conComponents?.size ?: 0 < 2 || conComponents?.size ?: 0 > 3) {
                         Toast.makeText(applicationContext,
-                            "${data?.dataString} is not a valid connection string!", Toast.LENGTH_SHORT).show()
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString), Toast.LENGTH_SHORT).show()
                         return
                     }
 

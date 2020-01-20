@@ -1,0 +1,197 @@
+<resources>
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s n\'est pas une chaine de connexion valide</string>
+    <string name="valid_address">Adresse valide</string>
+    <string name="balance">Solde</string>
+    <string name="scan_qr_code">Scannez le QR Code</string>
+    <string name="send">Envoyer</string>
+    <string name="address">Adresse</string>
+    <string name="cancel">Annuler</string>
+    <string name="amount">Montant</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Répondre</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Historique des transactions</string>
+    <string name="or">OU</string>
+    <string name="reconnect">>Se reconnecter</string>
+
+    <!-- MainActivity -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Aucune connexion</string>
+    <string name="connecting">"Connexion&#8230;"</string>
+    <string name="loading">Chargement&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Mémo</string>
+    <string name="memo_contents">Contenu du mémo</string>
+    <string name="view_on_block_explorer">Afficher sur l\'explorateur de block</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Date</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Transaction non confimée</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Partager</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">oir</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Rafraichir</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Cliquez sur "Applications" puis "Connection apppication mobile" sur votre ordinateur puis scannez le QR Code pour vous connecter.</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Déconnexion</string>
+    <string name="silentDragon_connection_address">Adresse de connexion SilentDragon</string>
+    <string name="disallow_routing_over_external_service">Interdire le routage via un service externe/Internet</string>
+    <string name="only_attempts_direct_connection">Si cette case est cochée, l\'application tentera uniquement une connexion directe à SilentDragon et n\'acheminera pas le trafic sur Internet via le service WormHole à wormhole.myhush.org. Veuillez consulter la page https://myhush.org/silentdragon pour plus de détails.</string>
+    <string name="currency">Devise</string>
+    <string name="silentdragon_version">Version de SilentDragon</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Visitez notre site Internet</string>
+    <string name="discord">Rejoignez notre Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Crédits</string>
+    <string name="license">License</string>
+    <string name="sda_version">Version de SilentDragonAndroid</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Non connecté</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Coller le code manuellement ici</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s n\'est pas une adresse Hush valide!></string>
+
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Recevoir</string>
+    <string name="no_address">Aucune adresse!</string>
+    <string name="hush_address">Adresse Hush</string>
+    <string name="copied_address_to_clipboard">L\'adresse a été copiée dans le presse-papier</string>
+    <string name="your_hush_transparent_address">Votre adresse Hush transparente</string>
+    <string name="your_hush_shielded_address">Votre adresse Hush blindée</string>
+
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Envoyer une transaction</string>
+    <string name="not_a_valid_hush_address">Adresse Hush non valide!</string>
+    <string name="no_memo_for_taddresses">(Pas de mémo pour les t-Addresses)</string>
+    <string name="memo_optional">Memo (Optionnel)</string>
+    <string name="send_anyway">Envoyer quand même</string>
+    <string name="invalid_amount">Montant invalide!</string>
+    <string name="invalid_destination_Hush_address">L\'adresse Hush de destination est invalide!</string>
+    <string name="send_from_taddr">Envoyer depuis une t-addr?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Impossible d\'envoyer un memo depuis une t-addr</string>
+    <string name="error_sending_transaction">Erreur d\'envoi de la transaction!</string>
+
+    <!-- content_send -->
+    <string name="to">Vers</string>
+    <string name="fee">Frais:</string>
+    <string name="include_reply_to_address">Inclure votre adresse pour vous répondre</string>
+
+
+    <string name="transaction_details">Détail de la transaction</string>
+
+    <string name="title_activity_receive">ReceiveActivity</string>
+    <string name="title_activity_send">SendActivity</string>
+
+
+    <string name="action_settings">Paramétres</string>
+    <string name="action_about">A propos</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tx_details">TxDetailsActivity</string>
+    <string name="title_activity_qr_code_reader">QrCodeReaderActivity</string>
+    <string name="title_activity_settings">Paramétres</string>
+    <string name="title_activity_about">A propos</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message
+        history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value"/>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
