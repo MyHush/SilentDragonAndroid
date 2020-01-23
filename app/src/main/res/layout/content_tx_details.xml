@@ -28,7 +28,7 @@
                         app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginStart="8dp"/>
                 <TextView
-                        android:text="Send"
+                        android:text="@string/send"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" android:id="@+id/txtType"
                         android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@+id/imgTypeColor"
@@ -38,7 +38,7 @@
                         android:layout_marginEnd="16dp" android:layout_marginBottom="2dp"
                         app:layout_constraintBottom_toTopOf="@+id/txtDateTime"/>
                 <TextView
-                        android:text="Date Time"
+                        android:text="@string/date_time"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" android:id="@+id/txtDateTime"
                         android:layout_marginTop="2dp"

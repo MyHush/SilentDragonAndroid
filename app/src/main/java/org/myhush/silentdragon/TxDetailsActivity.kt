@@ -40,23 +40,24 @@ class TxDetailsActivity : AppCompatActivity() {
 
         if (tx?.type == "confirm") {
 
-            txtType.text = "Confirm Transaction"
+            txtType.text = getString(R.string.confirm_transaction)
             txtDateTime.text = ""
-            btnExternal.text = "Confirm and Send"
+            btnExternal.text = getString(R.string.confirm_and_send)
         } else {
-            txtType.text = tx?.type?.capitalize() + if (tx?.confirmations == 0L) " (Unconfirmed Tx)" else ""
+            //txtType.text = tx?.type?.capitalize() + if (tx?.confirmations == 0L) getString(R.string.unconfirmed_tx) else ""
+            txtType.text = if (tx?.type == "send") getString(R.string.sent) else getString(R.string.received) + if (tx?.confirmations == 0L) getString(R.string.unconfirmed_tx) else ""
             txtDateTime.text = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM)
                 .format(Date((tx?.datetime ?: 0) * 1000))
 
             // Check if there is a reply-to address
             if (getReplyToAddress(tx?.memo) != null) {
-                btnExternal.text = "@string/reply"
+                btnExternal.text = getString(R.string.reply)
             } else {
                 btnExternal.visibility = View.GONE
             }
         }
 
-        txtAddress.text = if (tx?.addr.isNullOrBlank()) "(Shielded Address)" else tx?.addr
+        txtAddress.text = if (tx?.addr.isNullOrBlank()) getString(R.string.shielded_address) else tx?.addr
 
         val amt = kotlin.math.abs(tx?.amount?.toDoubleOrNull() ?: 0.0)
         val amtStr = DecimalFormat("#0.0000####").format(amt)

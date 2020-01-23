@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:text="Recieving HUSH X.XXXXXXXX"
+            android:text="Receiving HUSH X.XXXXXXXX"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/prgUnconfirmed"
             app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Unconfirmed Transaction"
+            android:text="@string/unconfirmed_transaction"
             android:textColor="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/txtUnconfirmedTx"

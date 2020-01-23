@@ -12,11 +12,15 @@
 
     <!-- TxDetailsActivity.kt -->
     <string name="reply">Répondre</string>
+    <string name="shielded_address">(Adresse blindée)</string>
+    <string name="unconfirmed_tx"> (Tx non confirmée)</string>
+    <string name="confirm_transaction">Confirmer la transaction</string>
+    <string name="confirm_and_send">Confirmer et envoyer</string>
 
     <!-- content_main.xml -->
     <string name="past_transactions">Historique des transactions</string>
     <string name="or">OU</string>
-    <string name="reconnect">>Se reconnecter</string>
+    <string name="reconnect">Se reconnecter</string>
 
     <!-- MainActivity -->
     <string name="app_name">SilentDragon</string>
@@ -28,6 +32,7 @@
     <string name="memo">Mémo</string>
     <string name="memo_contents">Contenu du mémo</string>
     <string name="view_on_block_explorer">Afficher sur l\'explorateur de block</string>
+    <string name="date_time">Date Heure</string>
 
     <!-- fragment_transaction_item -->
     <string name="date">Date</string>
@@ -36,17 +41,33 @@
     <!-- fragment_unconfirmed_tx_item -->
     <string name="unconfirmed_transaction">Transaction non confimée</string>
 
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Envoi en cours </string>
+    <string name="receiving">Réception en cours </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Saisie manuelle</string>
+
     <!-- menu_recieve -->
     <string name="share">Partager</string>
 
     <!-- menu_txdetails -->
     <string name="view">oir</string>
 
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Envoyé</string>
+    <string name="received">Reçu</string>
+
+
     <!-- menu_main -->
     <string name="refresh">Rafraichir</string>
 
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Connexion par Internet n\'est pas activé sur l\'application SilenDragon.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Connexion par Internet est désactivé dans les paramétres.</string>
+
     <!-- activity_qr_reader -->
-    <string name="how_to_connect_sd2sda">Cliquez sur "Applications" puis "Connection apppication mobile" sur votre ordinateur puis scannez le QR Code pour vous connecter.</string>
+    <string name="how_to_connect_sd2sda">Cliquez sur \"Applications\" puis \"Connection apppication mobile\" sur votre ordinateur puis scannez le QR Code pour vous connecter.</string>
 
     <!-- activity_settings -->
     <string name="disconnect">Déconnexion</string>
@@ -95,6 +116,10 @@
     <string name="send_from_taddr">Envoyer depuis une t-addr?</string>
     <string name="cant_send_a_memo_to_a_taddr">Impossible d\'envoyer un memo depuis une t-addr</string>
     <string name="error_sending_transaction">Erreur d\'envoi de la transaction!</string>
+    <string name="memo_field_over_512">Le mémo est long! Il doit être au maximum de 512 bytes.</string>
+    <string name="more_than_shielded_address">%1$s %2$s est supérieur à votre solde de vos adresses blindées. Ce transaction devra être envoyé à partir d\'une adresse transparente et ne sera pas privé.\n\nEtes-vous absolument sûr?"</string>
+    <string name="max_spend_in_a_single_tx">Vous ne pouvez pas dépenser plus de %1$d %2$s dans une seule transaction."</string>
+    <string name="reply_to">Répondre à"</string>
 
     <!-- content_send -->
     <string name="to">Vers</string>
@@ -111,6 +136,11 @@
     <string name="action_settings">Paramétres</string>
     <string name="action_about">A propos</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
+
+
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

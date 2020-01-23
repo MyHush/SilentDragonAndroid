@@ -185,9 +185,8 @@ class SendActivity : AppCompatActivity() {
 
                 val alertDialog = AlertDialog.Builder(this@SendActivity)
                 alertDialog.setTitle(getString(R.string.send_from_taddr))
-                alertDialog.setMessage("$amt ${DataModel.mainResponseData?.tokenName} is more than the balance in " +
-                        "your shielded address. This Tx will have to be sent from a transparent address, and will" +
-                        " not be private.\n\nAre you absolutely sure?")
+                //alertDialog.setMessage("$amt ${DataModel.mainResponseData?.tokenName}" + "..."
+                alertDialog.setMessage(getString(R.string.more_than_shielded_address, amt, DataModel.mainResponseData?.tokenName))
                 alertDialog.apply {
                     setPositiveButton(getString(R.string.send_anyway)) { dialog, id -> doConfirm() }
                     setNegativeButton(getString(R.string.cancel)) { dialog, id -> dialog.cancel() }
@@ -200,14 +199,14 @@ class SendActivity : AppCompatActivity() {
 
         // Warning if spending more than total
         if (amt.toDouble() > DataModel.mainResponseData?.maxspendable ?: Double.MAX_VALUE) {
-            showErrorDialog("Can't spend more than ${DataModel.mainResponseData?.tokenName} " +
-                    "${DataModel.mainResponseData?.maxspendable} in a single Tx")
+            //showErrorDialog("Can't spend more than ${DataModel.mainResponseData?.tokenName} " + "${DataModel.mainResponseData?.maxspendable} in a single Tx")
+            showErrorDialog(getString(R.string.max_spend_in_a_single_tx, DataModel.mainResponseData?.maxspendable, DataModel.mainResponseData?.tokenName ))
             return
         }
 
         val memo = txtSendMemo.text.toString() + getReplyToAddressIfChecked(toAddr)
         if (memo.length > 512) {
-            showErrorDialog("Memo field is too long! Must be at most 512 bytes.")
+            showErrorDialog(getString(R.string.memo_field_over_512))
             return
         }
 
@@ -235,7 +234,7 @@ class SendActivity : AppCompatActivity() {
 
     private fun getReplyToAddressIfChecked(toAddr: String) : String {
         if (chkIncludeReplyTo.isChecked && toAddr.startsWith("zs1")) {
-            return "\nReply to:\n${DataModel.mainResponseData?.saplingAddress}"
+            return "\n" + getString(R.string.reply_to) + ":\n${DataModel.mainResponseData?.saplingAddress}"
         } else {
             return ""
         }
