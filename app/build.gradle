@@ -23,6 +23,7 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
+    /*
     signingConfigs {
         release {
             storeFile file(secretProperties["store_file_location"])
@@ -39,6 +40,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+     */
 }
 
 dependencies {
