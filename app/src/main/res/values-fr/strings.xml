@@ -128,14 +128,8 @@
 
     <string name="action_settings">Paramétres</string>
     <string name="action_about">A propos</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
 
     <string name="transaction_details">Détail de la transaction</string>
-
-    <string name="title_activity_receive">ReceiveActivity</string>
-    <string name="title_activity_send">SendActivity</string>
-
-    <string name="title_activity_tx_details">TxDetailsActivity</string>
 
     <string name="title_activity_settings">Paramétres</string>
     <string name="title_activity_about">A propos</string>
