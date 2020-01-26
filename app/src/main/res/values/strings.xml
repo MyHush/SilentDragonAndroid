@@ -135,12 +135,13 @@
 
     <string name="transaction_details">Transaction Details</string>
 
-    <!--
-    <string name="title_activity_receive">ReceiveActivity</string>
-    <string name="title_activity_send">SendActivity</string>-->
+
+    <string name="title_activity_receive" translatable="false">ReceiveActivity</string>
+    <string name="title_activity_send" translatable="false">SendActivity</string>
+    <string name="title_activity_tx_details" translatable="false">TxDetailsActivity</string>
 
     <!-- string name="hello_blank_fragment">Hello blank fragment</string>  -->
-    <!--<string name="title_activity_tx_details">TxDetailsActivity</string> -->
+
     <!-- <string name="title_activity_qr_code_reader">QrCodeReaderActivity</string>-->
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_about">About</string>
