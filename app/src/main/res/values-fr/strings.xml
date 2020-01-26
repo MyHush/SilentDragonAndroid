@@ -52,7 +52,7 @@
     <string name="share">Partager</string>
 
     <!-- menu_txdetails -->
-    <string name="view">oir</string>
+    <string name="view">Voir</string>
 
     <!-- TxDetailsActivity.kt -->
     <string name="sent">Envoyé</string>
@@ -63,11 +63,11 @@
     <string name="refresh">Rafraichir</string>
 
     <!-- connectionManager.kt  -->
-    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Connexion par Internet n\'est pas activé sur l\'application SilenDragon.</string>
-    <string name="Connecting_over_internet_is_disabled_in_settings">Connexion par Internet est désactivé dans les paramétres.</string>
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">La connexion par Internet n\'est pas activée dans l\'application SilenDragon.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">La connexion par Internet est désactivée dans les paramétres.</string>
 
     <!-- activity_qr_reader -->
-    <string name="how_to_connect_sd2sda">Cliquez sur \"Applications\" puis \"Connection apppication mobile\" sur votre ordinateur puis scannez le QR Code pour vous connecter.</string>
+    <string name="how_to_connect_sd2sda">Cliquez sur \"Applications\" puis \"Connection application mobile\" sur votre ordinateur puis scannez le QR Code pour vous connecter.</string>
 
     <!-- activity_settings -->
     <string name="disconnect">Déconnexion</string>
@@ -108,7 +108,7 @@
     <!-- SendActivity.kt -->
     <string name="send_transaction">Envoyer une transaction</string>
     <string name="not_a_valid_hush_address">Adresse Hush non valide!</string>
-    <string name="no_memo_for_taddresses">(Pas de mémo pour les t-Addresses)</string>
+    <string name="no_memo_for_taddresses">(Pas de mémo pour les t-Adresses)</string>
     <string name="memo_optional">Memo (Optionnel)</string>
     <string name="send_anyway">Envoyer quand même</string>
     <string name="invalid_amount">Montant invalide!</string>
@@ -117,7 +117,7 @@
     <string name="cant_send_a_memo_to_a_taddr">Impossible d\'envoyer un memo depuis une t-addr</string>
     <string name="error_sending_transaction">Erreur d\'envoi de la transaction!</string>
     <string name="memo_field_over_512">Le mémo est long! Il doit être au maximum de 512 bytes.</string>
-    <string name="more_than_shielded_address">%1$s %2$s est supérieur à votre solde de vos adresses blindées. Ce transaction devra être envoyé à partir d\'une adresse transparente et ne sera pas privé.\n\nEtes-vous absolument sûr?"</string>
+    <string name="more_than_shielded_address">%1$s %2$s est supérieur à votre solde de vos adresses blindées. Cette transaction devra être envoyé à partir d\'une adresse transparente et ne sera pas privée.\n\nEtes-vous absolument sûr?"</string>
     <string name="max_spend_in_a_single_tx">Vous ne pouvez pas dépenser plus de %1$d %2$s dans une seule transaction."</string>
     <string name="reply_to">Répondre à"</string>
 
