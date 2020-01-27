@@ -4,7 +4,7 @@
       xmlns:compat="http://schemas.android.com/apk/res-auto"
       tools:context="org.myhush.silentdragon.QrReaderActivity">
     <item android:id="@+id/action_manual_input"
-          android:title="Manual Input"
+          android:title="@string/manual_input"
           android:orderInCategory="100"
           app:showAsAction="ifRoom" android:icon="@drawable/ic_keyboard_icon"/>
 </menu>

@@ -36,7 +36,7 @@ class SendActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        title = "Send Transaction"
+        title = getString(R.string.send_transaction)
 
         // Clear the valid address prompt
         txtValidAddress.text = ""
@@ -80,12 +80,12 @@ class SendActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (DataModel.isValidAddress(s.toString())) {
-                    txtValidAddress.text = "\u2713 Valid address"
+                    txtValidAddress.text = "\u2713 " + getString(R.string.valid_address)
                     txtValidAddress.setTextColor(ContextCompat.getColor(applicationContext,
                         R.color.white_selected
                     ))
                 } else {
-                    txtValidAddress.text = "Not a valid Hush address!"
+                    txtValidAddress.text = getString(R.string.not_a_valid_hush_address)
                     txtValidAddress.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
                 }
 
@@ -93,11 +93,11 @@ class SendActivity : AppCompatActivity() {
                     txtSendMemo.isEnabled       = false
                     chkIncludeReplyTo.isEnabled = false
                     txtSendMemo.text            = SpannableStringBuilder("")
-                    txtSendMemoTitle.text       = "(No Memo for t-Addresses)"
+                    txtSendMemoTitle.text       = getString(R.string.no_memo_for_taddresses)
                 } else {
                     txtSendMemo.isEnabled = true
                     chkIncludeReplyTo.isEnabled = true
-                    txtSendMemoTitle.text = "Memo (Optional)"
+                    txtSendMemoTitle.text = getString(R.string.memo_optional)
                 }
             }
         })
@@ -163,7 +163,7 @@ class SendActivity : AppCompatActivity() {
         // First, check if the address is correct.
         val toAddr = sendAddress.text.toString()
         if (!DataModel.isValidAddress(toAddr)) {
-            showErrorDialog("Invalid destination Hush address!")
+            showErrorDialog(getString(R.string.invalid_destination_Hush_address))
             return
         }
 
@@ -172,7 +172,7 @@ class SendActivity : AppCompatActivity() {
 
         // amount=0 xtns are valid
         if (amt.toDoubleOrNull() == null || amt.toDouble() < 0.0 ) {
-            showErrorDialog("Invalid amount!")
+            showErrorDialog(getString(R.string.invalid_amount))
             return
         }
 
@@ -184,13 +184,12 @@ class SendActivity : AppCompatActivity() {
                 amt.toDouble() <= DataModel.mainResponseData?.maxspendable ?: Double.MAX_VALUE) {
 
                 val alertDialog = AlertDialog.Builder(this@SendActivity)
-                alertDialog.setTitle("Send from t-addr?")
-                alertDialog.setMessage("$amt ${DataModel.mainResponseData?.tokenName} is more than the balance in " +
-                        "your shielded address. This Tx will have to be sent from a transparent address, and will" +
-                        " not be private.\n\nAre you absolutely sure?")
+                alertDialog.setTitle(getString(R.string.send_from_taddr))
+                //alertDialog.setMessage("$amt ${DataModel.mainResponseData?.tokenName}" + "..."
+                alertDialog.setMessage(getString(R.string.more_than_shielded_address, amt, DataModel.mainResponseData?.tokenName))
                 alertDialog.apply {
-                    setPositiveButton("Send Anyway") { dialog, id -> doConfirm() }
-                    setNegativeButton("Cancel") { dialog, id -> dialog.cancel() }
+                    setPositiveButton(getString(R.string.send_anyway)) { dialog, id -> doConfirm() }
+                    setNegativeButton(getString(R.string.cancel)) { dialog, id -> dialog.cancel() }
                 }
 
                 alertDialog.create().show()
@@ -200,19 +199,19 @@ class SendActivity : AppCompatActivity() {
 
         // Warning if spending more than total
         if (amt.toDouble() > DataModel.mainResponseData?.maxspendable ?: Double.MAX_VALUE) {
-            showErrorDialog("Can't spend more than ${DataModel.mainResponseData?.tokenName} " +
-                    "${DataModel.mainResponseData?.maxspendable} in a single Tx")
+            //showErrorDialog("Can't spend more than ${DataModel.mainResponseData?.tokenName} " + "${DataModel.mainResponseData?.maxspendable} in a single Tx")
+            showErrorDialog(getString(R.string.max_spend_in_a_single_tx, DataModel.mainResponseData?.maxspendable, DataModel.mainResponseData?.tokenName ))
             return
         }
 
         val memo = txtSendMemo.text.toString() + getReplyToAddressIfChecked(toAddr)
         if (memo.length > 512) {
-            showErrorDialog("Memo field is too long! Must be at most 512 bytes.")
+            showErrorDialog(getString(R.string.memo_field_over_512))
             return
         }
 
         if (toAddr.startsWith("R") && !memo.isBlank()) {
-            showErrorDialog("Can't send a memo to a transparent address")
+            showErrorDialog(getString(R.string.cant_send_a_memo_to_a_taddr))
             return
         }
 
@@ -235,7 +234,7 @@ class SendActivity : AppCompatActivity() {
 
     private fun getReplyToAddressIfChecked(toAddr: String) : String {
         if (chkIncludeReplyTo.isChecked && toAddr.startsWith("zs1")) {
-            return "\nReply to:\n${DataModel.mainResponseData?.saplingAddress}"
+            return "\n" + getString(R.string.reply_to) + ":\n${DataModel.mainResponseData?.saplingAddress}"
         } else {
             return ""
         }
@@ -243,9 +242,9 @@ class SendActivity : AppCompatActivity() {
 
     fun showErrorDialog(msg: String) {
         val alertDialog = AlertDialog.Builder(this@SendActivity).create()
-        alertDialog.setTitle("Error Sending Transaction!")
+        alertDialog.setTitle(getString(R.string.error_sending_transaction))
         alertDialog.setMessage(msg)
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK") {
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok)) {
                 dialog, _ -> dialog.dismiss() }
         alertDialog.show()
     }

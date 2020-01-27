@@ -1,7 +1,10 @@
 // Copyright 2019 The Hush developers
 package org.myhush.silentdragon
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.util.Log
 import com.beust.klaxon.Json
 import com.beust.klaxon.JsonObject
@@ -235,9 +238,9 @@ object ConnectionManager {
             if (t is ConnectException && (m_directConn && !allowInternet)) {
                 var mesg = t.localizedMessage
                 if (!DataModel.getAllowInternet()) {
-                    mesg += ": Connecting over the internet was not enabled by the desktop node."
+                    mesg += ": " + SilentDragonApp.appContext!!.getString(R.string.Connecting_over_internet_not_enabled_in_desktop_node)
                 } else if (!DataModel.getGlobalAllowInternet()) {
-                    mesg += ": Connecting over the internet is disabled in settings."
+                    mesg += ": " + SilentDragonApp.appContext!!.getString(R.string.Connecting_over_internet_is_disabled_in_settings)
                 }
 
                 sendErrorSignal(mesg, true)

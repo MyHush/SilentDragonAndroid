@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
-            android:text="Go to Apps -> Connect mobile app on your desktop and scan the QR Code to connect"
+            android:text="@string/how_to_connect_sd2sda"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/txtQrCodeHelp"
@@ -32,7 +32,7 @@
             android:layout_marginBottom="16dp" app:layout_constraintBottom_toTopOf="@+id/btnQrCodeCancel"
             android:textColor="@android:color/white"/>
     <Button
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnQrCodeCancel"

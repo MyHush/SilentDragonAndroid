@@ -4,7 +4,7 @@
       xmlns:compat="http://schemas.android.com/apk/res-auto"
       tools:context="org.myhush.silentdragon.TxDetailsActivity">
     <item android:id="@+id/action_view"
-          android:title="View"
+          android:title="@string/view"
           android:orderInCategory="100"
           app:showAsAction="ifRoom" android:icon="@android:drawable/ic_menu_view"/>
 </menu>
