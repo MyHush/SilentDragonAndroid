@@ -1,4 +1,5 @@
-// Copyright 2019 The Hush developers
+// Copyright 2019-2020 The Hush developers
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
