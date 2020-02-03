@@ -76,6 +76,7 @@
         android:text="10min"
         android:textColor="#fff"
         android:textSize="10sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

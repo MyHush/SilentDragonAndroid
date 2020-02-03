@@ -67,9 +67,7 @@ class SendActivity : AppCompatActivity() {
         if (DataModel.selectedCurrency == "BTC")
             amountUSD.text = "${DataModel.currencySymbols[DataModel.selectedCurrency]} " + DecimalFormat("0.00000000").format(0)
         else
-        {
             amountUSD.text = "${DataModel.currencySymbols[DataModel.selectedCurrency]} " + DecimalFormat("0.00").format(0)
-        }
 
         textViewFee.text = DecimalFormat("0.0000").format(0.0001) + " HUSH"
 

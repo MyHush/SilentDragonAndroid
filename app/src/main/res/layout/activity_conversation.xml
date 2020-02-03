@@ -40,9 +40,11 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@mipmap/ic_launcher_dragon_foreground"
             tools:visibility="visible" />
+
     </android.support.constraint.ConstraintLayout>
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
@@ -54,7 +56,7 @@
             android:id="@+id/MessageList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
     </ScrollView>
 
     <android.support.constraint.ConstraintLayout
@@ -88,6 +90,19 @@
             app:layout_constraintEnd_toStartOf="@+id/buttonSend"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView_zAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#0AFFFFFF"
+        android:text="zAddress"
+        android:textAlignment="center"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
 
 </android.support.constraint.ConstraintLayout>

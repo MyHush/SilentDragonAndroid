@@ -10,6 +10,7 @@ import com.beust.klaxon.json
 import okhttp3.WebSocket
 import org.libsodium.jni.NaCl
 import org.libsodium.jni.Sodium
+import org.myhush.silentdragon.chat.Message
 import java.math.BigInteger
 
 object DataModel {
@@ -19,6 +20,7 @@ object DataModel {
 
     class TransactionItem(val type: String, val datetime: Long, val amount: String, val memo: String?,
                           val addr: String, val txid: String?, val confirmations: Long)
+
 
     var mainResponseData : MainResponse? = null
     var transactions : List<TransactionItem>? = null

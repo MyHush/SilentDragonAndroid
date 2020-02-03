@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_add_contact.*
+import org.myhush.silentdragon.Addressbook
 import org.myhush.silentdragon.R
 
 class AddContactActivity : AppCompatActivity() {
@@ -18,7 +19,8 @@ class AddContactActivity : AppCompatActivity() {
                 var fullname = editText_FullName.text.toString()
                 var zAddr = editTextZAddress.text.toString()
 
-                Addressbook.contactList.add(Addressbook.Contact(fullname, nickName, zAddr))
+                Addressbook.addContact(fullname, nickName, zAddr)
+
                 this.finish()
             }
         }

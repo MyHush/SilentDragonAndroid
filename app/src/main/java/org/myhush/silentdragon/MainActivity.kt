@@ -25,6 +25,8 @@ import kotlinx.android.synthetic.main.content_main.*
 import org.myhush.silentdragon.DataModel.ConnectionStatus
 import org.myhush.silentdragon.DataModel.connStatus
 import org.myhush.silentdragon.chat.ChatActivity
+import org.myhush.silentdragon.chat.Message
+import org.myhush.silentdragon.chat.MessageType
 import java.text.DecimalFormat
 
 
@@ -75,10 +77,10 @@ class MainActivity : AppCompatActivity(),
             if(DataModel.selectedCurrency == "BTC")
                 Toast.makeText(applicationContext, "1 HUSH = ${DataModel.currencySymbols[DataModel.selectedCurrency]}${DecimalFormat(" #,##0.00000000")
                     .format(DataModel.currencyValues[DataModel.selectedCurrency])}", Toast.LENGTH_LONG).show()
-            else(
+            else
                 Toast.makeText(applicationContext, "1 HUSH = ${DataModel.currencySymbols[DataModel.selectedCurrency]}${DecimalFormat("#,##0.00")
-                .format(DataModel.currencyValues[DataModel.selectedCurrency])}", Toast.LENGTH_LONG).show()
-                    )
+                    .format(DataModel.currencyValues[DataModel.selectedCurrency])}", Toast.LENGTH_LONG).show()
+
         }
 
         bottomNav.setOnNavigationItemSelectedListener {
@@ -108,6 +110,18 @@ class MainActivity : AppCompatActivity(),
         loadSharedPref()
 
         updateUI(false)
+
+        /*///////////////////////////
+        // CREATE SAMPLE CONTACTS //
+
+        Addressbook.clear()
+        Addressbook.addContact("", "N1CK145", "zN1CK145")
+        Addressbook.addContact("", "Denio", "zDenio")
+        Addressbook.addContact("", "Max Mustermann", "zMaxMust")
+
+        //                        //
+        /////////////////////////// */
+
     }
 
     private fun loadSharedPref() {
@@ -214,6 +228,11 @@ class MainActivity : AppCompatActivity(),
         runOnUiThread {
             val fragTx = supportFragmentManager.beginTransaction()
 
+            // clear past messages
+            txns?.forEach {
+                Addressbook.findContactByInAddress(it.addr)?.messageList?.clear()
+            }
+
             for (fr in supportFragmentManager.fragments) {
                 fragTx.remove(fr)
             }
@@ -226,19 +245,37 @@ class MainActivity : AppCompatActivity(),
                 return@runOnUiThread
             }
 
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            val fixAdd= "zs12ehfu3pzj23z88up5wefn2psl5akc3m3ctpnmxmyxm4qx3vghlnq98dnu7sv0hdqgn3e20jq2rr"
+            val fixName = "Netterdon"
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             // Split all the transactions into confirmations = 0 and confirmations > 0
             // Unconfirmed first
             val unconfirmed = txns.filter { t -> t.confirmations == 0L }
             if (unconfirmed.isNotEmpty()) {
                 for (tx in unconfirmed) {
-                    fragTx.add(
-                        txList.id ,
-                        UnconfirmedTxItemFragment.newInstance(
-                            Klaxon().toJsonString(tx),
-                            ""
-                        ),
-                        "tag1"
-                    )
+                    if(tx.memo?.length == 0){
+                        fragTx.add(
+                            txList.id ,
+                            UnconfirmedTxItemFragment.newInstance(
+                                Klaxon().toJsonString(tx),
+                                ""
+                            ),
+                            "tag1"
+                        )
+                    } else {
+                        // test if contact exists
+                        if(Addressbook.findContactByInAddress(tx.addr) == null)
+                            Addressbook.addContact(fixName, tx.addr, fixAdd)
+                        // add message
+                        if(tx.type == "send")
+                            Addressbook.findContactByInAddress(tx.addr)!!.messageList.add(Message(tx.addr, tx, MessageType.SEND))
+                        else
+                            Addressbook.findContactByInAddress(tx.addr)!!.messageList.add(Message(tx.addr, tx, MessageType.RECIEVE))
+
+                    }
+
                 }
             }
 
@@ -247,15 +284,27 @@ class MainActivity : AppCompatActivity(),
             if (confirmed.isNotEmpty()) {
                 var oddeven = "odd"
                 for (tx in confirmed) {
-                    fragTx.add(
-                        txList.id,
-                        TransactionItemFragment.newInstance(
-                            Klaxon().toJsonString(tx),
-                            oddeven
-                        ),
-                        "tag1"
-                    )
-                    oddeven = if (oddeven == "odd") "even" else "odd"
+                    if(tx.memo?.length == 0){
+                        fragTx.add(
+                            txList.id,
+                            TransactionItemFragment.newInstance(
+                                Klaxon().toJsonString(tx),
+                                oddeven
+                            ),
+                            "tag1"
+                        )
+                        oddeven = if (oddeven == "odd") "even" else "odd"
+                    } else {
+                        // test if contact exists
+                        if(Addressbook.findContactByInAddress(tx.addr) == null)
+                            Addressbook.addContact(fixName, tx.addr, fixAdd)
+                        // add message
+                        if(tx.type == "send")
+                            Addressbook.findContactByInAddress(tx.addr)!!.messageList.add(Message(tx.addr, tx, MessageType.SEND))
+                        else
+                            Addressbook.findContactByInAddress(tx.addr)!!.messageList.add(Message(tx.addr, tx, MessageType.RECIEVE))
+                    }
+
                 }
             }
             fragTx.commitAllowingStateLoss()

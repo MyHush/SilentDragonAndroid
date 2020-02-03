@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import kotlinx.android.synthetic.main.content_receive.*
 import org.myhush.silentdragon.R
 
 class ChatItemFragment : Fragment() {
-    var fullname: String = ""
     var nickname: String = ""
     var lastMessage: String = ""
+    var contactAddress: String = ""
     var v: View? = null
 
     override fun onCreateView (inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +31,7 @@ class ChatItemFragment : Fragment() {
             val intent = Intent(activity, ConversationActivity::class.java)
 
             intent.putExtra("displayName", nickname) // Send some information
+            intent.putExtra("contactAddress", contactAddress)
 
             startActivity(intent)
         }

@@ -11,12 +11,12 @@ class Message {
     var txID = ""
     var txHeight: Int = -1
 
-    constructor(fromAddress: String, tx: DataModel.TransactionItem){
+    constructor(fromAddress: String, tx: DataModel.TransactionItem, messageType: MessageType){
         this.memo = tx.memo.toString()
         this.txID = tx.txid.toString()
         this.dateTime = tx.datetime
         this.toAddress = tx.addr
         this.fromAddress = fromAddress
+        this.messageType = messageType
     }
-
 }
