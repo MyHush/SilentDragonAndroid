@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s رشته اتصال صحیح نمی باشد</string>
+    <string name="valid_address">آدرس صحیح</string>
+    <string name="balance">اعتبار</string>
+    <string name="scan_qr_code">QR اسکن کد</string>
+    <string name="send">ارسال</string>
+    <string name="address">آدرس</string>
+    <string name="cancel">انصراف</string>
+    <string name="amount">مقدار</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">پاسخ</string>
+    <string name="shielded_address">(آدرس حفاظت شده)</string>
+    <string name="unconfirmed_tx"> (تراکنش تأیید نشده)</string>
+    <string name="confirm_transaction">تأیید تراکنش</string>
+    <string name="confirm_and_send">تأیید و ارسال</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">تراکنش های گذشته</string>
+    <string name="or">یا</string>
+    <string name="reconnect">اتصال دوباره</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon|سایلنت دراگون</string>
+    <string name="no_connection">متصل نیست</string>
+    <string name="connecting">درحال اتصال&#8230;</string>
+    <string name="loading">درحال بارگذاری&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">یادداشت</string>
+    <string name="memo_contents">محتوای یادداشت</string>
+    <string name="view_on_block_explorer">مشاهده تراکنش در وبسایت</string>
+    <string name="date_time">تاریخ</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">تاریخ</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">تراکنش تأیید نشده</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">ارسالی ها </string>
+    <string name="receiving">دریافتی ها </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">دستی وارد کردن</string>
+
+    <!-- menu_recieve -->
+    <string name="share">اشتراک گذاری</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">مشاهده</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">ارسال شده</string>
+    <string name="received">دریافت شده</string>
+
+    <!-- menu_main -->
+    <string name="refresh">تازه سازی</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">.اتصال به اینترنت توسط نود رایانه شخصی امکان پذیر نبود</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">.اتصال به اینترنت در تنظیمات غیر فعال شده است</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">برای اتصال، در رایانه شخصی خود به "برنامه ها" و سپس به "اتصال برنامه تلفن همراه" بروید و کد کیوآر را اسکن کنید</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">قطع شدن</string>
+    <string name="silentDragon_connection_address">آدرس اتصال سایلنت دراگون</string>
+    <string name="disallow_routing_over_external_service">نپذیرفتن مسیریابی در شبکه توسط سرویس خارجی/اینترنت</string>
+    <string name="only_attempts_direct_connection"> .مراجعه فرمایید https://myhush.org/silentdragon ارتباط برقرار نمی کند . برای اطلاعات بیشتر، لطفا به وبسایت wormhole.myhush.org به نشانی WormHole  در صورت انتخاب، این برنامه تنها یک اتصال مستقیم به سایلنت دراگون برقرار می کند. و از طریق سرویس اینترنتی  </string>
+    <string name="currency">واحد پول</string>
+    <string name="silentdragon_version">نسخه سایلنت دراگون</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">بازدید از وبسایت ما</string>
+    <string name="discord">عضویت در دیسکورد ما</string>
+    <string name="twitter">توییتر</string>
+    <string name="github">گیت هاب</string>
+    <string name="credits">سازندگان</string>
+    <string name="license">مجوز</string>
+    <string name="sda_version">نسخه اندروید سایلنت دراگون</string>
+    <string name="copyright">حق انحصاری</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">متصل نشد</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">اینجا کد را به صورت دستی بچسبانید</string>
+    <string name="ok">باشه</string>
+    <string name="is_not_a_valid_hush_address">%1$s !صحیح نمی باشد Hush آدرس </string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">دریافت</string>
+    <string name="no_address">!بدون آدرس</string>
+    <string name="hush_address">Hush آدرس</string>
+    <string name="copied_address_to_clipboard">آدرس در کلیپ بورد کپی شد</string>
+    <string name="your_hush_transparent_address">عمومی شما Hush آدرس </string>
+    <string name="your_hush_shielded_address">حفاظت شده شما Hush آدرس </string>
+
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">ارسال تراکنش</string>
+    <string name="not_a_valid_hush_address">!صحیح نمی باشد Hush آدرس</string>
+    <string name="no_memo_for_taddresses">(آدرس های عمومی بدون یادداشت هستند)</string>
+    <string name="memo_optional">یادداشت (اختیاری)</string>
+    <string name="send_anyway">درهرصورت ارسال شود</string>
+    <string name="invalid_amount">!مقدار صحیح نمی باشد</string>
+    <string name="invalid_destination_Hush_address">!مقصد، صحیح نمی باشد Hush آدرس </string>
+    <string name="send_from_taddr">آیا با آدرس عمومی ارسال شود؟</string>
+    <string name="cant_send_a_memo_to_a_taddr">می شود/نمی شود به آدرس عمومی ای، یادداشتی فرستاد</string>
+    <string name="error_sending_transaction">!در ارسال تراکنش، خطایی رخ داد</string>
+    <string name="memo_field_over_512">.طول یادداشت بیش از حد بلند است. باید حداکثر 512 بایت باشد</string>
+    <string name="more_than_shielded_address">%1$s %2$s این مقدار، بیشتر از اعتبار آدرس حفاظت شده شما است. این تراکنش باید از یک آدرس عمومی ارسال شود و خصوصی نخواهد بود. آیا کاملاً مطمئن هستید؟</string>
+    <string name="max_spend_in_a_single_tx">%1$d %2$s می توان/نمی توان بیش از این مقدار، در هر تراکنش خرج کرد</string>
+    <string name="reply_to">پاسخ به</string>
+
+    <!-- content_send -->
+    <string name="to">به</string>
+    <string name="fee">کارمزد:</string>
+    <string name="include_reply_to_address">شامل پاسخ به آدرس</string>
+
+    <string name="action_settings">تنظیمات</string>
+    <string name="action_about">درباره</string>
+
+    <string name="transaction_details">جزئیات تراکنش ها</string>
+
+    <string name="title_activity_receive" translatable="false">ReceiveActivity</string>
+    <string name="title_activity_send" translatable="false">SendActivity</string>
+    <string name="title_activity_tx_details" translatable="false">TxDetailsActivity</string>
+
+    <string name="title_activity_settings">تنظیمات</string>
+    <string name="title_activity_about">درباره</string>
+
+</resources>
