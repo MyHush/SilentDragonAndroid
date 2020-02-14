@@ -97,7 +97,7 @@
     <!-- QrReaderActivity.kt -->
     <string name="paste_the_code_here_manually">Paste the code here manually</string>
     <string name="ok">OK</string>
-    <string name="is_not_a_valid_hush_address">%1$s is not a valid HUSH address!></string>
+    <string name="is_not_a_valid_hush_address">%1$s is not a valid HUSH address!</string>
 
     <!-- ReceiveActivity.kt.kt -->
     <string name="receive">Receive</string>
@@ -120,9 +120,9 @@
     <string name="cant_send_a_memo_to_a_taddr">Can\'t send a memo to a transparent address</string>
     <string name="error_sending_transaction">Error Sending Transaction!</string>
     <string name="memo_field_over_512">Memo field is too long! Must be at most 512 bytes.</string>
-    <string name="more_than_shielded_address">%1$s %2$s is more than the balance in your shielded address. This Tx will have to be sent from a transparent address, and will not be private.\n\nAre you absolutely sure?"</string>
+    <string name="more_than_shielded_address">%1$s %2$s is more than the balance in your shielded address. This Tx will have to be sent from a transparent address, and will not be private.\n\nAre you absolutely sure?</string>
     <string name="max_spend_in_a_single_tx">Can\'t spend more than %1$d %2$s in a single Tx"</string>
-    <string name="reply_to">Reply to"</string>
+    <string name="reply_to">Reply to</string>
 
     <!-- content_send -->
     <string name="to">To</string>

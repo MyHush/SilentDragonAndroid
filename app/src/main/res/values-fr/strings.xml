@@ -93,7 +93,7 @@
     <!-- QrReaderActivity.kt -->
     <string name="paste_the_code_here_manually">Coller le code manuellement ici</string>
     <string name="ok">OK</string>
-    <string name="is_not_a_valid_hush_address">%1$s n\'est pas une adresse Hush valide!></string>
+    <string name="is_not_a_valid_hush_address">%1$s n\'est pas une adresse Hush valide!</string>
 
 
     <!-- ReceiveActivity.kt.kt -->
@@ -117,9 +117,9 @@
     <string name="cant_send_a_memo_to_a_taddr">Impossible d\'envoyer un memo depuis une t-addr</string>
     <string name="error_sending_transaction">Erreur d\'envoi de la transaction!</string>
     <string name="memo_field_over_512">Le mémo est long! Il doit être au maximum de 512 bytes.</string>
-    <string name="more_than_shielded_address">%1$s %2$s est supérieur à votre solde de vos adresses blindées. Cette transaction devra être envoyée à partir d\'une adresse transparente et ne sera pas privée.\n\nEtes-vous absolument sûr?"</string>
+    <string name="more_than_shielded_address">%1$s %2$s est supérieur à votre solde de vos adresses blindées. Cette transaction devra être envoyée à partir d\'une adresse transparente et ne sera pas privée.\n\nEtes-vous absolument sûr?</string>
     <string name="max_spend_in_a_single_tx">Vous ne pouvez pas dépenser plus de %1$d %2$s dans une seule transaction."</string>
-    <string name="reply_to">Répondre à"</string>
+    <string name="reply_to">Répondre à</string>
 
     <!-- content_send -->
     <string name="to">Vers</string>
