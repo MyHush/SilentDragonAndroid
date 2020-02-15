@@ -72,7 +72,7 @@
     <string name="disconnect">قطع شدن</string>
     <string name="silentDragon_connection_address">آدرس اتصال سایلنت دراگون</string>
     <string name="disallow_routing_over_external_service">نپذیرفتن مسیریابی در شبکه توسط سرویس خارجی/اینترنت</string>
-    <string name="only_attempts_direct_connection"> .مراجعه فرمایید https://myhush.org/silentdragon ارتباط برقرار نمی کند . برای اطلاعات بیشتر، لطفا به وبسایت wormhole.myhush.org به نشانی WormHole  در صورت انتخاب، این برنامه تنها یک اتصال مستقیم به سایلنت دراگون برقرار می کند. و از طریق سرویس اینترنتی  </string>
+    <string name="only_attempts_direct_connection">در صورت انتخاب، این برنامه تنها یک اتصال مستقیم به سایلنت دراگون برقرار می کند و از طریق سرویس اینترنتی کرم چاله متصل نمی شود برای اطلاعات بیشتر، لطفا به صفحه سایلنت دراگون در وبسایت ما مراجعه فرمایید صفحه سرویس کرم چاله: wormhole.myhush.org  صفحه سایلنت دراگون: https://myhush.org/silentdragon</string>
     <string name="currency">واحد پول</string>
     <string name="silentdragon_version">نسخه سایلنت دراگون</string>
 
@@ -87,7 +87,7 @@
     <string name="copyright">حق انحصاری</string>
 
     <!-- SettingActivity.kt -->
-    <string name="not_connected">متصل نشد</string>
+    <string name="not_connected">متصل نیست</string>
 
     <!-- QrReaderActivity.kt -->
     <string name="paste_the_code_here_manually">اینجا کد را به صورت دستی بچسبانید</string>
@@ -115,7 +115,7 @@
     <string name="cant_send_a_memo_to_a_taddr">می شود/نمی شود به آدرس عمومی ای، یادداشتی فرستاد</string>
     <string name="error_sending_transaction">!در ارسال تراکنش، خطایی رخ داد</string>
     <string name="memo_field_over_512">.طول یادداشت بیش از حد بلند است. باید حداکثر 512 بایت باشد</string>
-    <string name="more_than_shielded_address">%1$s %2$s این مقدار، بیشتر از اعتبار آدرس حفاظت شده شما است. این تراکنش باید از یک آدرس عمومی ارسال شود و خصوصی نخواهد بود. آیا کاملاً مطمئن هستید؟</string>
+    <string name="more_than_shielded_address">%1$s %2$s این مقدار، بیشتر از اعتبار آدرس حفاظت شده شما است. این تراکنش باید از یک آدرس عمومی ارسال شود و خصوصی نخواهد بود.\n\n آیا کاملاً مطمئن هستید؟"</string>
     <string name="max_spend_in_a_single_tx">%1$d %2$s می توان/نمی توان بیش از این مقدار، در هر تراکنش خرج کرد</string>
     <string name="reply_to">پاسخ به</string>
 
