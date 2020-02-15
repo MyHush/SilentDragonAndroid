@@ -1,0 +1,210 @@
+<resources>
+ <!-- For later
+        <string name="text_english" translatable="false">English</string>
+        <string name="text_spanish" translatable="false">"Español"</string>
+        <string name="text_french" translatable="false">"Français"</string>
+ -->
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s dies ist kein gültiger Verbindungs Link</string>
+    <string name="valid_address">Gültige Adresse</string>
+    <string name="balance">Guthaben</string>
+    <string name="scan_qr_code">Scanne den QR Code</string>
+    <string name="send">Senden</string>
+    <string name="address">Adresse</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="amount">Betrag</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Antworten</string>
+    <string name="shielded_address">(verborgende Adresse)</string>
+    <string name="unconfirmed_tx"> (unbestätigte Transaktion)</string>
+    <string name="confirm_transaction">bestätige Transaktion</string>
+    <string name="confirm_and_send">Bestägigen und senden</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">letzte Transaktionen</string>
+    <string name="or">OR</string>
+    <string name="reconnect">Wiederverbinden</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Keine Verbindung</string>
+    <string name="connecting">Verbinde&#8230;</string>
+    <string name="loading">Lade&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Nachricht</string>
+    <string name="memo_contents">Inhalt der Nachricht</string>
+    <string name="view_on_block_explorer">Auf dem Blockexplorer ansehen</string>
+    <string name="date_time">Datum / Zeit</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Datum</string>
+    <string name="amt">Betrag</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Unbestätigte Transaktion</string>
+
+   <!-- UnconfirmedTxItemFragment.kt -->
+   <string name="sending">Sende </string>
+   <string name="receiving">Empfange </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Manuelle eingabe</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Teilen</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Ansehen</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Gesendet</string>
+    <string name="received">Empfangen</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Aktualisieren</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Verbindung über das Internet wurde nicht ausgewählt, auf dem Desktop Wallet.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Verbindung über das Internet ist ausgeschaltet in den Einstellungen.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Gehe zu \"Programme\" -> \"Verbinde die Smartphone app\" auf dem Desktop Wallet und stelle die Verbindung her</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Verbindung trennen</string>
+    <string name="silentDragon_connection_address">SilentDragon Verbindungs-Adresse</string>
+    <string name="disallow_routing_over_external_service">Verbindung über das Internet verbieten</string>
+    <string name="only_attempts_direct_connection">Wenn diese Option aktiviert ist, versucht die Anwendung nur eine direkte Verbindung zu SilentDragon und leitet keinen Datenverkehr über das Internet über den WormHole-Dienst unter wormhole.myhush.org weiter. Weitere Einzelheiten finden Sie unter https://myhush.org/silentdragon.</string>
+    <string name="currency">Währung</string>
+    <string name="silentdragon_version">SilentDragon Version</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Besuche unsere Website</string>
+    <string name="discord">Trete unseren Discord bei</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Danksagung</string>
+    <string name="license">Lizens</string>
+    <string name="sda_version">SilentDragonAndroid Version</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Nicht verbunden</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Füge den code manuell ein</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s ist keine gültige Hush Adresse!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">empfangen</string>
+    <string name="no_address">Keine Adresse angegeben!</string>
+    <string name="hush_address">Hush Adresse</string>
+    <string name="copied_address_to_clipboard">Adresse in die Zwischenablage kopiert</string>
+    <string name="your_hush_transparent_address">Ihre transparente Hush Adresse</string>
+    <string name="your_hush_shielded_address">Ihre verborgene Hush Adresse</string>
+
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Sende die Transaktion</string>
+    <string name="not_a_valid_hush_address">Dies ist Keine gültige Hush Adresse!</string>
+    <string name="no_memo_for_taddresses">Nachrichten zu versenden, mit transparenten Adressen ist nicht möglich</string>
+    <string name="memo_optional">Nachricht (Optional)</string>
+    <string name="send_anyway">Trotzdem versenden</string>
+    <string name="invalid_amount">Ungültiger Betrag!</string>
+    <string name="invalid_destination_Hush_address">Die empfänger Adresse ist ungültig!</string>
+    <string name="send_from_taddr">Von einer transparenten Adresse versenden?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Nachrichten können nicht auf transparente Adressen versendet werden.</string>
+    <string name="error_sending_transaction">Fehler beim senden der Transaktion!</string>
+    <string name="memo_field_over_512">Die Nachricht ist zu lang. Sie darf nur 512 Zeichen enthalten.</string>
+    <string name="more_than_shielded_address">%1$s %2$s ist mehr als Sie auf einer verborgenen Adresse zur Verfügung haben. Die Transaktion muss deshalb von einer transparenten Adresse versendet werden, und ist dann nicht mehr anonym.\n\ Wollen Sie trotzdem senden?</string>
+    <string name="max_spend_in_a_single_tx">Kann in einer einzigen Transaktion nicht mehr senden als:  %1$d %2$s "</string>
+    <string name="reply_to">Antworten an</string>
+
+    <!-- content_send -->
+    <string name="to">An</string>
+    <string name="fee">Gebühr:</string>
+    <string name="include_reply_to_address">Antwort Adresse einfügen</string>
+
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_about">Über</string>
+    <!-- <string name="title_activity_scrolling">ScrollingActivity</string> -->
+
+    <string name="transaction_details">Transaktionsdetails</string>
+
+
+    <string name="title_activity_receive" translatable="false">ReceiveActivity</string>
+    <string name="title_activity_send" translatable="false">SendActivity</string>
+    <string name="title_activity_tx_details" translatable="false">TxDetailsActivity</string>
+
+    <!-- string name="hello_blank_fragment">Hello blank fragment</string>  -->
+
+    <!-- <string name="title_activity_qr_code_reader">QrCodeReaderActivity</string>-->
+    <string name="title_activity_settings">Einstellungen</string>
+    <string name="title_activity_about">Über</string>
+
+    <!-- Strings related to Settings -->
+    <!-- Example General settings -->
+    <!--<string name="pref_header_general">General</string> -->
+    <!-- <string name="pref_title_social_recommendations">Enable social recommendations</string>-->
+    <!-- <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message
+        history
+    </string>-->
+    <!-- <string name="pref_title_display_name">Display name</string>-->
+    <!-- <string name="pref_default_display_name">John Smith</string>-->
+    <!-- <string name="pref_title_add_friends_to_messages">Add friends to messages</string>-->
+    <!--<string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>-->
+    <!--<string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>-->
+    <!-- Example settings for Data & Sync -->
+    <!-- <string name="pref_header_data_sync">Data &amp; sync</string> -->
+    <!-- <string name="pref_title_sync_frequency">Sync frequency</string>-->
+    <!--<string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>-->
+    <!--<string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>-->
+    <!--<string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>-->
+    <!--<string-array name="list_preference_entry_values">
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+  </string-array>-->
+    <!--<string-array name="multi_select_list_preference_default_value"/>-->
+    <!--<string name="pref_title_system_sync_settings">System sync settings</string>-->
+    <!-- Example settings for Notifications -->
+    <!--<string name="pref_header_notifications">Notifications</string>-->
+    <!--<string name="pref_title_new_message_notifications">New message notifications</string>-->
+    <!--<string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>-->
+</resources>
