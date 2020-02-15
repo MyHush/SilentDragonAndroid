@@ -1,3 +1,4 @@
+// Copyright 2019-2020 The Hush developers
 package org.myhush.silentdragon
 
 import android.annotation.SuppressLint
@@ -7,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.provider.ContactsContract
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
@@ -16,6 +18,7 @@ import android.text.TextWatcher
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import android.widget.Toast
 import com.beust.klaxon.Klaxon
 import kotlinx.android.synthetic.main.activity_send.*
 import kotlinx.android.synthetic.main.content_send.*
@@ -33,7 +36,7 @@ class SendActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        title = "Send Transaction"
+        title = getString(R.string.send_transaction)
 
         // Clear the valid address prompt
         txtValidAddress.text = ""
@@ -58,6 +61,18 @@ class SendActivity : AppCompatActivity() {
             )
         }
 
+        if (DataModel.currencyValues["USD"] == null)
+            ConnectionManager.initCurrencies()
+
+        if (DataModel.selectedCurrency == "BTC")
+            amountUSD.text = "${DataModel.currencySymbols[DataModel.selectedCurrency]} " + DecimalFormat("0.00000000").format(0)
+        else
+        {
+            amountUSD.text = "${DataModel.currencySymbols[DataModel.selectedCurrency]} " + DecimalFormat("0.00").format(0)
+        }
+
+        textViewFee.text = DecimalFormat("0.0000").format(0.0001) + " HUSH"
+
         sendAddress.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable?) {}
@@ -65,12 +80,12 @@ class SendActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (DataModel.isValidAddress(s.toString())) {
-                    txtValidAddress.text = "\u2713 Valid address"
+                    txtValidAddress.text = "\u2713 " + getString(R.string.valid_address)
                     txtValidAddress.setTextColor(ContextCompat.getColor(applicationContext,
                         R.color.white_selected
                     ))
                 } else {
-                    txtValidAddress.text = "Not a valid Hush address!"
+                    txtValidAddress.text = getString(R.string.not_a_valid_hush_address)
                     txtValidAddress.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
                 }
 
@@ -78,11 +93,11 @@ class SendActivity : AppCompatActivity() {
                     txtSendMemo.isEnabled       = false
                     chkIncludeReplyTo.isEnabled = false
                     txtSendMemo.text            = SpannableStringBuilder("")
-                    txtSendMemoTitle.text       = "(No Memo for t-Addresses)"
+                    txtSendMemoTitle.text       = getString(R.string.no_memo_for_taddresses)
                 } else {
                     txtSendMemo.isEnabled = true
                     chkIncludeReplyTo.isEnabled = true
-                    txtSendMemoTitle.text = "Memo (Optional)"
+                    txtSendMemoTitle.text = getString(R.string.memo_optional)
                 }
             }
         })
@@ -94,20 +109,27 @@ class SendActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val hush = s.toString().toDoubleOrNull()
-                val zprice = DataModel.mainResponseData?.zecprice
+                val price = DataModel.currencyValues[DataModel.selectedCurrency]
+                val symbol = DataModel.currencySymbols[DataModel.selectedCurrency]
 
-                if (hush == null) {
-                    txtSendCurrencySymbol.text = "" // Let the placeholder show the "$" sign
-                } else {
+                if (hush == null)
+                    txtSendCurrencySymbol.text = "" // Let the placeholder show
+                else {
                     txtSendCurrencySymbol.text = "HUSH"
+                }
 
-
-                    if (hush == null || zprice == null)
-                    amountUSD.text = "$ 0.0"
+                if (hush == null || price == null)
+                    if (symbol == "BTC")
+                        amountUSD.text = "$symbol " + DecimalFormat("0.00000000").format(0)
+                    else {
+                        amountUSD.text = "$symbol " + DecimalFormat("0.00").format(0)
+                    }
                 else
-                    amountUSD.text =
-                         " $"   + DecimalFormat("#.########").format(hush * zprice)
-            }
+                    if (symbol == "BTC")
+                        amountUSD.text = "$symbol " + DecimalFormat("#,##0.00000000").format(hush * price)
+                    else {
+                        amountUSD.text = "$symbol " + DecimalFormat("#,##0.00").format(hush * price)
+                    }
             }
         })
 
@@ -141,7 +163,7 @@ class SendActivity : AppCompatActivity() {
         // First, check if the address is correct.
         val toAddr = sendAddress.text.toString()
         if (!DataModel.isValidAddress(toAddr)) {
-            showErrorDialog("Invalid destination Hush address!")
+            showErrorDialog(getString(R.string.invalid_destination_Hush_address))
             return
         }
 
@@ -150,7 +172,7 @@ class SendActivity : AppCompatActivity() {
 
         // amount=0 xtns are valid
         if (amt.toDoubleOrNull() == null || amt.toDouble() < 0.0 ) {
-            showErrorDialog("Invalid amount!")
+            showErrorDialog(getString(R.string.invalid_amount))
             return
         }
 
@@ -162,13 +184,12 @@ class SendActivity : AppCompatActivity() {
                 amt.toDouble() <= DataModel.mainResponseData?.maxspendable ?: Double.MAX_VALUE) {
 
                 val alertDialog = AlertDialog.Builder(this@SendActivity)
-                alertDialog.setTitle("Send from t-addr?")
-                alertDialog.setMessage("${DataModel.mainResponseData?.tokenName} $amt is more than the balance in " +
-                        "your shielded address. This Tx will have to be sent from a transparent address, and will" +
-                        " not be private.\n\nAre you absolutely sure?")
+                alertDialog.setTitle(getString(R.string.send_from_taddr))
+                //alertDialog.setMessage("$amt ${DataModel.mainResponseData?.tokenName}" + "..."
+                alertDialog.setMessage(getString(R.string.more_than_shielded_address, amt, DataModel.mainResponseData?.tokenName))
                 alertDialog.apply {
-                    setPositiveButton("Send Anyway") { dialog, id -> doConfirm() }
-                    setNegativeButton("Cancel") { dialog, id -> dialog.cancel() }
+                    setPositiveButton(getString(R.string.send_anyway)) { dialog, id -> doConfirm() }
+                    setNegativeButton(getString(R.string.cancel)) { dialog, id -> dialog.cancel() }
                 }
 
                 alertDialog.create().show()
@@ -178,19 +199,19 @@ class SendActivity : AppCompatActivity() {
 
         // Warning if spending more than total
         if (amt.toDouble() > DataModel.mainResponseData?.maxspendable ?: Double.MAX_VALUE) {
-            showErrorDialog("Can't spend more than ${DataModel.mainResponseData?.tokenName} " +
-                    "${DataModel.mainResponseData?.maxspendable} in a single Tx")
+            //showErrorDialog("Can't spend more than ${DataModel.mainResponseData?.tokenName} " + "${DataModel.mainResponseData?.maxspendable} in a single Tx")
+            showErrorDialog(getString(R.string.max_spend_in_a_single_tx, DataModel.mainResponseData?.maxspendable, DataModel.mainResponseData?.tokenName ))
             return
         }
 
         val memo = txtSendMemo.text.toString() + getReplyToAddressIfChecked(toAddr)
         if (memo.length > 512) {
-            showErrorDialog("Memo field is too long! Must be at most 512 bytes.")
+            showErrorDialog(getString(R.string.memo_field_over_512))
             return
         }
 
         if (toAddr.startsWith("R") && !memo.isBlank()) {
-            showErrorDialog("Can't send a memo to a transparent address")
+            showErrorDialog(getString(R.string.cant_send_a_memo_to_a_taddr))
             return
         }
 
@@ -213,7 +234,7 @@ class SendActivity : AppCompatActivity() {
 
     private fun getReplyToAddressIfChecked(toAddr: String) : String {
         if (chkIncludeReplyTo.isChecked && toAddr.startsWith("zs1")) {
-            return "\nReply to:\n${DataModel.mainResponseData?.saplingAddress}"
+            return "\n" + getString(R.string.reply_to) + ":\n${DataModel.mainResponseData?.saplingAddress}"
         } else {
             return ""
         }
@@ -221,9 +242,9 @@ class SendActivity : AppCompatActivity() {
 
     fun showErrorDialog(msg: String) {
         val alertDialog = AlertDialog.Builder(this@SendActivity).create()
-        alertDialog.setTitle("Error Sending Transaction!")
+        alertDialog.setTitle(getString(R.string.error_sending_transaction))
         alertDialog.setMessage(msg)
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK") {
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok)) {
                 dialog, _ -> dialog.dismiss() }
         alertDialog.show()
     }
@@ -232,32 +253,18 @@ class SendActivity : AppCompatActivity() {
 
     private fun setAmountHUSH(amt: Double) {
         amountHUSH.setText((DecimalFormat("#.########").format(amt) + "${DataModel.mainResponseData?.tokenName}"))
-        setAmount(amt)
+        setAmountUSD(amt)
     }
 
     private fun setAmountUSD(amt: Double?) {
         if (amt == null) {
-            return;
+            return
         }
-
         // Since there is a text-change listner on the USD field, we set the USD first, then override the
         // HUSH field manually.
-        val zprice = DataModel.mainResponseData?.zecprice ?: 0.0
         amountHUSH.setText((DecimalFormat("#.########").format(amt) + "${DataModel.mainResponseData?.tokenName}"))
-
-        amountUSD.text =
-             "$" + DecimalFormat("#.########").format(amt)
-    }
-
-    private fun setAmount(amt: Double?) {
-        val zprice = DataModel.mainResponseData?.zecprice
-
-        if (amt == null || zprice == null)
-            amountUSD.text = "0.0 $"
-        else
-            amountUSD.text =
-                "$" + DecimalFormat("#.########").format(amt)
-
+        Toast.makeText(this.applicationContext, amt.toString(), Toast.LENGTH_SHORT).show()
+        amountUSD.text = "${DataModel.currencySymbols[DataModel.selectedCurrency]} " + DecimalFormat("#,##0.00").format(amt)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -299,8 +306,6 @@ class SendActivity : AppCompatActivity() {
 
                         finish()
                     }
-                } else {
-                    // Cancel
                 }
             }
         }

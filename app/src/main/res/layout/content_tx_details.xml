@@ -28,7 +28,7 @@
                         app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                         android:layout_marginStart="8dp"/>
                 <TextView
-                        android:text="Send"
+                        android:text="@string/send"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" android:id="@+id/txtType"
                         android:layout_marginStart="16dp" app:layout_constraintStart_toEndOf="@+id/imgTypeColor"
@@ -38,7 +38,7 @@
                         android:layout_marginEnd="16dp" android:layout_marginBottom="2dp"
                         app:layout_constraintBottom_toTopOf="@+id/txtDateTime"/>
                 <TextView
-                        android:text="Date Time"
+                        android:text="@string/date_time"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" android:id="@+id/txtDateTime"
                         android:layout_marginTop="2dp"
@@ -66,7 +66,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="Address"
+                    android:text="@string/address"
                     android:textColor="#FFFFFF"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +81,7 @@
                     android:layout_marginBottom="16dp"
                     android:ellipsize="middle"
                     android:singleLine="true"
-                    android:text="Address"
+                    android:text="@string/address"
                     android:textAlignment="textEnd"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Amount"
+                    android:text="@string/amount"
                     android:textColor="#FFFFFF"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="2.1234 HUSH"
+                    android:text="X.XXXX HUSH"
                     android:textAlignment="textEnd"
                     android:textAllCaps="false"
                     android:textSize="24sp"
@@ -122,7 +122,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />
                 <TextView
-                        android:text="$ 45.23"
+                        android:text="$XX.XX"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content" android:id="@+id/txtAmtUSD"
                         android:layout_marginTop="8dp"
@@ -151,7 +151,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="Memo"
+                    android:text="@string/memo"
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toTopOf="@+id/txtMemo"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -169,7 +169,7 @@
                     android:ems="10"
                     android:inputType="none"
                     android:minLines="2"
-                    android:text="MemoContents"
+                    android:text="@string/memo_contents"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -178,7 +178,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView14" />
             </android.support.constraint.ConstraintLayout>
             <Button
-                    android:text="View on Block Explorer"
+                    android:text="@string/view_on_block_explorer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/btnExternal"
                     android:layout_marginTop="24dp"

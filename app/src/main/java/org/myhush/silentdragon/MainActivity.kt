@@ -1,14 +1,13 @@
+// Copyright 2019-2020 The Hush developers
 package org.myhush.silentdragon
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.os.StrictMode
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -35,6 +34,8 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build()) // TESTING
+
         super.onCreate(savedInstanceState)
 
         title = getString(R.string.app_name)
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity(),
 
         // When creating, clear all the data first
         setMainStatus("")
+
 
         DataModel.init()
 
@@ -66,8 +68,15 @@ class MainActivity : AppCompatActivity(),
         }
 
         txtMainBalanceUSD.setOnClickListener {
-            Toast.makeText(applicationContext, "1 HUSH = $${DecimalFormat("#.##")
-                .format(DataModel.mainResponseData?.zecprice)}", Toast.LENGTH_LONG).show()
+
+
+            if(DataModel.selectedCurrency == "BTC")
+                Toast.makeText(applicationContext, "1 HUSH = ${DataModel.currencySymbols[DataModel.selectedCurrency]}${DecimalFormat(" #,##0.00000000")
+                    .format(DataModel.currencyValues[DataModel.selectedCurrency])}", Toast.LENGTH_LONG).show()
+            else(
+                Toast.makeText(applicationContext, "1 HUSH = ${DataModel.currencySymbols[DataModel.selectedCurrency]}${DecimalFormat("#,##0.00")
+                .format(DataModel.currencyValues[DataModel.selectedCurrency])}", Toast.LENGTH_LONG).show()
+                    )
         }
 
         bottomNav.setOnNavigationItemSelectedListener {
@@ -89,7 +98,14 @@ class MainActivity : AppCompatActivity(),
             }
         }
 
+        loadSharedPref()
         updateUI(false)
+    }
+
+    private fun loadSharedPref() {
+        var ref: SharedPreferences = getSharedPreferences("MainFile", 0)
+
+        DataModel.selectedCurrency = ref.getString("currency", "USD")
     }
 
     private fun setMainStatus(status: String) {
@@ -101,6 +117,7 @@ class MainActivity : AppCompatActivity(),
 
     @SuppressLint("SetTextI18n")
     private fun updateUI(updateTxns: Boolean) {
+
         runOnUiThread {
             Log.i(TAG, "Updating UI $updateTxns")
 
@@ -108,7 +125,7 @@ class MainActivity : AppCompatActivity(),
             bottomNav.menu.findItem(R.id.action_bal)?.isChecked = true
             when (connStatus) {
                 ConnectionStatus.DISCONNECTED -> {
-                    setMainStatus("No Connection")
+                    setMainStatus(resources.getString(R.string.no_connection))
 
                     scrollViewTxns.visibility = ScrollView.GONE
                     layoutConnect.visibility = ConstraintLayout.VISIBLE
@@ -137,7 +154,7 @@ class MainActivity : AppCompatActivity(),
                     }
                 }
                 ConnectionStatus.CONNECTING -> {
-                    setMainStatus("Connecting...")
+                    setMainStatus(resources.getString(R.string.connecting))
                     scrollViewTxns.visibility = ScrollView.GONE
                     layoutConnect.visibility = ConstraintLayout.GONE
                     swiperefresh.isRefreshing = true
@@ -149,18 +166,22 @@ class MainActivity : AppCompatActivity(),
                 ConnectionStatus.CONNECTED -> {
                     scrollViewTxns.visibility = ScrollView.VISIBLE
                     layoutConnect.visibility = ConstraintLayout.GONE
+                    ConnectionManager.initCurrencies()
 
                     if (DataModel.mainResponseData == null) {
-                        setMainStatus("Loading...")
+                        setMainStatus(resources.getString(R.string.loading))
                     } else {
+                        val cur = DataModel.selectedCurrency
+                        val price = DataModel.currencyValues[cur]?: 0.0
                         val bal = DataModel.mainResponseData?.balance ?: 0.0
-                        val zPrice = DataModel.mainResponseData?.zecprice ?: 0.0
-
                         val balText = DecimalFormat("#0.00000000").format(bal)
 
-                        lblBalance.text = "Balance"
-                        txtMainBalance.text = balText.substring(0, balText.length - 4) + " ${DataModel.mainResponseData?.tokenName} "
-                        txtMainBalanceUSD.text =  "$ " + DecimalFormat("#,##0.00").format(bal * zPrice)
+                        lblBalance.text = resources.getString(R.string.balance)
+                        txtMainBalance.text = balText + " ${DataModel.mainResponseData?.tokenName} "
+                        if(cur == "BTC")
+                            txtMainBalanceUSD.text =  "${DataModel.currencySymbols[cur]} " + DecimalFormat("0.00000000").format(bal * price)
+                        else
+                            txtMainBalanceUSD.text =  "${DataModel.currencySymbols[cur]} " + DecimalFormat("#,##0.00").format(bal * price)
 
                         // Enable the send and recieve buttons
                         bottomNav.menu.findItem(R.id.action_recieve).isEnabled = true
@@ -248,6 +269,11 @@ class MainActivity : AppCompatActivity(),
                 startActivity(intent)
                 return true
             }
+            R.id.action_about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
+                return true
+            }
             R.id.action_refresh -> {
                 swiperefresh.isRefreshing = true
                 ConnectionManager.refreshAllData()
@@ -308,14 +334,14 @@ class MainActivity : AppCompatActivity(),
                     // Check to make sure that the result is an actual address
                     if (!(data?.dataString ?: "").startsWith("ws")) {
                         Toast.makeText(applicationContext,
-                            "${data?.dataString} is not a valid connection string!", Toast.LENGTH_SHORT).show()
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString), Toast.LENGTH_SHORT).show()
                         return
                     }
 
                     val conComponents = data?.dataString?.split(",")
                     if (conComponents?.size ?: 0 < 2 || conComponents?.size ?: 0 > 3) {
                         Toast.makeText(applicationContext,
-                            "${data?.dataString} is not a valid connection string!", Toast.LENGTH_SHORT).show()
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString), Toast.LENGTH_SHORT).show()
                         return
                     }
 
@@ -351,4 +377,5 @@ class MainActivity : AppCompatActivity(),
 
 
     private val TAG = "MainActivity"
+
 }

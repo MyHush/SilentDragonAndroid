@@ -1,13 +1,22 @@
+// Copyright 2019-2020 The Hush developers
 package org.myhush.silentdragon
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.util.Log
+import com.beust.klaxon.Json
+import com.beust.klaxon.JsonObject
 import com.beust.klaxon.json
 import okhttp3.*
 import okio.ByteString
+import org.json.JSONObject
+import java.lang.Exception
 import java.net.ConnectException
 import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.collections.HashMap
 
 
 object ConnectionManager {
@@ -19,8 +28,8 @@ object ConnectionManager {
      */
     fun refreshAllData() {
         // First, try to make a connection.
-
         makeConnection()
+        initCurrencies()
     }
 
     // Attempt a connection to the server. If there is no saved connection, we'll set the connection status
@@ -105,7 +114,51 @@ object ConnectionManager {
         i.putExtra("doDisconnect", doDisconnect)
         SilentDragonApp.appContext?.sendBroadcast(i)
     }
+    fun initCurrencies(){
+        try {
+            DataModel.currencySymbols["AUD"] = "$"
+            DataModel.currencySymbols["CAD"] = "$"
+            DataModel.currencySymbols["CNY"] = "¥"
+            DataModel.currencySymbols["EUR"] = "€"
+            DataModel.currencySymbols["GBP"] = "£"
+            DataModel.currencySymbols["JPY"] = "¥"
+            DataModel.currencySymbols["KRW"] = "₩"
+            DataModel.currencySymbols["MXN"] = "$"
+            DataModel.currencySymbols["MYR"] = "RM"
+            DataModel.currencySymbols["PHP"] = "₱"
+            DataModel.currencySymbols["PKR"] = "₨"
+            DataModel.currencySymbols["RUB"] = "₽"
+            DataModel.currencySymbols["SGD"] = "$"
+            DataModel.currencySymbols["THB"] = "฿"
+            DataModel.currencySymbols["USD"] = "$"
+            DataModel.currencySymbols["VEF"] = "Bs"
+            DataModel.currencySymbols["VND"] = "₫"
+            DataModel.currencySymbols["ZAR"] = "R"
 
+            Thread {
+                val client = OkHttpClient()
+                val currencies = "usd,eur,jpy,btc,cny,rub,cad,sgd,chf,inr,gbp,aud,pkr,mxn,php,vnd,thb,zar,krw,myr,vef"
+                val request: Request = Request.Builder()
+                    .url("https://api.coingecko.com/api/v3/simple/price?ids=hush&vs_currencies=${currencies}")
+                    .build()
+                val response: Response = client.newCall(request).execute()
+                val json: JSONObject = JSONObject(response.body()?.string())["hush"] as JSONObject
+
+                if (json.length() > 0){
+                    for (cur: String in json.keys()){
+                        DataModel.currencyValues[cur.toUpperCase()] = json.getDouble(cur)
+                        if(!DataModel.currencySymbols.containsKey(cur.toUpperCase()))
+                            DataModel.currencySymbols[cur.toUpperCase()] = cur.toUpperCase()
+                    }
+                }
+            }.start()
+
+
+
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
+    }
 
     private class WebsocketClient (directConn: Boolean) : WebSocketListener() {
         val m_directConn = directConn
@@ -185,9 +238,9 @@ object ConnectionManager {
             if (t is ConnectException && (m_directConn && !allowInternet)) {
                 var mesg = t.localizedMessage
                 if (!DataModel.getAllowInternet()) {
-                    mesg += ": Connecting over the internet was not enabled by the desktop node."
+                    mesg += ": " + SilentDragonApp.appContext!!.getString(R.string.Connecting_over_internet_not_enabled_in_desktop_node)
                 } else if (!DataModel.getGlobalAllowInternet()) {
-                    mesg += ": Connecting over the internet is disabled in settings."
+                    mesg += ": " + SilentDragonApp.appContext!!.getString(R.string.Connecting_over_internet_is_disabled_in_settings)
                 }
 
                 sendErrorSignal(mesg, true)

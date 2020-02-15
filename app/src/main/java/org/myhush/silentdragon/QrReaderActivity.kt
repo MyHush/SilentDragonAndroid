@@ -1,3 +1,4 @@
+// Copyright 2019-2020 The Hush developers
 package org.myhush.silentdragon
 
 import android.app.Activity
@@ -34,7 +35,7 @@ class QrReaderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_reader)
 
-        title = "Scan QR Code"
+        title = getString(R.string.scan_qr_code)
 
         val code = intent.getIntExtra("REQUEST_CODE", 0)
         if (code == REQUEST_ADDRESS)
@@ -67,7 +68,7 @@ class QrReaderActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_manual_input -> {
                 val builder = AlertDialog.Builder(this)
-                builder.setTitle("Paste the code here manually")
+                builder.setTitle(getString(R.string.paste_the_code_here_manually))
 
                 // Set up the input
                 val input = EditText(this)
@@ -76,13 +77,13 @@ class QrReaderActivity : AppCompatActivity() {
                 builder.setView(input)
 
                 // Set up the buttons
-                builder.setPositiveButton("OK") { dialog, which ->
+                builder.setPositiveButton(getString(R.string.ok)) { dialog, which ->
                     run {
                         val txt = input.text.toString()
                         processText(txt)
                     }
                 }
-                builder.setNegativeButton("Cancel") { dialog, which -> dialog.cancel() }
+                builder.setNegativeButton(getString(R.string.cancel)) { dialog, which -> dialog.cancel() }
 
                 builder.create().show()
                 return true
@@ -160,7 +161,7 @@ class QrReaderActivity : AppCompatActivity() {
             if (err.length > 48) {
                 err = err.substring(0, 22) + "...." + err.substring(err.length - 22, err.length)
             }
-            lblErrorMsg.text = "\"$err\" is not a valid connection string!"
+            lblErrorMsg.text = getString(R.string.is_not_a_valid_connection_string, err)
             return
         }
 
@@ -172,7 +173,8 @@ class QrReaderActivity : AppCompatActivity() {
             if (err.length > 48) {
                 err = err.substring(0, 22) + "...." + err.substring(err.length - 22, err.length)
             }
-            lblErrorMsg.text = "\"$err\" is not a valid HUSH address!"
+            lblErrorMsg.text = getString(R.string.is_not_a_valid_hush_address, err)
+
             return
         }
 

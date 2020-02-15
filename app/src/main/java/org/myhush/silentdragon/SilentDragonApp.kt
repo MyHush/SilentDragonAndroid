@@ -1,3 +1,4 @@
+// Copyright 2019-2020 The Hush developers
 package org.myhush.silentdragon
 
 import android.app.Application

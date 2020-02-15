@@ -17,7 +17,7 @@
             app:layout_constraintHorizontal_bias="0.524"
             app:layout_constraintTop_toTopOf="parent"/>
     <TextView
-            android:text="Balance"
+            android:text="@string/balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/lblBalance" android:layout_marginTop="24dp"
@@ -30,7 +30,7 @@
         android:id="@+id/txtMainBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0.0 Hush"
+        android:text="XXXXXX.XXXXXXXX HUSH"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/txtMainBalanceUSD"
@@ -45,7 +45,7 @@
         android:layout_marginStart="154dp"
         android:layout_marginEnd="154dp"
         android:layout_marginBottom="32dp"
-        android:text="0.0 $"
+        android:text="$0.0"
         android:textColor="@color/light_grey"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,13 +55,13 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_marginTop="125dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="107dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_hush_new_foreground" />
+        app:srcCompat="@mipmap/ic_launcher_dragon_foreground" />
     <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/swiperefresh"
             android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                           android:layout_height="wrap_content"
                           android:id="@+id/txList" android:orientation="vertical">
                 <TextView
-                        android:text="Past Transactions"
+                        android:text="@string/past_transactions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView2" android:textStyle="bold"
                         android:textSize="18sp" android:padding="16dp"/>
@@ -108,7 +108,7 @@
                 app:layout_constraintVertical_bias="0.22000003" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"/>
         <Button
-                android:text="Scan QR Code"
+                android:text="@string/scan_qr_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnConnect" app:layout_constraintStart_toStartOf="parent"
@@ -117,7 +117,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/imageView5"/>
         <TextView
-                android:text="OR"
+                android:text="@string/or"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/lblConnectionOr" android:layout_marginTop="8dp"
@@ -125,7 +125,7 @@
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp" android:textAlignment="center"/>
         <Button
-                android:text="Reconnect"
+                android:text="@string/reconnect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnReconnect" android:layout_marginTop="8dp"

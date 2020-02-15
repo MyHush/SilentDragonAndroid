@@ -74,7 +74,7 @@ the Google Play Store.
 
 The `keytool` command can be used, for example:
 
-    keytool -genkey -alias silentdragon -keyalg RSA -keystore new.jks -dname "CN=Duke Leto, O=Hush" -storepass testing -keypass 123
+    keytool -genkey -alias silentdragon -keyalg RSA -keystore new.jks -dname "CN=Duke Leto, O=Hush" -storepass testing -keypass 123 -validity XXX
 
 ### Creating a release keystore via GUI
 
@@ -116,3 +116,8 @@ This build can be directly uploaded to Google Play.
 ### Building a release APK for F-Droid
 
 ...
+
+
+# License
+
+GNU Public License v3

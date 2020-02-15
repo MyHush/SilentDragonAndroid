@@ -7,7 +7,11 @@
           android:title="@string/action_settings"
           android:orderInCategory="100"
           app:showAsAction="never"/>
-    <item android:title="Refresh" android:id="@+id/action_refresh"
+    <item android:id="@+id/action_about"
+        android:title="@string/action_about"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+    <item android:title="@string/refresh" android:id="@+id/action_refresh"
           compat:showAsAction="ifRoom"
 
           android:icon="@drawable/refresh"/>
