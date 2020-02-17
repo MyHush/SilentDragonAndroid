@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Polski
+ZADDR (adres prywatny)
+TADDR (adres transparentny)
+-->
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s nie jest poprawnym ciągiem znaków połączenia</string>
+    <string name="valid_address">Adres Poprawny</string>
+    <string name="balance">Środki na koncie</string>
+    <string name="scan_qr_code">Skanuj QR kod</string>
+    <string name="send">Wyślij</string>
+    <string name="address">Adres</string>
+    <string name="cancel">Anuluj</string>
+    <string name="amount">Kwota</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Odpowiedz</string>
+    <string name="shielded_address">(Prywatny adres)</string>
+    <string name="unconfirmed_tx"> (Niepotwierdzona tranzakcja)</string>
+    <string name="confirm_transaction">Potwierdź Tranzakcję</string>
+    <string name="confirm_and_send">Potwierdź i wyślij</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Poprzednie tranzakcje</string>
+    <string name="or">LUB</string>
+    <string name="reconnect">Połącz ponownie</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Brak połączenia</string>
+    <string name="connecting">Łączenie&#8230;</string>
+    <string name="loading">Wczytywanie&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Treść Memo</string>
+    <string name="view_on_block_explorer">Widok w Przeglądarce Bloków</string>
+    <string name="date_time">Data i czas</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Data</string>
+    <string name="amt">Wartość</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Niepotwierdzona Tranzakcja</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Wysyłanie </string>
+    <string name="receiving">Odbieranie </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Wpis manualny</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Udostępnij</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Podgląd</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Wysłano</string>
+    <string name="received">odebrano</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Odśwież</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Połączenie przez internet nie było włączone przez desktop node.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Połączenie przez internet jest wyłączone w ustawieniach.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Idź do \"Aplikacje\" -> \"Łączenie mobilnych aplikacji\" na swoim pulpicie i przeskanuj QR kod, żeby się połączyć</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Rozłącz</string>
+    <string name="silentDragon_connection_address">SilentDragon adres połączenia</string>
+    <string name="disallow_routing_over_external_service">Nie zezwalaj na ruch informacji przez zewnętrzne serwisy lub internet</string>
+    <string name="only_attempts_direct_connection">Jeśli zaznaczono, aplikacja spróbuje łączyć się jedynie bezpośrednio do SilentDragon, a nie prowadzić komunikację przez internet za pomocą technologii WormHole przez wormhole.myhush.org . Szczegóły na https://myhush.org/silentdragon </string>
+    <string name="currency">Waluta</string>
+    <string name="silentdragon_version">Wersja SilentDragon</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Odwiedź naszą stronę</string>
+    <string name="discord">Dołącz na nasz Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Twórcy</string>
+    <string name="license">Licencja</string>
+    <string name="sda_version">Wersja SilentDragonAndroid</string>
+    <string name="copyright">Prawa autorskie</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Nie połączono</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Wklej kod ręcznie</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s to nie jest poprawny adres HUSH!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Odbierz</string>
+    <string name="no_address">Brak adresu!</string>
+    <string name="hush_address">Adres Hush</string>
+    <string name="copied_address_to_clipboard">Adres skopiowany do schowka</string>
+    <string name="your_hush_transparent_address">Twój adres transparentny Hush</string>
+    <string name="your_hush_shielded_address">Twój adres prywatny Hush</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Wyślij tranzakcję</string>
+    <string name="not_a_valid_hush_address">Niepoprawny adres Hush!</string>
+    <string name="no_memo_for_taddresses">(Brak memo dla adresów transparentnych)</string>
+    <string name="memo_optional">Memo (opcjonalnie)</string>
+    <string name="send_anyway">Wyślij mimo to</string>
+    <string name="invalid_amount">Niepoprawna wartość!</string>
+    <string name="invalid_destination_Hush_address">Niepoprawny adres doręczenia!</string>
+    <string name="send_from_taddr">Wyślij z adresu transparentnego?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Nie można wysłać memo na adres transparentny</string>
+    <string name="error_sending_transaction">Błąd przy wysyłaniu tranzakcji!</string>
+    <string name="memo_field_over_512">Pole memo jest zbyt długie! Musi mieć maksymalnie 512 bajtów.</string>
+    <string name="more_than_shielded_address">%1$s %2$s to więcej niż ilość środków na Twoim koncie. Ta tranzakcja będzie musiała zostać wysłana z Twojego adresu transparentnego i nie będzie prywatna.\n\nCzy jesteś absolutnie pewien?</string>
+    <string name="max_spend_in_a_single_tx">Nie można wysłać więcej niż %1$d %2$s w jednej tranzakcji"</string>
+    <string name="reply_to">Odpowiedz do</string>
+
+    <!-- content_send -->
+    <string name="to">Do</string>
+    <string name="fee">Opłata:</string>
+    <string name="include_reply_to_address">Dołącz adres odpowiedzi</string>
+
+    <string name="action_settings">Ustawienia</string>
+    <string name="action_about">O aplikacji</string>
+
+    <string name="transaction_details">Szczegóły Tranzakcji</string>
+
+    <string name="title_activity_receive" translatable="false">ReceiveActivity</string>
+    <string name="title_activity_send" translatable="false">SendActivity</string>
+    <string name="title_activity_tx_details" translatable="false">TxDetailsActivity</string>
+
+    <string name="title_activity_settings">Ustawienia</string>
+    <string name="title_activity_about">O aplikacji</string>
+
+</resources>

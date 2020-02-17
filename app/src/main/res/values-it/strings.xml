@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Italian  -->
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s non è una stinga di connessione valida</string>
+    <string name="valid_address">Indirizzo Valido</string>
+    <string name="balance">Saldo</string>
+    <string name="scan_qr_code">Scansiona Codice QR</string>
+    <string name="send">Invia</string>
+    <string name="address">Indirizzo</string>
+    <string name="cancel">Cancella</string>
+    <string name="amount">Importo</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Rispondi</string>
+    <string name="shielded_address">(Indirizzo Shielded)</string>
+    <string name="unconfirmed_tx"> (Tx non Confermata)</string>
+    <string name="confirm_transaction">Conferma Transazione</string>
+    <string name="confirm_and_send">Conferma e Invia</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Transazioni Recenti</string>
+    <string name="or">OPPURE</string>
+    <string name="reconnect">Riconnetti</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Nessuna Connessione</string>
+    <string name="connecting">Connessione&#8230;</string>
+    <string name="loading">Caricamento&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Promemoria</string>
+    <string name="memo_contents">Contenuto Promemoria</string>
+    <string name="view_on_block_explorer">Visualizza su Block Explorer</string>
+    <string name="date_time">Data Ora</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Data</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Transazione non Confermata</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Inviando </string>
+    <string name="receiving">Ricevendo </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Inserimento Manuale</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Condividi</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Visualizza</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Inviato</string>
+    <string name="received">Ricevuto</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Ricarica</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">La connessione a Internet non è stata abilitata dal desktop node.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">La connessione a Internet è disabilitata nelle impostazioni.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Vai in \"Apps\" -> \"Connect mobile app\" sul tuo computer e scansiona il codice QR Code per connetterti</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Disconnetti</string>
+    <string name="silentDragon_connection_address">Indirizzo di connessione SilentDragon</string>
+    <string name="disallow_routing_over_external_service">Non consentire il Routing tramite un servizio esterno/internet</string>
+    <string name="only_attempts_direct_connection">Se selezionato, l\'app tenterà solo una connessione diretta a SilentDragon e non indirizzerà il traffico su internet tramite il servizio WormHole su wormhole.myhush.org . Per maggiori dettagli consultare https://myhush.org/silentdragon</string>
+    <string name="currency">Valuta</string>
+    <string name="silentdragon_version">Versione SilentDragon</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Visita il nostro sito Web</string>
+    <string name="discord">Unisciti al nostro Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Crediti</string>
+    <string name="license">Licenza</string>
+    <string name="sda_version">Versione SilentDragonAndroid</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Non Connesso</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Incollare qui il codice manualmente</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s non è un indirizzo HUSH valido!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Ricevi</string>
+    <string name="no_address">Nessun indirizzo!</string>
+    <string name="hush_address">Indirizzo Hush</string>
+    <string name="copied_address_to_clipboard">Indirizzo copiato negli appunti</string>
+    <string name="your_hush_transparent_address">Il tuo indirizzo HUSH Transparent</string>
+    <string name="your_hush_shielded_address">Il tuo indirizzo HUSH Shielded</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Invia Transazione</string>
+    <string name="not_a_valid_hush_address">Non è un indirizzo HUSH valido!</string>
+    <string name="no_memo_for_taddresses">(Nessun Promemoria per gli indirizzi t)</string>
+    <string name="memo_optional">Promemoria (Opzionale)</string>
+    <string name="send_anyway">Invia Comunque</string>
+    <string name="invalid_amount">Importo non valido!</string>
+    <string name="invalid_destination_Hush_address">Indirizzo Hush di destinazione non valido!</string>
+    <string name="send_from_taddr">Inviare dall\'indirizzo t?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Impossibile inviare un promemoria a un indirizzo transparent</string>
+    <string name="error_sending_transaction">Errore durante l\'invio della Transazione!</string>
+    <string name="memo_field_over_512">Il campo Promemoria è troppo lungo! Deve contenere al massimo 512 byte.</string>
+    <string name="more_than_shielded_address">%1$s %2$s è più del saldo nel tuo indirizzo shielded. Questa Tx dovrà essere inviata da un indirizzo transparent, e non sarà privata.\n\nSei assolutamente sicuro?</string>
+    <string name="max_spend_in_a_single_tx">Impossibile spendere più di %1$d %2$s in una singola Tx"</string>
+    <string name="reply_to">Rispondi a</string>
+
+    <!-- content_send -->
+    <string name="to">A</string>
+    <string name="fee">Commissione:</string>
+    <string name="include_reply_to_address">Includi indirizzo di risposta</string>
+
+    <string name="action_settings">Impostazioni</string>
+    <string name="action_about">About</string>
+
+    <string name="transaction_details">Dettagli Transazione</string>
+
+    <string name="title_activity_receive" translatable="false">ReceiveActivity</string>
+    <string name="title_activity_send" translatable="false">SendActivity</string>
+    <string name="title_activity_tx_details" translatable="false">TxDetailsActivity</string>
+
+    <string name="title_activity_settings">Impostazioni</string>
+    <string name="title_activity_about">About</string>
+
+</resources>
