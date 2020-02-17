@@ -92,25 +92,25 @@
     <!-- QrReaderActivity.kt -->
     <string name="paste_the_code_here_manually">اینجا کد را به صورت دستی بچسبانید</string>
     <string name="ok">باشه</string>
-    <string name="is_not_a_valid_hush_address">%1$s !صحیح نمی باشد Hush آدرس </string>
+    <string name="is_not_a_valid_hush_address">%1$s آدرس هاش صحیح نمی باشد</string>
 
     <!-- ReceiveActivity.kt.kt -->
     <string name="receive">دریافت</string>
     <string name="no_address">!بدون آدرس</string>
-    <string name="hush_address">Hush آدرس</string>
+    <string name="hush_address">آدرس هاش</string>
     <string name="copied_address_to_clipboard">آدرس در کلیپ بورد کپی شد</string>
-    <string name="your_hush_transparent_address">عمومی شما Hush آدرس </string>
-    <string name="your_hush_shielded_address">حفاظت شده شما Hush آدرس </string>
+    <string name="your_hush_transparent_address">آدرس هاش عمومی شما</string>
+    <string name="your_hush_shielded_address">آدرس هاش حفاظت شده شما</string>
 
 
     <!-- SendActivity.kt -->
     <string name="send_transaction">ارسال تراکنش</string>
-    <string name="not_a_valid_hush_address">!صحیح نمی باشد Hush آدرس</string>
+    <string name="not_a_valid_hush_address">آدرس هاش صحیح نمی باشد</string>
     <string name="no_memo_for_taddresses">(آدرس های عمومی بدون یادداشت هستند)</string>
     <string name="memo_optional">یادداشت (اختیاری)</string>
     <string name="send_anyway">درهرصورت ارسال شود</string>
     <string name="invalid_amount">!مقدار صحیح نمی باشد</string>
-    <string name="invalid_destination_Hush_address">!مقصد، صحیح نمی باشد Hush آدرس </string>
+    <string name="invalid_destination_Hush_address">آدرس هاش مقصد، صحیح نمی باشد!</string>
     <string name="send_from_taddr">آیا با آدرس عمومی ارسال شود؟</string>
     <string name="cant_send_a_memo_to_a_taddr">می شود/نمی شود به آدرس عمومی ای، یادداشتی فرستاد</string>
     <string name="error_sending_transaction">!در ارسال تراکنش، خطایی رخ داد</string>
