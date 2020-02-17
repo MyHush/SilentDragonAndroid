@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!-- Polski -->
+<!-- Polski
+ZADDR (adres prywatny)
+TADDR (adres transparentny)
+-->
 
     <!-- general -->
     <string name="is_not_a_valid_connection_string">%1$s nie jest poprawnym ciągiem znaków połączenia</string>
-    <string name="valid_address">Poprawny Adres</string>
+    <string name="valid_address">Adres Poprawny</string>
     <string name="balance">Środki na koncie</string>
     <string name="scan_qr_code">Skanuj QR kod</string>
     <string name="send">Wyślij</string>
