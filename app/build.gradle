@@ -1,4 +1,5 @@
 // Copyright 2019-2020 The Hush developers
+// Released under the GPLv3
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
@@ -19,7 +20,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 2
-        versionName "0.5.12"
+        versionName "0.5.13"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
