@@ -1,4 +1,5 @@
 // Copyright 2019-2020 The Hush developers
+// Released under the GPLv3
 package org.myhush.silentdragon
 
 import android.annotation.SuppressLint
@@ -105,7 +106,7 @@ class MainActivity : AppCompatActivity(),
     private fun loadSharedPref() {
         var ref: SharedPreferences = getSharedPreferences("MainFile", 0)
 
-        DataModel.selectedCurrency = ref.getString("currency", "USD")
+        DataModel.selectedCurrency = ref.getString("currency", "BTC")
     }
 
     private fun setMainStatus(status: String) {
