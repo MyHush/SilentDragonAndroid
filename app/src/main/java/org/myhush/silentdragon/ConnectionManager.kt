@@ -1,4 +1,5 @@
 // Copyright 2019-2020 The Hush developers
+// Released under the GPLv3
 package org.myhush.silentdragon
 
 import android.annotation.SuppressLint
@@ -117,6 +118,7 @@ object ConnectionManager {
     fun initCurrencies(){
         try {
             DataModel.currencySymbols["AUD"] = "$"
+            DataModel.currencySymbols["BTC"] = "BTC"
             DataModel.currencySymbols["CAD"] = "$"
             DataModel.currencySymbols["CNY"] = "¥"
             DataModel.currencySymbols["EUR"] = "€"
@@ -133,11 +135,13 @@ object ConnectionManager {
             DataModel.currencySymbols["USD"] = "$"
             DataModel.currencySymbols["VEF"] = "Bs"
             DataModel.currencySymbols["VND"] = "₫"
+            DataModel.currencySymbols["XAG"] = "XAG"
+            DataModel.currencySymbols["XAU"] = "XAU"
             DataModel.currencySymbols["ZAR"] = "R"
 
             Thread {
                 val client = OkHttpClient()
-                val currencies = "usd,eur,jpy,btc,cny,rub,cad,sgd,chf,inr,gbp,aud,pkr,mxn,php,vnd,thb,zar,krw,myr,vef"
+                val currencies = "usd,eur,jpy,btc,cny,rub,cad,sgd,chf,inr,gbp,aud,pkr,mxn,php,vnd,thb,zar,krw,myr,vef,xau,xag"
                 val request: Request = Request.Builder()
                     .url("https://api.coingecko.com/api/v3/simple/price?ids=hush&vs_currencies=${currencies}")
                     .build()
