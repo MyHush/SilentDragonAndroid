@@ -1,0 +1,143 @@
+<resources>
+ <!-- For later
+    <string name="text_english" translatable="false">English</string>
+    <string name="text_spanish" translatable="false">"Español"</string>
+    <string name="text_french" translatable="false">"Français"</string>
+ -->
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s Ei ole kelvollinen merkkijono</string>
+    <string name="valid_address">Voimassa oleva osoite</string>
+    <string name="balance">Saldo</string>
+    <string name="scan_qr_code">Skannaa QR Koodi</string>
+    <string name="send">Lähetä</string>
+    <string name="address">Osoite</string>
+    <string name="cancel">Peruuta</string>
+    <string name="amount">Määrä</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Vastaa</string>
+    <string name="shielded_address">(Suojattu Osoite)</string>
+    <string name="unconfirmed_tx"> (Vahvistamaton Siirto)</string>
+    <string name="confirm_transaction">Vahvista Siirto</string>
+    <string name="confirm_and_send">Vahvista ja Lähetä</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Aiemmat Tapahtumat</string>
+    <string name="or">Tai</string>
+    <string name="reconnect">Yhdistä Uudelleen</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Ei Yhteyttä</string>
+    <string name="connecting">Yhdistää&#8230;</string>
+    <string name="loading">Lataa&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Viesti</string>
+    <string name="memo_contents">Viestin sisältö</string>
+    <string name="view_on_block_explorer">Näytä Lohkoketjussa</string>
+    <string name="date_time">Päivämäärä Aika</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Päivämäärä</string>
+    <string name="amt">määrä</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Vahvistamaton Tapahtuma</string>
+
+   <!-- UnconfirmedTxItemFragment.kt -->
+   <string name="sending">Lähettävä </string>
+   <string name="receiving">Vastaanottava </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Manuaalinen syöttö</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Jaa</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Näkymä</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Lähetetty</string>
+    <string name="received">Vastaanotettu</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Päivitä</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Yhdistäminen internetin välityksellä ei ole sallittu työpöytä sovelluksesta.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Yhdistäminen internetin välityksellä on poistettu käytöstä asetuksista.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Mene \"Sovellukset\" -> \"Yhdistä Älypuhelin Sovellukseen\" tietokonesovelluksessasi ja skannaa QR koodi yhdistääksesi</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Katkaise Yhteys</string>
+    <string name="silentDragon_connection_address">SilentDragon yhteysosoite</string>
+    <string name="disallow_routing_over_external_service">Estä yhteys ulkoisen palvelimen/internetin kautta</string>
+    <string name="only_attempts_direct_connection">Jos valittu, sovellus yrittää vain suoraa yhteyttä SilentDragon-sovellukseen, eikä reitiä liikennettä internetin kautta käyttäen WormHole palvelua sijainnissa wormhole.myhush.org . Katso lisätietoja https://myhush.org/silentdragon</string>
+    <string name="currency">Valuutta</string>
+    <string name="silentdragon_version">SilentDragon versio</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Vieraile verkkosivullamme</string>
+    <string name="discord">Liity meidän Discord-kanavalle</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Krediitit</string>
+    <string name="license">Lisenssi</string>
+    <string name="sda_version">SilentDragonAndroid versio</string>
+    <string name="copyright">Tekijänoikeus</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Ei Yhdistetty</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Liitä koodi tähän manuaalisesti</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s ei ole kelvollinen HUSH osoite!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Vastaanota</string>
+    <string name="no_address">Ei osoitetta!</string>
+    <string name="hush_address">Hush osoite</string>
+    <string name="copied_address_to_clipboard">Osoite kopioitu leikepöydälle</string>
+    <string name="your_hush_transparent_address">Läpinäkyvä Hush osoitteesi</string>
+    <string name="your_hush_shielded_address">Suojattu Hush osoitteesi</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Lähetä Siirto</string>
+    <string name="not_a_valid_hush_address">Ei ole kelvollinen Hush osoite!</string>
+    <string name="no_memo_for_taddresses">(Läpinäkyvillä osoitteilla ei ole mahdollista lähettää viestejä)</string>
+    <string name="memo_optional">Viesti (Valinnainen)</string>
+    <string name="send_anyway">Lähetä Kuitenkin</string>
+    <string name="invalid_amount">Virheellinen Määrä!</string>
+    <string name="invalid_destination_Hush_address">Virheellinen Kohde Hush-osoite!</string>
+    <string name="send_from_taddr">Lähetä läpinäkyvästä osoitteesta?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Viestejä ei voi lähettää läpinäkyviin osoitteisiin</string>
+    <string name="error_sending_transaction">Virhe Siirron Lähettämisessä!</string>
+    <string name="memo_field_over_512">Muistiokenttä on liian pitkä! Täytyy olla enintään 512 tavua.</string>
+    <string name="more_than_shielded_address">%1$s %2$s on enemmän kuin suojatun osoitteen saldo. Tämä Siirto täytyy lähettää läpinäkyvästä osoitteesta, eikä se tule olemaan yksityinen.\n\nOletko täysin varma?</string>
+    <string name="max_spend_in_a_single_tx">Ei voi lähettää enempää kuin %1$d %2$s yhdessä siirrossa"</string>
+    <string name="reply_to">Vastaa</string>
+
+    <!-- content_send -->
+    <string name="to">To</string>
+    <string name="fee">Siirtomaksu:</string>
+    <string name="include_reply_to_address">Sisällytä vastausosoite</string>
+
+    <string name="action_settings">Asetukset</string>
+    <string name="action_about">Tietoja</string>
+
+    <string name="transaction_details">Tapahtuman Tiedot</string>
+
+    <string name="title_activity_receive" translatable="false">ReceiveActivity</string>
+    <string name="title_activity_send" translatable="false">SendActivity</string>
+    <string name="title_activity_tx_details" translatable="false">TxDetailsActivity</string>
+
+    <string name="title_activity_settings">Asetukset</string>
+    <string name="title_activity_about">Tietoja</string>
+
+ </resources>
