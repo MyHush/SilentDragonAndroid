@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Romanian -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s nu este un șir de conexiune corect</string>
+    <string name="valid_address">Adresă corectă</string>
+    <string name="balance">Sold</string>
+    <string name="scan_qr_code">Scanează codul QR</string>
+    <string name="send">Trimite</string>
+    <string name="address">Adresă</string>
+    <string name="cancel">Anulează</string>
+    <string name="amount">Sumă</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Răspuns</string>
+    <string name="shielded_address">(Adresă ecranată)</string>
+    <string name="unconfirmed_tx"> (Tranzacţie neconfirmată)</string>
+    <string name="confirm_transaction">Confirmă tranzacţia</string>
+    <string name="confirm_and_send">Confirmă și trimite</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Tranzacţii anterioare</string>
+    <string name="or">ori</string>
+    <string name="reconnect">Reconectare</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Conexiune lipsă</string>
+    <string name="connecting">Se conectează &#8230;</string>
+    <string name="loading">Se încarcă &#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Notificare</string>
+    <string name="memo_contents">Conţinut notificare</string>
+    <string name="view_on_block_explorer">Vizualizează pe Block Explorer</string>
+    <string name="date_time">Data Ora</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Data</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Tranzacţie neconfirmată</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Trimitere </string>
+    <string name="receiving">Primire</string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Intrare manuală</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Distribuie</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Vizualizează</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Trimis</string>
+    <string name="received">Primit</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Reimprospătează</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Conectarea pe internet nu a fost activată de nodul desktop.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Conectarea pe internet a fost dezactivată in setări.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Accesează \”Aplicaţii\” -> \”Conectează aplicaţia mobilă\” pe desktop și scanează codul QR pentru conectare</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Deconectare</string>
+    <string name="silentDragon_connection_address"> Adresa de conectare SilentDragon</string>
+    <string name="disallow_routing_over_external_service">Nu permite rutarea prin servicii/internet externe
+</string>
+    <string name="only_attempts_direct_connection">Dacă este bifată, aplicația va încerca doar o conexiune directă la SilentDragon și nu va orienta traficul pe internet prin intermediul serviciului WormHole de la wormhole.myhush.org. Vizitează https://myhush.org/silentdragon pentru mai multe detalii</string>
+    <string name="currency">Monedă</string>
+    <string name="silentdragon_version">Versiunea SilentDragon</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Vizitează site-ul nostru</string>
+    <string name="discord">Intră pe Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Mulțumiri</string>
+    <string name="license">Licență</string>
+    <string name="sda_version">Versiunea SilentDragonAndroid</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Neconectat</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Lipește aici manual</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s nu este o adresă HUSH corectă!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Primește</string>
+    <string name="no_address">Fără adresă!</string>
+    <string name="hush_address">Adresă Hush</string>
+    <string name="copied_address_to_clipboard">Adresă copiată în clipboard</string>
+    <string name="your_hush_transparent_address">Adresa ta Hush transparentă</string>
+    <string name="your_hush_shielded_address">Adresa ta Hush protejată</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Trimite transacție</string>
+    <string name="not_a_valid_hush_address">Nu este o adresă HUSH corectă!</string>
+    <string name="no_memo_for_taddresses">(Nicio notificare pentru adresa t)</string>
+    <string name="memo_optional">Notificare (Opțional)</string>
+    <string name="send_anyway">Trimite oricum</string>
+    <string name="invalid_amount">Sumă incorectă!</string>
+    <string name="invalid_destination_Hush_address">Destinație incorectă pentru adresa Hush!</string>
+    <string name="send_from_taddr">Trimite de la adresa t?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Nu se poate trimite o notificare la o adresă transparentă</string>
+    <string name="error_sending_transaction">Eroare la trimiterea transacției!</string>
+    <string name="memo_field_over_512">Spațiul pentru notificare este prea lung! Trebuie să fie maximum 512 bytes.</string>
+    <string name="more_than_shielded_address">%1$s %2$s este mai mult decât soldul pe adresa protejată. Această transacție va trebui trimisă de la o adresă transparentă și nu va fi privată. \ N \ n Sunteți absolut sigur?</string>
+    <string name="max_spend_in_a_single_tx">Nu se poate cheltui mai mult de %1$d %2$s într-o singură transacție”</string>
+    <string name="reply_to">Răspunde</string>
+
+    <!-- content_send -->
+    <string name="to">La</string>
+    <string name="fee">Taxă:</string>
+    <string name="include_reply_to_address">Include răspuns la adresă</string>
+
+    <string name="action_settings">Setări</string>
+    <string name="action_about">Despre</string>
+
+    <string name="transaction_details">Detalii transacție</string>
+
+    <string name="title_activity_settings">Setări</string>
+    <string name="title_activity_about">Despre</string>
+
+</resources>
