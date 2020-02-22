@@ -24,7 +24,7 @@
 
     <!-- MainActivity.kt -->
     <string name="app_name">SilentDragon</string>
-    <string name="no_connection">Няма Връзка</ Адресstring>
+    <string name="no_connection">Няма Връзка</string>
     <string name="connecting">Свързване&#8230;</string>
     <string name="loading">Зареждане&#8230;</string>
 
