@@ -74,7 +74,7 @@
     <string name="disconnect">Αποσύνδεση</string>
     <string name="silentDragon_connection_address">SilentDragon διεύθυνση σύνδεσης</string>
     <string name="disallow_routing_over_external_service">Απενεργοποιήστε τη δρομολόγηση μέσω εξωτερικής υπηρεσίας/διαδικτύου</string>
-    <string name="only_attempts_direct_connection">Αν είναι επιλεγμένο, η εφαρμογή θα επιχειρήσει μόνο απευθείας σύνδεση με το SilentDragon, και όχι την κυκλοφορία διαδρομής μέσω του Διαδικτύου μέσω της υπηρεσίας WormHole στο wormhole.myhush.org . Παρακαλούμε δείτε το https://myhush.org/silentdragon για περισσότερες πληροφορίες</string>
+    <string name="only_attempts_direct_connection">Αν είναι επιλεγμένο, η εφαρμογή θα επιχειρήσει μόνο απευθείας σύνδεση με το SilentDragon, και όχι την δρομολόγηση της κυκλοφορίας μέσω του Διαδικτύου με την υπηρεσία WormHole στο wormhole.myhush.org . Παρακαλούμε δείτε το https://myhush.org/silentdragon για περισσότερες πληροφορίες</string>
     <string name="currency">Νόμισμα</string>
     <string name="silentdragon_version">Έκδοση SilentDragon</string>
 
