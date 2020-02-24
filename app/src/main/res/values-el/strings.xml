@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Greek -->
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s μη έγκυρη συμβολοσειρά σύνδεσης</string>
+    <string name="valid_address">Έγκυρη διεύθυνση</string>
+    <string name="balance">Υπόλοιπο</string>
+    <string name="scan_qr_code">Σάρωση κώδικα QR</string>
+    <string name="send">Αποστολή</string>
+    <string name="address">Διεύθυνση</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="amount">Ποσό</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Απάντηση</string>
+    <string name="shielded_address">(Θωρακισμένη διεύθυνση)</string>
+    <string name="unconfirmed_tx"> (Μη επιβεβαιωμένη συναλλαγή)</string>
+    <string name="confirm_transaction">Επιβεβαίωση συναλλαγής</string>
+    <string name="confirm_and_send">Επιβεβαίωση και αποστολή</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Προηγούμενες συναλλαγές</string>
+    <string name="or">Η</string>
+    <string name="reconnect">Επανασύνδεση</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Χωρίς σύνδεση</string>
+    <string name="connecting">Σύνδεση&#8230;</string>
+    <string name="loading">Φόρτωση&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Περιεχόμενα Memo</string>
+    <string name="view_on_block_explorer">Προβολή στο Block Explorer</string>
+    <string name="date_time">Ημερομηνία και ώρα</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Ημερομηνία</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Μη επιβεβαιωμένη συναλλαγή</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Αποστολή </string>
+    <string name="receiving">Λήψη </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Χειροκίνητη εισαγωγή</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Κοινή χρήση</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Προβολή</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Απεσταλμένα</string>
+    <string name="received">Ληφθέντα</string>
+
+    <!-- menu_main -->
+    <string name="refresh">επαναφόρτωση</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Η σύνδεση μέσω του διαδικτύου δεν ήταν ενεργοποιημένη απο τον κόμβο του υπολογιστή.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Η σύνδεση μέσω του διαδικτύου είναι απενεργοποιημένη στις ρυθμίσεις.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Πηγαίνετε στο \"Apps\" -> \"Connect mobile app\" στον υπολογιστή σας και σαρώστε τον κώδικα QR για να συνδεθείτε</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Αποσύνδεση</string>
+    <string name="silentDragon_connection_address">SilentDragon διεύθυνση σύνδεσης</string>
+    <string name="disallow_routing_over_external_service">Απενεργοποιήστε τη δρομολόγηση μέσω εξωτερικής υπηρεσίας/διαδικτύου</string>
+    <string name="only_attempts_direct_connection">Αν είναι επιλεγμένο, η εφαρμογή θα επιχειρήσει μόνο απευθείας σύνδεση με το SilentDragon, και όχι την δρομολόγηση της κυκλοφορίας μέσω του Διαδικτύου με την υπηρεσία WormHole στο wormhole.myhush.org . Παρακαλούμε δείτε το https://myhush.org/silentdragon για περισσότερες πληροφορίες</string>
+    <string name="currency">Νόμισμα</string>
+    <string name="silentdragon_version">Έκδοση SilentDragon</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Επισκεφτείτε την ιστοσελίδα μας</string>
+    <string name="discord">Γίνετε μέλος στο Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Εύσημα</string>
+    <string name="license">Άδεια</string>
+    <string name="sda_version">SilentDragonAndroid έκδοση</string>
+    <string name="copyright">Πνευματικά δικαιώματα</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Μη συνδεδεμένο</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Επικολλήστε τον κώδικα εδώ χειροκίνητα</string>
+    <string name="ok">Εντάξει</string>
+    <string name="is_not_a_valid_hush_address">%1$s μη έγκυρη διεύθυνση HUSH!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Λήψη</string>
+    <string name="no_address">Καμία διεύθυνση!</string>
+    <string name="hush_address">Διεύθυνση Hush</string>
+    <string name="copied_address_to_clipboard">Η διεύθυνση αντιγράφηκε στο πρόχειρο</string>
+    <string name="your_hush_transparent_address">Η διαφανή σας διεύθυνση Hush</string>
+    <string name="your_hush_shielded_address">Η θωρακισμένη σας διεύθυνση Hush</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Αποστολή συναλλαγής</string>
+    <string name="not_a_valid_hush_address">Μη έγκυρη διεύθυνση Hush!</string>
+    <string name="no_memo_for_taddresses">(Δεν υπάρχει MEMO για τις t-Addresses)</string>
+    <string name="memo_optional">Memo (Προαιρετικό)</string>
+    <string name="send_anyway">Αποστολή ούτως ή άλλως</string>
+    <string name="invalid_amount">Μη έγκυρο ποσό!</string>
+    <string name="invalid_destination_Hush_address">Μη έγκυρος προορισμός διεύθυνσης Hush!</string>
+    <string name="send_from_taddr">Αποστολή απο t-addr?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Δεν μπορεί να σταλθεί ένα MEMO σε μία διαφανής διεύθυνση</string>
+    <string name="error_sending_transaction">Σφάλμα αποστολής συναλλαγής!</string>
+    <string name="memo_field_over_512">Το πεδίο MEMO είναι πολύ μεγάλο! Πρέπει να είναι το πολύ 512 bytes.</string>
+    <string name="more_than_shielded_address">%1$s %2$s είναι περισσότερο από το υπόλοιπο στην θωρακισμένη σας διεύθυνση. Αυτή η συναλλαγή θα πρέπει να αποσταλεί από μία διαφανή διεύθυνση, και δεν θα είναι ιδιωτική.\n\nΕίστε απολύτως σίγουροι?</string>
+    <string name="max_spend_in_a_single_tx">Δεν μπορούν να ξοδευτούν πάνω από %1$d %2$s σε μία μόνο συναλλαγή"</string>
+    <string name="reply_to">Απάντηση προς</string>
+
+    <!-- content_send -->
+    <string name="to">Προς</string>
+    <string name="fee">Προμήθεια:</string>
+    <string name="include_reply_to_address">Συμπερίληψη της διεύθυνσης αποστολή προς</string>
+
+    <string name="action_settings">Ρυθμίσεις</string>
+    <string name="action_about">Σχετικά με</string>
+
+    <string name="transaction_details">Λεπτομέρειες Συναλλαγής</string>
+
+    <string name="title_activity_settings">Ρυθμίσεις</string>
+    <string name="title_activity_about">Σχετικά με</string>
+
+</resources>

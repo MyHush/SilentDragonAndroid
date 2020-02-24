@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2019 The Hush developers
+# Copyright 2019-2020 The Hush developers
 # Released under the GPLv3 license
 
 set -e

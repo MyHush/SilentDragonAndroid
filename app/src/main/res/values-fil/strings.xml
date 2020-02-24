@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filipino -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s ay hindi wastong string ng koneksyon</string>
+    <string name="valid_address">Wastong Address</string>
+    <string name="balance">Balanse</string>
+    <string name="scan_qr_code">I-scan ang QR Code</string>
+    <string name="send">Ipadala</string>
+    <string name="address">Address</string>
+    <string name="cancel">I-Kansela</string>
+    <string name="amount">Halaga</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Tugon</string>
+    <string name="shielded_address">(Naka-shield na Address)</string>
+    <string name="unconfirmed_tx"> (Hindi pa Kumpirmadong Tx)</string>
+    <string name="confirm_transaction"> I-kumpirma ang Transaksyon</string>
+    <string name="confirm_and_send">Kumpirmahin at Ipadala</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Mga Nakaraang Transaksyon</string>
+    <string name="or">O</string>
+    <string name="reconnect">Kumonekta Muli</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Walang Koneksyon</string>
+    <string name="connecting">Kumukonekta&#8230;</string>
+    <string name="loading">Naglo-load&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Nilalaman ng Memo</string>
+    <string name="view_on_block_explorer">Tingnan sa Block Explorer</string>
+    <string name="date_time">Petsa Oras</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Petsa</string>
+    <string name="amt">Halaga</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Hindi pa Kumpirmadong Transaksyon</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Nagpapadala</string>
+    <string name="receiving">Tumatanggap</string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Manu-manong Input</string>
+
+    <!-- menu_recieve -->
+    <string name="share">I-share</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Tingnan</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Napadala na</string>
+    <string name="received">Natanggap na</string>
+
+    <!-- menu_main -->
+    <string name="refresh">I-refresh</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Ang pag-konekta sa internet ay hindi pinagana ng desktop node.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Ang pag-konekta sa internet ay hindi pinagana sa settings.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Pumunta sa \"Apps\" -> \"Connect mobile app\" sa iyong desktop at i-scan ang QR Code para kumonekta</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">I-diskonekta</string>
+    <string name="silentDragon_connection_address">SilentDragon address ng koneksyon</string>
+    <string name="disallow_routing_over_external_service">Huwag payagan ang pag-route galing sa eksternal na serbisyo/internet</string>
+    <string name="only_attempts_direct_connection">Pag naka-check, ang app ay susubok lamang ng direktang koneksyon sa SilentDragon, at hindi magra-route ng trapik galing sa internet sa pamamagitan ng serbisyong WormHole sa wormhole.myhush.org . Paki-tingnan ang https://myhush.org/silentdragon para sa iba pang mga detalye.</string>
+    <string name="currency">Currency</string>
+    <string name="silentdragon_version">Bersyon ng SilentDragon</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Puntahan ang aming Website</string>
+    <string name="discord">Sumali sa aming Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Credits</string>
+    <string name="license">License</string>
+    <string name="sda_version">SilentDragonAndroid version</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Hindu Konektado</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">I-paste and code dito ng manu-mano</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s ay hindi wastong HUSH address!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Tanggapin</string>
+    <string name="no_address">Walang address!</string>
+    <string name="hush_address">Hush address</string>
+    <string name="copied_address_to_clipboard">Na-copy na ang address sa clipboard</string>
+    <string name="your_hush_transparent_address">Ang Iyong transparent na Hush address</string>
+    <string name="your_hush_shielded_address">Ang Iyong naka-shield na Hush address</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Ipadala ang Transaksyon</string>
+    <string name="not_a_valid_hush_address">Hindi wastong Hush address!</string>
+    <string name="no_memo_for_taddresses">(Walang Memo para sa mga t-Address)</string>
+    <string name="memo_optional">Memo (Opsyonal)</string>
+    <string name="send_anyway">Ipadala Pa Rin</string>
+    <string name="invalid_amount">Hindi Wastong Halaga!</string>
+    <string name="invalid_destination_Hush_address">Hindi wastong destinasyon na Hush address!</string>
+    <string name="send_from_taddr">Ipadala galing sa t-addr?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Hindi makakapadala ng memo sa transparent na address</string>
+    <string name="error_sending_transaction">May Mali sa Pagpapadala ng Transaksyon!</string>
+    <string name="memo_field_over_512">Ang Memo field ay sumobra sa haba! Dapat hanggang 512 bytes lamang.</string>
+    <string name="more_than_shielded_address">%1$s %2$s ay higit pa sa balanse sa iyong naka-shield na address. Ang Tx na ito ay dapat ipadala galing sa isang transparent na address, at hindi magiging pribado. \n\nSigurado ka ba talaga?</string>
+    <string name="max_spend_in_a_single_tx">Hindi pwedeng gumastos ng sobra sa %1$d %2$s sa isang solong Tx"</string>
+    <string name="reply_to">Tumugon kay</string>
+
+    <!-- content_send -->
+    <string name="to">Para kay</string>
+    <string name="fee">Kabayaran:</string>
+    <string name="include_reply_to_address">Isama ang Reply-To na Address </string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+
+    <string name="transaction_details">Mga Detalye ng Transaksyon</string>
+
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_about">About</string>
+
+</resources>
