@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Hungarian -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s érvénytelen kapcsolat</string>
+    <string name="valid_address">Érvényes cím</string>
+    <string name="balance">Egyenleg</string>
+    <string name="scan_qr_code">Szken QR kód</string>
+    <string name="send">Küldés</string>
+    <string name="address">Cím</string>
+    <string name="cancel">Mégse</string>
+    <string name="amount">Összeg</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Válasz</string>
+    <string name="shielded_address">(Védett cím)</string>
+    <string name="unconfirmed_tx"> (Nem megerősített tranzakció)</string>
+    <string name="confirm_transaction">Tranzakció megerősítése</string>
+    <string name="confirm_and_send">Megerősít és küld</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Korábbi tranzakciók</string>
+    <string name="or">vagy</string>
+    <string name="reconnect">Ójrakapcsolódás</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Nincs kapcsolat</string>
+    <string name="connecting">Kapcsolódás&#8230;</string>
+    <string name="loading">Betöltés&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Memo tartalma</string>
+    <string name="view_on_block_explorer">Megnézés böngészőbe</string>
+    <string name="date_time">Dátum - Idő</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Dátum</string>
+    <string name="amt">Összeg</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Nem megerősített tranzakció</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Küldés </string>
+    <string name="receiving">Fogadás </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Beütés kézzel</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Megosztás</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Megnéz</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Küld</string>
+    <string name="received">fogadott</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Frissítés</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">A kapcsolat nincs engedélyezve az asztali verzióban.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Az internetkapcsolat nincs bekapcsolva a beállításokba.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Lépj be az \"Apps\" fülre -> \"Connect mobile app\" az asztali verzióban, és szkenneld le a QR kódot.</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Szétkapcsol</string>
+    <string name="silentDragon_connection_address">SilentDragon kapcsolat cím</string>
+    <string name="disallow_routing_over_external_service">Kimenő csomagok letiltása</string>
+    <string name="only_attempts_direct_connection">Ha ez be van jelölve, a SilentDragon nem irányít adatot az intereneten keresztül a wormhole.myhush.org segítségével. További információ a https://myhush.org/silentdragon oldalon.</string>
+    <string name="currency">Pénznem</string>
+    <string name="silentdragon_version">SilentDragon verzió</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Weboldal megtekintése</string>
+    <string name="discord">Csatlakozz a Discordhoz</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Kredit</string>
+    <string name="license">Licensz</string>
+    <string name="sda_version">SilentDragonAndroid verzió</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Nincs kapcsolat</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Illeszd be a kódot ide</string>
+    <string name="ok">Rendben</string>
+    <string name="is_not_a_valid_hush_address">%1$s Érvénytelen HUSH cím!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Fogadás</string>
+    <string name="no_address">Cím üres!</string>
+    <string name="hush_address">Hush Cím</string>
+    <string name="copied_address_to_clipboard">Cím a vágólapra másolva</string>
+    <string name="your_hush_transparent_address">Publikus cím</string>
+    <string name="your_hush_shielded_address">Privát cím</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Küldés</string>
+    <string name="not_a_valid_hush_address">Érvénytelen cím</string>
+    <string name="no_memo_for_taddresses">(A Memo nem használható publikus címeken)</string>
+    <string name="memo_optional">Memo (Opcionális)</string>
+    <string name="send_anyway">Küldés mindenképp</string>
+    <string name="invalid_amount">Érvénytelen összeg!</string>
+    <string name="invalid_destination_Hush_address">Érvénytelen cím!</string>
+    <string name="send_from_taddr">Küldés publikus címről?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Memo nem használható publikus címeken</string>
+    <string name="error_sending_transaction">Hiba!</string>
+    <string name="memo_field_over_512">Memo tól hosszú, maximum 512 byte.</string>
+    <string name="more_than_shielded_address">%1$s %2$s a megadott összeg több mint ami elérhető. A tranzackió a publikus címről lesz elküldve.\n\nBiztos ezt szeretnéd?</string>
+    <string name="max_spend_in_a_single_tx">Nem küldhetsz többet mint %1$d %2$s egy tranzakcióval."</string>
+    <string name="reply_to">Válasz</string>
+
+    <!-- content_send -->
+    <string name="to">Kinek</string>
+    <string name="fee">Díj:</string>
+    <string name="include_reply_to_address">Válaszcím megadása</string>
+
+    <string name="action_settings">Beállítások</string>
+    <string name="action_about">Infó</string>
+
+    <string name="transaction_details">Tranzakció részletek</string>
+
+    <string name="title_activity_settings">Beállítások</string>
+    <string name="title_activity_about">Infó</string>
+
+</resources>
