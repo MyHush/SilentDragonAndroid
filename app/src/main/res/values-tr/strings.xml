@@ -21,6 +21,8 @@
     <string name="past_transactions">Geçmiş İşlemler</string>
     <string name="or">VEYA</string>
     <string name="reconnect">Yeniden bağlan</string>
+    <string name="help">Yardım</string>
+    <string name="help_text">Bu uygulama tam düğümünüz için uzaktan kontrol yapar.\n\nAndroid telefonunuzun düğümünüze bağlanabilmesi için SilentDragon masaüstünü çalıştırmanız ve tamamen senkronize etmeniz gerekir.\n\nDüğümünüz senkronize edildikten sonra, Uygulamalar -> Mobil uygulamayı bağla\'ya giderek QR kodunu taratıp SilentDragon\'a bağlanabilirsiniz.</string>
 
     <!-- MainActivity.kt -->
     <string name="app_name">SilentDragon</string>
