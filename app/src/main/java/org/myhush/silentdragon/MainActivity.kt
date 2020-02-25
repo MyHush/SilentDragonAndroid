@@ -4,6 +4,7 @@ package org.myhush.silentdragon
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.*
 import android.net.Uri
 import android.os.Bundle
@@ -62,6 +63,19 @@ class MainActivity : AppCompatActivity(),
 
         btnReconnect.setOnClickListener {
             ConnectionManager.refreshAllData()
+        }
+
+        btnHelp.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(this)
+
+            dialogBuilder.setMessage(resources.getString(R.string.help_text))
+                .setNegativeButton(resources.getString(R.string.ok), DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
+
+            val alert = dialogBuilder.create()
+            alert.setTitle(resources.getString(R.string.help))
+            alert.show()
         }
 
         swiperefresh.setOnRefreshListener {
@@ -135,9 +149,11 @@ class MainActivity : AppCompatActivity(),
                     // Hide the reconnect button if there is no connection string
                     if (DataModel.getConnString(SilentDragonApp.appContext!!).isNullOrBlank() ||
                         DataModel.getSecret() == null) {
+                        btnHelp.visibility = Button.VISIBLE
                         btnReconnect.visibility = Button.GONE
                         lblConnectionOr.visibility = TextView.GONE
                     } else {
+                        btnHelp.visibility = Button.GONE
                         btnReconnect.visibility = Button.VISIBLE
                         lblConnectionOr.visibility = TextView.VISIBLE
                     }
