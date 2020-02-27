@@ -64,7 +64,7 @@ Make sure you have Gradle 5.4.x or higher, 5.4.1 is known to work:
 
 ## Release Build Process
 
-The first time you create a release build you'll need to create two files. The
+The first time you create a release build you'll need to create a keystore file and prepare a properties file. The
 release keystore is used for app signing and a properties file is used to store
 sensitive information about the keystore. These files should not be committed
 to git. Once you have both of these files you can create a release build for
@@ -84,18 +84,10 @@ The `keytool` command can be used, for example:
 * Set the Key Store Name to `silent_dragon_keystore.jks` and the path to that of the project, create a password for the keystore path, a Key alias, and a key password. The store password and key password should be the same. Fill out some basic organization information and click Ok.
 * On the next screen make sure the build variant "release" is selected and click Finish.
 
-### Creating a properties file
+### Preparing properties file
 
-Within the projects main directory create a file secrets.properties The
-contents of the file are below and filled in with the release keystore alias,
-key password, and store password from when you created the release keystore.
-
-```
-store_file_location=../silent_dragon_keystore.jks
-key_alias=<alias>
-key_password=<key_password>
-store_password=<store_password>
-```
+Copy `secrets.properties` file from `examples` folder and paste it to the projects main directory.
+Fill store_file_location, key_alias, key_password and store_password when you created the release keystore.
 
 ### Building a release APK for Google Play
 
