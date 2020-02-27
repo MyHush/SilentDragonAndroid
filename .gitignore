@@ -58,5 +58,7 @@ freeline_project_description.json
 
 secrets.properties
 
+!examples/*
+
 # vim
 *.sw?

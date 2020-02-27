@@ -5,13 +5,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-def secretsPropertiesFile = rootProject.file("secrets.properties")
-def secretProperties = new Properties()
-
-if (secretsPropertiesFile.exists()) {
-    secretProperties.load(new FileInputStream((secretsPropertiesFile)))
-}
-
 android {
     compileSdkVersion 28
 
@@ -25,14 +18,8 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
-
     signingConfigs {
-        release {
-            storeFile file(secretProperties["store_file_location"])
-            keyAlias secretProperties["key_alias"]
-            keyPassword secretProperties["key_password"]
-            storePassword secretProperties["store_password"]
-        }
+        release
     }
 
     buildTypes {
@@ -43,6 +30,22 @@ android {
         }
     }
 
+}
+
+def secretsPropertiesFile = rootProject.file("secrets.properties")
+def secretProperties = new Properties()
+
+if (secretsPropertiesFile.exists()) {
+    secretProperties.load(new FileInputStream(secretsPropertiesFile))
+
+    android.signingConfigs.release.storeFile = file(secretProperties["store_file_location"])
+    android.signingConfigs.release.keyAlias = secretProperties["key_alias"]
+    android.signingConfigs.release.keyPassword = secretProperties["key_password"]
+    android.signingConfigs.release.storePassword = secretProperties["store_password"]
+
+    android.buildTypes.release.signingConfig = android.signingConfigs.release
+} else {
+    android.buildTypes.release.signingConfig = null
 }
 
 dependencies {
