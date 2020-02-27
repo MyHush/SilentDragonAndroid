@@ -12,7 +12,9 @@ import android.os.Handler
 import android.os.StrictMode
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.Snackbar
+import android.support.v4.text.HtmlCompat
 import android.support.v7.app.AppCompatActivity
+import android.text.Html
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -68,7 +70,7 @@ class MainActivity : AppCompatActivity(),
         btnHelp.setOnClickListener {
             val dialogBuilder = AlertDialog.Builder(this)
 
-            dialogBuilder.setMessage(resources.getString(R.string.help_text))
+            dialogBuilder.setMessage(Html.fromHtml(resources.getString(R.string.help_text), HtmlCompat.FROM_HTML_MODE_LEGACY))
                 .setNegativeButton(resources.getString(R.string.ok), DialogInterface.OnClickListener {
                         dialog, id -> dialog.cancel()
                 })
