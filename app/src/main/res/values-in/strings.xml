@@ -21,6 +21,8 @@
     <string name="past_transactions">Transaksi Yang lalu</string>
     <string name="or">OR</string>
     <string name="reconnect">Menghubungkan Ulang</string>
+    <string name="help">Help</string>
+    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the deskop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
 
     <!-- MainActivity.kt -->
     <string name="app_name">SilentDragon</string>
@@ -115,7 +117,7 @@
     <string name="error_sending_transaction">Pengriman Transaksi Error!</string>
     <string name="memo_field_over_512">Bidang Memo Terlalu Panjang! Paling Banyak 512 Bytes.</string>
     <string name="more_than_shielded_address">%1$s %2$s lebih dari saldo dalam alamat terlindung Anda. Tx ini harus dikirim dari alamat transparan, dan tidak akan bersifat pribadi.\n\nApakah Anda benar-benar yakin?</string>
-    <string name="max_spend_in_a_single_tx">Tidak bisa menghabiskan lebih dari %1$d %2$ dalam satu Tx</string>
+    <string name="max_spend_in_a_single_tx">Tidak bisa menghabiskan lebih dari %1$d %2$s dalam satu Tx</string>
     <string name="reply_to">Balas Kepada</string>
 
     <!-- content_send -->

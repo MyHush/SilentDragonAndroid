@@ -23,7 +23,9 @@
     <string name="past_transactions">Transazioni Recenti</string>
     <string name="or">OPPURE</string>
     <string name="reconnect">Riconnetti</string>
-
+    <string name="help">Help</string>
+    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the deskop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
+  
     <!-- MainActivity.kt -->
     <string name="app_name">SilentDragon</string>
     <string name="no_connection">Nessuna Connessione</string>

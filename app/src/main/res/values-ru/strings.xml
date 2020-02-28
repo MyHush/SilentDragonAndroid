@@ -24,7 +24,8 @@
     <string name="past_transactions">Прошедшие транзакции</string>
     <string name="or">Или</string>
     <string name="reconnect">Переподключиться</string>
-
+    <string name="help">Help</string>
+    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the deskop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
 
     <!-- MainActivity.kt -->
     <string name="app_name">ТихийДракон</string>
@@ -135,7 +136,7 @@
     <string name="cant_send_a_memo_to_a_taddr"> Невозможно отправить мемо на т-адрес</string>
     <string name="error_sending_transaction"> Ошибка в отправке транзакции!</string>
     <string name="memo_field_over_512"> Поле мемо слишком длинное! Должно быть менее 512 байт.</string>
-    <string name="more_than_shielded_address"> Сумма %1$d %2$s больше, чем баланс на Вашем затененном адресе. Данная транзакция будет отправлена с т-адреса и не будет скрытой.  Вы абсолютно уверены? </string>
+    <string name="more_than_shielded_address"> Сумма %1$s %2$s больше, чем баланс на Вашем затененном адресе. Данная транзакция будет отправлена с т-адреса и не будет скрытой.  Вы абсолютно уверены? </string>
     <string name="max_spend_in_a_single_tx"> Невозможно отправить больше, чем %1$d %2$s в одной транзакции"</string>
     <string name="reply_to"> Ответить</string>
 
