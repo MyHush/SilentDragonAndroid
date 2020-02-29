@@ -6,8 +6,8 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v7.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -35,7 +35,7 @@ class ReceiveActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        tabAddressType.setOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        tabAddressType.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab?) {}
 
             override fun onTabUnselected(p0: TabLayout.Tab?) {}
@@ -89,7 +89,7 @@ class ReceiveActivity : AppCompatActivity() {
         addrTxt.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText(getString(R.string.hush_address), addr)
-            clipboard.primaryClip = clip
+            clipboard.setPrimaryClip(clip)
             Toast.makeText(applicationContext, getString(R.string.copied_address_to_clipboard), Toast.LENGTH_SHORT).show()
         }
     }
@@ -123,7 +123,7 @@ class ReceiveActivity : AppCompatActivity() {
 
                 return true
             }
-            else -> super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item as MenuItem)
         }
     }
 }

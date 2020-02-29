@@ -1,7 +1,7 @@
 // Copyright 2019-2020 The Hush developers
 package org.myhush.silentdragon
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_about.lblVersionName
 
