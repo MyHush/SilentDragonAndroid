@@ -1,5 +1,5 @@
 <resources>
-
+    <!-- French -->
     <!-- general -->
     <string name="is_not_a_valid_connection_string">%1$s n\'est pas une chaine de connexion valide</string>
     <string name="valid_address">Adresse valide</string>
@@ -21,8 +21,8 @@
     <string name="past_transactions">Historique des transactions</string>
     <string name="or">OU</string>
     <string name="reconnect">Se reconnecter</string>
-    <string name="help">Help</string>
-    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the deskop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
+    <string name="help">Aide</string>
+    <string name="help_text">Cette application contrôle à distance votre nœud complet.&lt;br>&lt;br>Pour vous permettre d\'utiliser cette application, vous devez exécuter l\'application SilentDragon sur un ordinateur et synchroniser complètement.&lt;br>&lt;br>Puis allez dans &lt;b>Application -> Connection à l\'application mobile&lt;/b> pour afficher un QR code, que vous pouvez scanner à partir de cette application pour s\'y connecter.</string>
   
     <!-- MainActivity -->
     <string name="app_name">SilentDragon</string>
