@@ -6,11 +6,12 @@ SilentDragon Android is an Android frontend for the desktop SilentDragon that le
 
 ## When will it be in my favorite app store?
 
-We are planning to submit to app stores Real Soon Now
+The application is already available on the Google Play store here:
+https://play.google.com/store/apps/details?id=org.myhush.silentdragon&hl=fr
 
 ### Running SilentDragon
 
-In order to let your Android phone connect to your desktop, you need to run the deskop [SilentDragon](https://github.com/MyHush/SilentDragon), and sync fully. This is not a full node
+In order to let your Android phone connect to your desktop, you need to run the desktop [SilentDragon](https://github.com/MyHush/SilentDragon), and sync fully. This is not a full node
 on your Android (your poor battery!). It's a remote control for your full node.
 
 Thankfully this should only take a short time with a fast internet connection!
