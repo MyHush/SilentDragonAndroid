@@ -7,6 +7,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.*
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.StrictMode
@@ -70,7 +71,7 @@ class MainActivity : AppCompatActivity(),
         btnHelp.setOnClickListener {
             val dialogBuilder = AlertDialog.Builder(this)
 
-            dialogBuilder.setMessage(Html.fromHtml(resources.getString(R.string.help_text), HtmlCompat.FROM_HTML_MODE_LEGACY))
+            dialogBuilder.setMessage(if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) Html.fromHtml(resources.getString(R.string.help_text), HtmlCompat.FROM_HTML_MODE_LEGACY) else Html.fromHtml(resources.getString(R.string.help_text)))
                 .setNegativeButton(resources.getString(R.string.ok), DialogInterface.OnClickListener {
                         dialog, id -> dialog.cancel()
                 })

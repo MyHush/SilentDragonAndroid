@@ -84,7 +84,7 @@ The `keytool` command can be used, for example:
 * Set the Key Store Name to `silent_dragon_keystore.jks` and the path to that of the project, create a password for the keystore path, a Key alias, and a key password. The store password and key password should be the same. Fill out some basic organization information and click Ok.
 * On the next screen make sure the build variant "release" is selected and click Finish.
 
-### Preparing properties file
+### Preparing a properties file
 
 Copy `secrets.properties` file from `examples` folder and paste it to the projects main directory.
 Fill store_file_location, key_alias, key_password and store_password when you created the release keystore.
