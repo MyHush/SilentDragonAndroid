@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Swedish -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s är ej en giltig anslutning tråd</string>
+    <string name="valid_address">giltig address</string>
+    <string name="balance">belopp</string>
+    <string name="scan_qr_code">scanna qr kod</string>
+    <string name="send">skicka</string>
+    <string name="address">address</string>
+    <string name="cancel">avbryt</string>
+    <string name="amount">summa</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">svara</string>
+    <string name="shielded_address">(avskärmat address)</string>
+    <string name="unconfirmed_tx"> (obekräftat transaktion)</string>
+    <string name="confirm_transaction">bekräfta transaktion</string>
+    <string name="confirm_and_send">bekräfta och skicka</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">tidigare transaktioner</string>
+    <string name="or">eller</string>
+    <string name="reconnect">återanslut</string>
+    <string name="help">Help</string>
+    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the desktop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
+  
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">ingen anslutning</string>
+    <string name="connecting">ansluter&#8230;</string>
+    <string name="loading">laddas&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">memo</string>
+    <string name="memo_contents">memo innehåll</string>
+    <string name="view_on_block_explorer">kolla på block explorer</string>
+    <string name="date_time">datum tis</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">datum</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">obekräftad transaktion</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">skickar </string>
+    <string name="receiving">tar emot </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">manuel inmatning</string>
+
+    <!-- menu_recieve -->
+    <string name="share">dela</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">se</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">skickat</string>
+    <string name="received">mottagen</string>
+
+    <!-- menu_main -->
+    <string name="refresh">refresh</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">anslutning över internet är ej aktiverad i skrivbords node.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">anslutning over internet är inaktiverad i inställningar.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Gå till "Appar" -> "Anslut mobil app" på din data och skanna  QR Koden för att ansluta</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">koppla ifrån</string>
+    <string name="silentDragon_connection_address">SilentDragon anslutnings address</string>
+    <string name="disallow_routing_over_external_service">förbjud routing över extern tjänst/internet</string>
+    <string name="only_attempts_direct_connection">Om det är markerad kommer appen bara försöka ha en direkt anslutning till Silentdragon, och inte dirigera trafik över internet via WormHole-tjänsten på wormhole.myhush.org . Snälla ta en titt på https://myhush.org/silentdragon för mer detaljer</string>
+    <string name="currency">valuta</string>
+    <string name="silentdragon_version">SilentDragon version</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Besök vår websida</string>
+    <string name="discord">Gå med i vår Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Credits</string>
+    <string name="license">licens</string>
+    <string name="sda_version">SilentDragonAndroid version</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">ej ansluten</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">klistra in koden här manuelt</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s detta är ej en tillgänglig hush address!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">mottag</string>
+    <string name="no_address">ingen address!</string>
+    <string name="hush_address">Hush address</string>
+    <string name="copied_address_to_clipboard">kopierat address till urklipp</string>
+    <string name="your_hush_transparent_address">ditt Hush transparent address</string>
+    <string name="your_hush_shielded_address">ditt Hush shielded address</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">skicka transaktion</string>
+    <string name="not_a_valid_hush_address">icke tillgänglig hush address!</string>
+    <string name="no_memo_for_taddresses">(ingen memo för taddresses)</string>
+    <string name="memo_optional">Memo (valfri)</string>
+    <string name="send_anyway">skicka hur som helst</string>
+    <string name="invalid_amount">ogiltig summa!</string>
+    <string name="invalid_destination_Hush_address">ogiltig destination Hush address!</string>
+    <string name="send_from_taddr">skicka från taddr?</string>
+    <string name="cant_send_a_memo_to_a_taddr">kan ej skicka memo till en taddr</string>
+    <string name="error_sending_transaction">fel skickad transaction!</string>
+    <string name="memo_field_over_512">Memo fältet är för lång! Måste vara på 512 bytes.</string>
+    <string name="more_than_shielded_address">%1$s %2$s är mer an beloppet i ditt shielded address. denna transaktion kommer bli skickad till en transparent adress, och kommer ej vara privat.\n\nÄr du absolut säker?</string>
+    <string name="max_spend_in_a_single_tx">Kan ej spendera mer är %1$d %2$s i en ensam transaktion in a single Tx"</string>
+    <string name="reply_to">svara till</string>
+
+    <!-- content_send -->
+    <string name="to">till</string>
+    <string name="fee">moms:</string>
+    <string name="include_reply_to_address">inkludera svar till address</string>
+
+    <string name="action_settings">inställningar</string>
+    <string name="action_about">om</string>
+
+    <string name="transaction_details">transaktion detaljer</string>
+
+    <string name="title_activity_settings">inställningar</string>
+    <string name="title_activity_about">om</string>
+
+</resources>

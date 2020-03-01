@@ -4,14 +4,18 @@ package org.myhush.silentdragon
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.*
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.StrictMode
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.Snackbar
+import android.support.v4.text.HtmlCompat
 import android.support.v7.app.AppCompatActivity
+import android.text.Html
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -62,6 +66,19 @@ class MainActivity : AppCompatActivity(),
 
         btnReconnect.setOnClickListener {
             ConnectionManager.refreshAllData()
+        }
+
+        btnHelp.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(this)
+
+            dialogBuilder.setMessage(if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) Html.fromHtml(resources.getString(R.string.help_text), HtmlCompat.FROM_HTML_MODE_LEGACY) else Html.fromHtml(resources.getString(R.string.help_text)))
+                .setNegativeButton(resources.getString(R.string.ok), DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
+
+            val alert = dialogBuilder.create()
+            alert.setTitle(resources.getString(R.string.help))
+            alert.show()
         }
 
         swiperefresh.setOnRefreshListener {
@@ -135,9 +152,11 @@ class MainActivity : AppCompatActivity(),
                     // Hide the reconnect button if there is no connection string
                     if (DataModel.getConnString(SilentDragonApp.appContext!!).isNullOrBlank() ||
                         DataModel.getSecret() == null) {
+                        btnHelp.visibility = Button.VISIBLE
                         btnReconnect.visibility = Button.GONE
                         lblConnectionOr.visibility = TextView.GONE
                     } else {
+                        btnHelp.visibility = Button.GONE
                         btnReconnect.visibility = Button.VISIBLE
                         lblConnectionOr.visibility = TextView.VISIBLE
                     }

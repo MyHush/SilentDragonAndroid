@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s nederīga savienojuma virkne</string>
+    <string name="valid_address">Derīga adrese</string>
+    <string name="balance">Atlikums</string>
+    <string name="scan_qr_code">Noskenēt QR kodu</string>
+    <string name="send">Sūtīt</string>
+    <string name="address">Adrese</string>
+    <string name="cancel">Atcelt</string>
+    <string name="amount">Summa</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Atbildēt</string>
+    <string name="shielded_address">(Privāta adrese)</string>
+    <string name="unconfirmed_tx"> (Neapstiprināts darījums)</string>
+    <string name="confirm_transaction">Apstiprināt darījumu</string>
+    <string name="confirm_and_send">Apstiprināt un nosūtīt</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Iepriekšējie darījumi</string>
+    <string name="or">VAI</string>
+    <string name="reconnect">Atkārtoti izveidot savienojumu</string>
+    <string name="help">Help</string>
+    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the desktop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
+  
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Nav savienojuma</string>
+    <string name="connecting">Savienojas&#8230;</string>
+    <string name="loading">Ielāde&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Piezīme</string>
+    <string name="memo_contents">Piezīmes saturs</string>
+    <string name="view_on_block_explorer">Skatīt bloku pārlūkā</string>
+    <string name="date_time">Datums Laiks</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Datums</string>
+    <string name="amt">Vērtība</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Neapstiprināts darījums</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Sūta </string>
+    <string name="receiving">Saņem </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Manuāla ievade</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Dalīties</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Aplūkot</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Nosūtīts</string>
+    <string name="received">Saņemts</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Atjaunot</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Izmantojot darbvirsmas mezglu, nebija iespējots interneta savienojums.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Interneta savienojums ir atspējots iestatījumos.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Iet uz \"Lietotnes\" -> \"Pievienot mobilo aplikāciju\" uz darbvirsmas un skenējiet QR kodu, lai izveidotu savienojumu</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Atvienot</string>
+    <string name="silentDragon_connection_address">SilentDragon savienojuma adrese</string>
+    <string name="disallow_routing_over_external_service">Aizliegt informācijas plūsmu, izmantojot ārējus pakalpojumus vai internetu</string>
+    <string name="only_attempts_direct_connection">Ja atzīmēts, lietotne mēģinās izveidot tiešu savienojumu ar SilentDragon, nevis sūtīt datus izmantojot pakalpojumu WormHole vietnē wormhole.myhush.org . Sīkāka informācija vietnē https://myhush.org/silentdragon</string>
+    <string name="currency">Valūta</string>
+    <string name="silentdragon_version">SilentDragon versija</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Apmeklējiet mūsu weblapu</string>
+    <string name="discord">Pievienojies mūsu Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Autori</string>
+    <string name="license">Licence</string>
+    <string name="sda_version">SilentDragonAndroid versija</string>
+    <string name="copyright">Autortiesības</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Nav savienojuma</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Manuāli ievadiet kodu</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s nederīga Hush adrese!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Saņemt</string>
+    <string name="no_address">Nav adreses!</string>
+    <string name="hush_address">Hush adrese</string>
+    <string name="copied_address_to_clipboard">Kopēt adresi</string>
+    <string name="your_hush_transparent_address">Jūsu Hush t-adrese</string>
+    <string name="your_hush_shielded_address">Jusu ptivāta Hush adrese</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Nosūtīt darījumu</string>
+    <string name="not_a_valid_hush_address">Nederīga Hush adrese!</string>
+    <string name="no_memo_for_taddresses">(Nav piezīmju t-adresei)</string>
+    <string name="memo_optional">Piezīme (nav obligāti)</string>
+    <string name="send_anyway">Sūtīt vienalga</string>
+    <string name="invalid_amount">Nepareiza summa!</string>
+    <string name="invalid_destination_Hush_address">Nederīga mērķa Hush adrese!</string>
+    <string name="send_from_taddr">Sūtīt no t-adreses?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Nevar nosūtīt atgādinājumu uz t-adresi</string>
+    <string name="error_sending_transaction">Kļūda sūtot darījumu!</string>
+    <string name="memo_field_over_512">Piezīmes lauks ir pārāk garš! Jābūt ne vairāk kā 512 baitiem.</string>
+    <string name="more_than_shielded_address">%1$s %2$s ir vairāk nekā jūsu privātas adreses kontā. Šis darījums būs veikts no jūsu t-adreses, nevis privātas.\n\nVai esat pilnīgi pārliecināts?</string>
+    <string name="max_spend_in_a_single_tx">Ne\var nosūtīt vairāk kā %1$d %2$s vienā darījumā"</string>
+    <string name="reply_to">Atbildēt uz</string>
+
+    <!-- content_send -->
+    <string name="to">Kam</string>
+    <string name="fee">Komisijas maksa:</string>
+    <string name="include_reply_to_address">Iekļaujiet atbildes adresi</string>
+
+    <string name="action_settings">Iestātījumi</string>
+    <string name="action_about">Par</string>
+
+    <string name="transaction_details">Informācija par darījumu</string>
+
+    <string name="title_activity_settings">Iestātījumi</string>
+    <string name="title_activity_about">Par</string>
+
+</resources>

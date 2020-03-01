@@ -1,0 +1,136 @@
+<resources>
+    <!-- Bulgarian -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s Връзката не е валидна</string>
+    <string name="valid_address">Валиден Адрес</string>
+    <string name="balance">Салдо</string>
+    <string name="scan_qr_code">Сканирай QR Кода</string>
+    <string name="send">Изпрати</string>
+    <string name="address">Адрес</string>
+    <string name="cancel">Отмени</string>
+    <string name="amount">Сума</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Отговори</string>
+    <string name="shielded_address">(Защитен Адрес)</string>
+    <string name="unconfirmed_tx"> (Непотвърдена Транзакция)</string>
+    <string name="confirm_transaction">Потвърди Транзакзията</string>
+    <string name="confirm_and_send">Потвърди и Изпрати</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Предишни транзакции</string>
+    <string name="or">OR</string>
+    <string name="reconnect">Свържи се отново</string>
+    <string name="help">Help</string>
+    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the desktop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Няма Връзка</string>
+    <string name="connecting">Свързване&#8230;</string>
+    <string name="loading">Зареждане&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Съдържание на бележка</string>
+    <string name="view_on_block_explorer">Преглед на Block Explorer</string>
+    <string name="date_time">Дата и Час</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Дата</string>
+    <string name="amt">Amt</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Непотвърдена транзакзия</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Изпращане </string>
+    <string name="receiving">Получаване </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Ръчно въвеждане</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Сподели</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Прегледай</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Изпратено</string>
+    <string name="received">Получено</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Обнови</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Свързването през интернет не беше активирано от node на работния плот.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Свързването през интернет е забранено в настройките.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Отидете на \ "Приложения \" -> \ "Свързване на мобилно приложение \" на вашия работен плот и сканирайте QR кода, за да се свържете</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Прекъсване на връзката</string>
+    <string name="silentDragon_connection_address">SilentDragon адрес на свързване</string>
+    <string name="disallow_routing_over_external_service">Забранете маршрутизирането през външна услуга / интернет</string>
+    <string name="only_attempts_direct_connection">Ако е поставена отметка, приложението ще опита само директна връзка с SilentDragon, и не маршрутизира трафика по интернет чрез услугата WormHole на wormhole.myhush.org . Моля вижте https://myhush.org/silentdragon за повече детайли</string>
+    <string name="currency">Валута</string>
+    <string name="silentdragon_version">SilentDragon версия</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Посете нашия уебсайт</string>
+    <string name="discord">Присъеденете се към нашия Дискорд</string>
+    <string name="twitter">Туйтър</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Credits</string>
+    <string name="license">Лиценз</string>
+    <string name="sda_version">SilentDragon Андройд зерсияn</string>
+    <string name="copyright">Авторско право</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Няма връзка</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Постави ръчно кода тук</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s не е валиден HUSH адрес!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Получи</string>
+    <string name="no_address">Липсващ адрес!</string>
+    <string name="hush_address">Hush адрес</string>
+    <string name="copied_address_to_clipboard">Копиран адрес в клипборда</string>
+    <string name="your_hush_transparent_address">Твоя прозрачен Hush адрес</string>
+    <string name="your_hush_shielded_address">Твоя Hush защитен адрес</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Изпрати транзакции</string>
+    <string name="not_a_valid_hush_address">Невалиден Hush адрес!</string>
+    <string name="no_memo_for_taddresses">(Няма записки на  t-Addresses)</string>
+    <string name="memo_optional">Бележка (Избирателно)</string>
+    <string name="send_anyway">Изпрати въпреки това</string>
+    <string name="invalid_amount">Невалидна сума!</string>
+    <string name="invalid_destination_Hush_address">Невалидна дестинация Hush Адрес!</string>
+    <string name="send_from_taddr">Изпрати от t-addr?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Не може да се изпрати бележка на прозрачен адрес</string>
+    <string name="error_sending_transaction">Грешка при изпращане на транзакция!</string>
+    <string name="memo_field_over_512">Полето е прекалено дълго! Трябва да е най-много 512 бита.</string>
+    <string name="more_than_shielded_address">%1$s %2$s е повече от салдото на вашият защитен адрес.Тази транзакция ще трябва да бъде изпратен от прозрачен адрес и няма ?</string>
+    <string name="max_spend_in_a_single_tx">Не може да се похарчи повече от %1$d %2$s в единична транзакция</string>
+    <string name="reply_to">Отговори на</string>
+
+    <!-- content_send -->
+    <string name="to">до</string>
+    <string name="fee">Такса:</string>
+    <string name="include_reply_to_address">Включете отговор на адрес</string>
+
+    <string name="action_settings">Настройки</string>
+    <string name="action_about">Относно</string>
+
+    <string name="transaction_details">Детайли на транзакция</string>
+
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_about">Относно</string>
+
+</resources>

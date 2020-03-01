@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Russian -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s недействующий канал соединения</string>
+    <string name="valid_address">Дейстующий адрес</string>
+    <string name="balance">Баланс</string>
+    <string name="scan_qr_code">Сканирование QR кода</string>
+    <string name="send">Отправить</string>
+    <string name="address">Адрес</string>
+    <string name="cancel">Отменить</string>
+    <string name="amount">Сумма</string>
+
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Ответить</string>
+    <string name="shielded_address">(Затененный адрес)</string>
+    <string name="unconfirmed_tx"> (Неподтвержденные Tx)</string>
+    <string name="confirm_transaction">Подтвержденные транзакции</string>
+    <string name="confirm_and_send">Подтвердить и отправить</string>
+
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Прошедшие транзакции</string>
+    <string name="or">Или</string>
+    <string name="reconnect">Переподключиться</string>
+    <string name="help">Help</string>
+    <string name="help_text">This application does remote control for your full node.&lt;br>&lt;br>In order to let your Android phone connect to your desktop, you need to run the desktop SilentDragon and sync fully.&lt;br>&lt;br>After your node is synced, go to &lt;b>Apps -> Connect Mobile App&lt;/b> to view the connection QR Code, which you can scan from this app for connect SilentDragon.</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">ТихийДракон</string>
+    <string name="no_connection">Нет связи</string>
+    <string name="connecting">Подключение&#8230;</string>
+    <string name="loading">Загрузка&#8230;</string>
+
+
+    <!-- content_tx_details -->
+    <string name="memo">Мемо</string>
+    <string name="memo_contents">Мемо содержание</string>
+    <string name="view_on_block_explorer">Вид обозревателя</string>
+    <string name="date_time">Date Time</string>
+
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Дата</string>
+    <string name="amt">Сумма</string>
+
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Неподтвержденные транзакции</string>
+
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Отправление </string>
+    <string name="receiving">Получение </string>
+
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Ручной ввод</string>
+
+
+    <!-- menu_recieve -->
+    <string name="share">Поделиться</string>
+
+
+    <!-- menu_txdetails -->
+    <string name="view">Вид</string>
+
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Отправлено</string>
+    <string name="received">Получено</string>
+
+
+    <!-- menu_main -->
+    <string name="refresh">Обновить</string>
+
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Интернет-соединение не было разрешено системой node.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Интернет соединение не активировано в настройках.</string>
+
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Перейдите в \"Apps\" -> \"Connect mobile app\" на Вашем устройстве и отсканируйте  QR код для соединения</string>
+
+
+    <!-- activity_settings -->
+    <string name="disconnect">Отсоединиться</string>
+    <string name="silentDragon_connection_address">Адрес Тихого Дракона для соединения</string>
+    <string name="disallow_routing_over_external_service">Не позволять соединение через внешние серверы/интернет</string>
+    <string name="only_attempts_direct_connection">Если проверено, то приложение позволит только прямое соединение с Тихим Драконом (Silent Dragon), а не соединение (роутинг, маршрутизацию) через интернет при помощи WormHole сервис на сайте wormhole.myhush.org . Для более подробной информации https://myhush.org/silentdragon</string>
+    <string name="currency">Валюта</string>
+    <string name="silentdragon_version">Версия Тихого Дракона </string>
+
+
+    <!-- activity_about.xml -->
+    <string name="website">Посетить наш веб-сайт</string>
+    <string name="discord">Присоединиться к нашему Дискорд</string>
+    <string name="twitter">Твиттер</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Активы</string>
+    <string name="license">Лицензионное соглашение</string>
+    <string name="sda_version">Версия андроида Тихого Дракона</string>
+    <string name="copyright">Авторское право</string>
+
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Нет соединения</string>
+
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Вставить код сюда вручную</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s Hush-адрес не действителен!</string>
+
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive"> Получено</string>
+    <string name="no_address"> Нет адреса!</string>
+    <string name="hush_address"> Hush адрес</string>
+    <string name="copied_address_to_clipboard"> Скопировать адрес в буфер обмена </string>
+    <string name="your_hush_transparent_address"> Ваш общедоступный Hush адрес</string>
+    <string name="your_hush_shielded_address"> Ваш затененный Hush адрес </string>
+
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction"> Отправить транзакцию </string>
+    <string name="not_a_valid_hush_address">Not a valid Hush address Недействительный Hush адрес!</string>
+    <string name="no_memo_for_taddresses">(отсутствует мемо для т-адреса)</string>
+    <string name="memo_optional"> Мемо (необязательно)</string>
+    <string name="send_anyway"> Отправить в любом случае </string>
+    <string name="invalid_amount"> Неверная сумма!</string>
+    <string name="invalid_destination_Hush_address"> Неверный Hush адрес получателя!</string>
+    <string name="send_from_taddr"> Отправить с т-адреса?</string>
+    <string name="cant_send_a_memo_to_a_taddr"> Невозможно отправить мемо на т-адрес</string>
+    <string name="error_sending_transaction"> Ошибка в отправке транзакции!</string>
+    <string name="memo_field_over_512"> Поле мемо слишком длинное! Должно быть менее 512 байт.</string>
+    <string name="more_than_shielded_address"> Сумма %1$s %2$s больше, чем баланс на Вашем затененном адресе. Данная транзакция будет отправлена с т-адреса и не будет скрытой.  Вы абсолютно уверены? </string>
+    <string name="max_spend_in_a_single_tx"> Невозможно отправить больше, чем %1$d %2$s в одной транзакции"</string>
+    <string name="reply_to"> Ответить</string>
+
+    <!-- content_send -->
+    <string name="to"> Кому </string>
+    <string name="fee"> Комиссия:</string>
+    <string name="include_reply_to_address"> Включить адрес Кому</string>
+
+    <string name="action_settings"> Настройки</string>
+    <string name="action_about"> О нас </string>
+
+    <string name="transaction_details">Детали транзакции</string>
+
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_about">О нас</string>
+
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Arabic -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s سلسلة اتصال غير صالحه </string>
+    <string name="valid_address">عنوان صحيح</string>
+    <string name="balance">رصيد</string>
+    <string name="scan_qr_code"> QR مسح رمز ال</string>
+    <string name="send">ارسال</string>
+    <string name="address">عنوان</string>
+    <string name="cancel">إلغاء</string>
+    <string name="amount">قيمة</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">رد</string>
+    <string name="shielded_address">(عنوان محمي)</string>
+    <string name="unconfirmed_tx"> (معاملة غير مؤكد)</string>
+    <string name="confirm_transaction">معاملة مؤكد </string>
+    <string name="confirm_and_send">تأكيد وإرسال</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">معاملات سابقة </string>
+    <string name="or">او</string>
+    <string name="reconnect">إعادة الاتصال</string>
+    <string name="help">مساعده</string>
+    <string name="help_text">هذا التطبيق يتحكم عن بعد لعقدة كاملة.&lt;br>&lt;br>من أجل السماح لهاتف الأندرويد الخاص بك بالاتصال بجهاز الحاسوب ، تحتاج إلى تشغيل (سايلنت دراجون) بجهاز الحاسوب والمزامنة بالكامل.&lt;br>&lt;br>بعد مزامنة العقدة الخاصة بك ، انتقل إلى &lt;b>تطبيق -> اشبك تطبيق جوال&lt;/b> لعرض اتصال كيو ار كود ، الذي يمكنك مسحه من هذا التطبيق لوصل سايلانت دراجون.</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">سايلانت دراجون</string>
+    <string name="no_connection">لا يوجد اتصال</string>
+    <string name="connecting">جاري التوصيل&#8230;</string>
+    <string name="loading">جار التحميل</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">مذكرة</string>
+    <string name="memo_contents"> محتوى المذكرة</string>
+    <string name="view_on_block_explorer">اعرض على بلوك إكسبلورر</string>
+    <string name="date_time">التاريخ_الوقت </string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">التاريخ</string>
+    <string name="amt">ا م ت</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">معاملة غير مؤكدة</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">إرسال </string>
+    <string name="receiving">استلام </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">إدخال يدوي</string>
+
+    <!-- menu_recieve -->
+    <string name="share">شارك</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">رؤية</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">أرسلت</string>
+    <string name="received">تم الاستلام</string>
+
+    <!-- menu_main -->
+    <string name="refresh">تحديث</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">لم يتم تمكين الاتصال عبر الإنترنت بواسطة عقدة جهاز الحاسوب</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">يتم تعطيل الاتصال عبر الإنترنت في الإعدادات</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">انتقل إلى \ "تطبيق \" -> \ "توصيل تطبيق الجوّال \" على سطح  الحاسوب الخاص بك وقم بمسح رمز الكيو ار</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">قطع الاتصال</string>
+    <string name="silentDragon_connection_address">عنوان الاتصال عنوان سايلنت دراجون</string>
+    <string name="disallow_routing_over_external_service">عدم السماح بالتوجيه عبر الخدمة الخارجية/internet</string>
+    <string name="only_attempts_direct_connection">إذا تم تحديده ، فسيحاول التطبيق الاتصال المباشر بـ SilentDragon فقط ، وليس توجيه حركة المرور عبر الإنترنت عبر خدمة WormHole على wormhole.myhush.org. لطفا أنظر الى https://myhush.org/silentdragon</string>
+    <string name="currency">العملة</string>
+    <string name="silentdragon_version">اصدار سايلنت دراجون</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">زورونا على موقعنا  </string>
+    <string name="discord">انضمو الى دسكورد</string>
+    <string name="twitter">تويتر</string>
+    <string name="github">جت هب</string>
+    <string name="credits">تصديق</string>
+    <string name="license">رخصه </string>
+    <string name="sda_version">سايلنت دراجون اصدار</string>
+    <string name="copyright">حقوق النشر</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">غير متصل</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">الصق الكود هنا يدويًا</string>
+    <string name="ok">اجل</string>
+    <string name="is_not_a_valid_hush_address">%1$s عنوان هش غير صالح!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">استلام</string>
+    <string name="no_address">لا يوجد عنوان !</string>
+    <string name="hush_address">عنوان هش</string>
+    <string name="copied_address_to_clipboard">نسخ العنوان إلى الحافظة</string>
+    <string name="your_hush_transparent_address">عنوان هش شفاف</string>
+    <string name="your_hush_shielded_address">عنوان هش محمي</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">إرسال المعاملة</string>
+    <string name="not_a_valid_hush_address">عنوان هش غير صالح!</string>
+    <string name="no_memo_for_taddresses">(لا Tيوجد مذكرة لعنوان ال)</string>
+    <string name="memo_optional">مذكرة (اختياري)</string>
+    <string name="send_anyway">أرسل على كل حال</string>
+    <string name="invalid_amount">مبلغ غير صحيح!</string>
+    <string name="invalid_destination_Hush_address">عنوان هش المقصود غير صحيح!</string>
+    <string name="send_from_taddr">ارسال من عنوان T ال </string>
+    <string name="cant_send_a_memo_to_a_taddr">لا يمكن ارسال مذكرة الي عنوان شفاف</string>
+    <string name="error_sending_transaction">خطأ في إرسال المعامله </string>
+    <string name="memo_field_over_512">مذكرة  طويله جدا! يجب أن تكون أقصاها ٥١٢ بايت</string>
+    <string name="more_than_shielded_address">%1$s %2$s هو اكثر من الرصيد في العنوان المخفي. هذه المعاملة سيتم إرسالها من عنوان شفاف، و لن تكون خفية.\n\nهل انت قطعا متأكد؟ </string>
+    <string name="max_spend_in_a_single_tx">لا يمكن صرف اكثر من  %1$d %2$s في معاملة واحده "</string>
+    <string name="reply_to">الرد على</string>
+
+    <!-- content_send -->
+    <string name="to">الى</string>
+    <string name="fee">رسوم:</string>
+    <string name="include_reply_to_address">اشمل الرد الى العنوانI</string>
+
+    <string name="action_settings">الاعدادات </string>
+    <string name="action_about">عن</string>
+
+    <string name="transaction_details">تفصيل المعاملة</string>
+
+    <string name="title_activity_settings">إعدادات </string>
+    <string name="title_activity_about">عن</string>
+
+</resources>
