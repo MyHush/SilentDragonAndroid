@@ -24,7 +24,7 @@
     <string name="or">OPPURE</string>
     <string name="reconnect">Riconnetti</string>
     <string name="help">Aiuto</string>
-    <string name="help_text">Questa applicazione controlla in remoto l\'intero nodo.&lt;br>&lt;br>Per consentire all\'utente di utilizzare questa applicazione, è necessario eseguire l\'applicazione SilentDragon su un computer e sincronizzarsi completamente.  &lt;br>&lt;br>Quindi vai su 'Applicazione -> Connessione all'applicazione mobile per visualizzare un codice QR, che puoi scansionare da questa applicazione per collegarti ad esso. </string>
+    <string name="help_text">Questa applicazione controlla in remoto l\'intero nodo.&lt;br>&lt;br>Per consentire all\'utente di utilizzare questa applicazione, è necessario eseguire l\'applicazione SilentDragon su un computer e sincronizzarsi completamente.  &lt;br>&lt;br>Quindi vai su &lt;b>Applicazione -> Connessione all applicazione mobile&lt;/b> per visualizzare un codice QR, che puoi scansionare da questa applicazione per collegarti ad esso.</string>
   
     <!-- MainActivity.kt -->
     <string name="app_name">SilentDragon</string>
