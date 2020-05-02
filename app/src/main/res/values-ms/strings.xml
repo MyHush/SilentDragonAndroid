@@ -128,7 +128,7 @@
     <string name="reply_to">balas kepada</string>
 
     <!-- content_send -->
-    <string name="to">kepada/string>
+    <string name="to">kepada</string>
     <string name="fee">bayaran:</string>
     <string name="include_reply_to_address">sertakan jawab balas ke alamat</string>
 
