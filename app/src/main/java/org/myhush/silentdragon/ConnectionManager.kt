@@ -146,7 +146,7 @@ object ConnectionManager {
                     .url("https://api.coingecko.com/api/v3/simple/price?ids=hush&vs_currencies=${currencies}")
                     .build()
                 val response: Response = client.newCall(request).execute()
-                val json: JSONObject = JSONObject(response.body()?.string())["hush"] as JSONObject
+                val json: JSONObject = JSONObject(response.body()?.string() as @NonNull String)["hush"] as JSONObject
 
                 if (json.length() > 0){
                     for (cur: String in json.keys()){

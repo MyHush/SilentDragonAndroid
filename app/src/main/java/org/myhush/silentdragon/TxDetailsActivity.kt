@@ -4,7 +4,7 @@ package org.myhush.silentdragon
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.beust.klaxon.Klaxon
 import kotlinx.android.synthetic.main.activity_tx_details.*
 import kotlinx.android.synthetic.main.content_tx_details.*
@@ -14,7 +14,7 @@ import java.text.DecimalFormat
 import java.util.*
 import android.content.Intent
 import android.net.Uri
-import android.support.constraint.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -136,7 +136,7 @@ class TxDetailsActivity : AppCompatActivity() {
 
                 return true
             }
-            else -> super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item as MenuItem)
         }
     }
 

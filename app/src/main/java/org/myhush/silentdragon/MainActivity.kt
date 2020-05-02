@@ -11,10 +11,10 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.StrictMode
-import android.support.constraint.ConstraintLayout
-import android.support.design.widget.Snackbar
-import android.support.v4.text.HtmlCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.snackbar.Snackbar
+import androidx.core.text.HtmlCompat
+import androidx.appcompat.app.AppCompatActivity
 import android.text.Html
 import android.util.Log
 import android.view.Menu
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity(),
     private fun loadSharedPref() {
         var ref: SharedPreferences = getSharedPreferences("MainFile", 0)
 
-        DataModel.selectedCurrency = ref.getString("currency", "BTC")
+        DataModel.selectedCurrency = ref.getString("currency", "BTC").toString()
     }
 
     private fun setMainStatus(status: String) {

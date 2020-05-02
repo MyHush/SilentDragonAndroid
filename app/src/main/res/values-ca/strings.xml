@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- catalan -->
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s no és un fil de connexió vàlid</string>
+    <string name="valid_address">Adreça Vàlida</string>
+    <string name="balance">Balanç</string>
+    <string name="scan_qr_code">Escaneja el Codi QR</string>
+    <string name="send">Envia</string>
+    <string name="address">Adreça</string>
+    <string name="cancel">Cancel·la</string>
+    <string name="amount">Quantitat</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Resposta</string>
+    <string name="shielded_address">(Adreça blindada)</string>
+    <string name="unconfirmed_tx"> (Tx No Confirmada)</string>
+    <string name="confirm_transaction">Confirmar Transacció</string>
+    <string name="confirm_and_send">Confirmar i Enviar</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Transaccions Anteriors</string>
+    <string name="or">O</string>
+    <string name="reconnect">Torna a Connectar</string>
+    <string name="help">Ajuda</string>
+    <string name="help_text">Aquesta aplicació fa de control remot per al teu full node.\n\nPer tal que el teu tel·lèfon Android es pugui connectar amb el teu escriptori, necessites arrencar el SilentDragon d\'escriptori i sincronitzar-lo del tot.\n\nUn cop el teu node estigui sincronitzat, ves a Apps -> Connectar App Mòbil per veure el Codi de Connexió QR que pots escanejar des d\'aquesta app per connectar el SilentDragon.</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Sense Connexió</string>
+    <string name="connecting">Connectant&#8230;</string>
+    <string name="loading">Carregant&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Continguts Memo</string>
+    <string name="view_on_block_explorer">Veure al Block Explorer</string>
+    <string name="date_time">Data Hora</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Data</string>
+    <string name="amt">Quant</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Transacció No Confirmada</string>
+
+    <!-- UnconfirmedTxItemFragment.kt -->
+    <string name="sending">Enviant </string>
+    <string name="receiving">Rebent </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Introducció Manual</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Compartir</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">Veure</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">Enviat</string>
+    <string name="received">Rebut</string>
+
+    <!-- menu_main -->
+    <string name="refresh">Refrescar</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">No s\'ha activat la connexió del node d\'escriptori a internet.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">La configuració de connexió a internet esta desactivada.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Ves a \"Apps\" -> \"Connectar app mòbil\" al teu escriptori i escaneja el Codi QR per connectar</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">Desconnectar</string>
+    <string name="silentDragon_connection_address">Adreça de connexió de SilentDragon</string>
+    <string name="disallow_routing_over_external_service">No permetre l\'enrutament a internet/servei extern</string>
+    <string name="only_attempts_direct_connection">Si es selecciona, la app només es connectarà directament amb el SilentDragon, i no enrutarà cap tràfic a internet via el servei WormHole a wormhole.myhush.org . Si us plau, fes un cop d\'ull a https://myhush.org/silentdragon per a més detalls</string>
+    <string name="currency">Moneda</string>
+    <string name="silentdragon_version">SilentDragon versió</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">Visita la nostra web</string>
+    <string name="discord">Uneix-te al nostre Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Crèdits</string>
+    <string name="license">Llicència</string>
+    <string name="sda_version">SilentDragonAndroid versió</string>
+    <string name="copyright">Copyright</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">No Connectat</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Enganxa el codi aquí manualment</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s no és una adreça HUSH vàlida!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Rebre</string>
+    <string name="no_address">Cap adreça!</string>
+    <string name="hush_address">Adreça Hush</string>
+    <string name="copied_address_to_clipboard">Adreça copiada al porta-retalls</string>
+    <string name="your_hush_transparent_address">La teva adreça Hush transparent</string>
+    <string name="your_hush_shielded_address">La teva adreça Hush blindada</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Enviar Transacció</string>
+    <string name="not_a_valid_hush_address">Adreça Hush no vàlida!</string>
+    <string name="no_memo_for_taddresses">(No Memo per a les t-Addresses)</string>
+    <string name="memo_optional">Memo (Opcional)</string>
+    <string name="send_anyway">Enviar de totes maneres</string>
+    <string name="invalid_amount">Quantitat invàlida!</string>
+    <string name="invalid_destination_Hush_address">Adreça de Hush de destí invàlida!</string>
+    <string name="send_from_taddr">Enviar desde t-addr?</string>
+    <string name="cant_send_a_memo_to_a_taddr">No es pot enviar un Memo a les adreces transparents</string>
+    <string name="error_sending_transaction">Error a l\'enviar la transacció!</string>
+    <string name="memo_field_over_512">El camp Memo és massa llarg! Ha de tenir com a molt 512 bytes.</string>
+    <string name="more_than_shielded_address">%1$s %2$s és més que el balanç de la teva adreça blindada. Aquesta Tx haurà de ser enviada des d\'una adreça transparent i no serà privada.\n\nEstàs completament segur?</string>
+    <string name="max_spend_in_a_single_tx">No es pot gastar més de %1$d %2$s en una sola Tx"</string>
+    <string name="reply_to">Respon a</string>
+
+    <!-- content_send -->
+    <string name="to">A</string>
+    <string name="fee">Comissió:</string>
+    <string name="include_reply_to_address">Incloure adreça de resposta</string>
+
+    <string name="action_settings">Configuració</string>
+    <string name="action_about">Sobre aquesta app</string>
+
+    <string name="transaction_details">Detalls de la Transacció</string>
+
+    <string name="title_activity_settings">Configuració</string>
+    <string name="title_activity_about">Sobre aquesta app</string>
+
+</resources>

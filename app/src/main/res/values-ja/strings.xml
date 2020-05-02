@@ -2,7 +2,7 @@
 <resources>
     <!-- Japanese -->
     <!-- general -->
-    <string name="is_not_a_valid_connection_string">%1$は有効な接続文字列ではありません！</string>
+    <string name="is_not_a_valid_connection_string">%1$sは有効な接続文字列ではありません！</string>
     <string name="valid_address">有効なアドレス</string>
     <string name="balance">残高</string>
     <string name="scan_qr_code">QRコードをスキャン</string>
@@ -95,7 +95,7 @@
     <!-- QrReaderActivity.kt -->
     <string name="paste_the_code_here_manually">ここにコードを手動で貼り付けます。</string>
     <string name="ok">OK</string>
-    <string name="is_not_a_valid_hush_address">%1$sは有効なハッシュアドレスではありません！</string>
+    <string name="is_not_a_valid_hush_address">%1$s は有効なハッシュアドレスではありません！</string>
 
     <!-- ReceiveActivity.kt.kt -->
     <string name="receive">受信</string>
