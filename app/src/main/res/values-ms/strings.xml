@@ -1,0 +1,147 @@
+﻿<resources>
+ <!-- For later
+    <string name="text_english" translatable="false">English</string>
+    <string name="text_spanish" translatable="false">"Español"</string>
+    <string name="text_french" translatable="false">"Français"</string>
+ -->
+
+    <!-- general -->
+    <string name="is_not_a_valid_connection_string">%1$s sambungan talian yang tidak sah</string>
+    <string name="valid_address">Alamat Sah</string>
+    <string name="balance">Baki</string>
+    <string name="scan_qr_code">Imbas Kod QR</string>
+    <string name="send">Hantar</string>
+    <string name="address">Alamat</string>
+    <string name="cancel">Batalkan</string>
+    <string name="amount">Jumlah</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="reply">Balas</string>
+    <string name="shielded_address">(Alamat Yang Dilidungi)</string>
+    <string name="unconfirmed_tx"> (Transaksi Belum Disahkan)</string>
+    <string name="confirm_transaction">Transaksi Disahkan</string>
+    <string name="confirm_and_send">Sahkan Dan Hantar</string>
+
+    <!-- content_main.xml -->
+    <string name="past_transactions">Transaksi Lama</string>
+    <string name="or">ATAU</string>
+    <string name="reconnect">Sambung Semula</string>
+    <string name="help">Bantuan</string>
+    <string name="help_text">Aplikasi ini berkebolehan untuk membuat kawalan jauh nod penuh anda.&lt;br>&lt;br>Untuk sambungkan telefon Android anda ke desktop anda, sila buka aplikasi desktop SilentDragon dan membuat penyegerakan penuh.&lt;br>&lt;br>Selepas penyegerakan nod penuh, sila ke &lt;b>Apps -> Sambung App Mudah Alih&lt;/b> untuk melihat sambungan kod QR, yang boleh diimbas menerusi applikasi ini untuk sambungan SilentDragon.</string>
+
+    <!-- MainActivity.kt -->
+    <string name="app_name">SilentDragon</string>
+    <string name="no_connection">Tiada Sambungan</string>
+    <string name="connecting">Menyambungkan&#8230;</string>
+    <string name="loading">Sedang Dimuatkan&#8230;</string>
+
+    <!-- content_tx_details -->
+    <string name="memo">Memo</string>
+    <string name="memo_contents">Kandungan Memo</string>
+    <string name="view_on_block_explorer">Lihat di Blok Explorer</string>
+    <string name="date_time">Haribulan Masa</string>
+
+    <!-- fragment_transaction_item -->
+    <string name="date">Haribulan</string>
+    <string name="amt">Jumlah</string>
+
+    <!-- fragment_unconfirmed_tx_item -->
+    <string name="unconfirmed_transaction">Traksaksi Yang Belum Disahkan</string>
+
+   <!-- UnconfirmedTxItemFragment.kt -->
+   <string name="sending">sedang hantar </string>
+   <string name="receiving">sedang terima </string>
+
+    <!-- menu_qrcodereader.xml -->
+    <string name="manual_input">Input manual</string>
+
+    <!-- menu_recieve -->
+    <string name="share">Kongsi</string>
+
+    <!-- menu_txdetails -->
+    <string name="view">lihat</string>
+
+    <!-- TxDetailsActivity.kt -->
+    <string name="sent">telah hantar</string>
+    <string name="received">telah diterima</string>
+
+    <!-- menu_main -->
+    <string name="refresh">menyegarkan</string>
+
+    <!-- connectionManager.kt  -->
+    <string name="Connecting_over_internet_not_enabled_in_desktop_node">Sambungan internet tidak dibenarkan di nod desktop.</string>
+    <string name="Connecting_over_internet_is_disabled_in_settings">Sambungan internet tidak diselenggara di saluran tetapan.</string>
+
+    <!-- activity_qr_reader -->
+    <string name="how_to_connect_sd2sda">Buka \"Apps\" -> \"Connect mobile app\" di desktop dan simbas QR kod untuk sambungan</string>
+
+    <!-- activity_settings -->
+    <string name="disconnect">memutuskan talian</string>
+    <string name="silentDragon_connection_address">alamat SilentDragon</string>
+    <string name="disallow_routing_over_external_service">melarang penghalan komputer melalui servis luar</string>
+    <string name="only_attempts_direct_connection">Sekiranya diperiksa, aplikasi akan cuba menyambung terus ke SilentDragon dan tidak akan mengarahkan lalu lintas Internet menggunakan perkhidmatan WormHole wormhole.myhush.org. Sila lihat untuk maklumat lebih lanjut di halaman https://myhush.org/silentdragon</string>
+    <string name="currency">Mata Wang</string>
+    <string name="silentdragon_version">Versi SilentDragon</string>
+
+    <!-- activity_about.xml -->
+    <string name="website">laman web</string>
+    <string name="discord">applikasi Discord</string>
+    <string name="twitter">Twitter</string>
+    <string name="github">GitHub</string>
+    <string name="credits">Pujian</string>
+    <string name="license">Lesen</string>
+    <string name="sda_version">Versi SilentDragonAndroid</string>
+    <string name="copyright">Hak cipta</string>
+
+    <!-- SettingActivity.kt -->
+    <string name="not_connected">Tidak ada sambungan</string>
+
+    <!-- QrReaderActivity.kt -->
+    <string name="paste_the_code_here_manually">Sila tampal kod anda secara manual disini</string>
+    <string name="ok">OK</string>
+    <string name="is_not_a_valid_hush_address">%1$s alamat yang tidak sah!</string>
+
+    <!-- ReceiveActivity.kt.kt -->
+    <string name="receive">Terima</string>
+    <string name="no_address">Tiada alamat</string>
+    <string name="hush_address">Alamat Hush</string>
+    <string name="copied_address_to_clipboard">Alamat telah disalin ke  papan keratan</string>
+    <string name="your_hush_transparent_address">Alamat lutsinar Hush anda</string>
+    <string name="your_hush_shielded_address">Alamat terlindung Hush anda</string>
+
+    <!-- SendActivity.kt -->
+    <string name="send_transaction">Hantar transaksi</string>
+    <string name="not_a_valid_hush_address">Alamat Hush yang tidak sah!</string>
+    <string name="no_memo_for_taddresses">(Tiada memo untuk t-Adrese)</string>
+    <string name="memo_optional">Memo (tidak wajib)</string>
+    <string name="send_anyway">hantar</string>
+    <string name="invalid_amount">Jumlah yang tidak sah!</string>
+    <string name="invalid_destination_Hush_address">Alamat Hush yang tidak sah!</string>
+    <string name="send_from_taddr">Hantar dari t-adrese?</string>
+    <string name="cant_send_a_memo_to_a_taddr">Tidak dapat hantar memo ke alamat taddr</string>
+    <string name="error_sending_transaction">ralat dalam penghantaran transaksi!</string>
+    <string name="memo_field_over_512">Memori terlalu besar! Maksimum 512 perkataan dibenarkan.</string>
+    <string name="more_than_shielded_address">%1$s %2$s lebih dari yang anda mampu di alamat yang selamat. Tx ini perlu dihantar dari alamat yang telus dan tidak akan bersifat peribadi. \ N \ Apakah anda benar-benar yakin
+
+?</string>
+    <string name="max_spend_in_a_single_tx">Tidak dapat membelanjakan lebih daripada% 1 $ d% 2 $ s dalam satu Tx"</string>
+    <string name="reply_to">balas kepada</string>
+
+    <!-- content_send -->
+    <string name="to">kepada/string>
+    <string name="fee">bayaran:</string>
+    <string name="include_reply_to_address">sertakan jawab balas ke alamat</string>
+
+    <string name="action_settings">tindakan tetapan</string>
+    <string name="action_about">tindakan mengenai</string>
+
+    <string name="transaction_details">Butiran transaksi</string>
+
+    <string name="title_activity_receive" translatable="false">Aktiviti diterima</string>
+    <string name="title_activity_send" translatable="false">Aktiviti hantar</string>
+    <string name="title_activity_tx_details" translatable="false">Aktiviti butiran transaksi</string>
+
+    <string name="title_activity_settings">Tetapan</string>
+    <string name="title_activity_about">mengenai</string>
+
+ </resources>
