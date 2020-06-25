@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -35,14 +35,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="https://www.myhush.org"
+            android:text="@string/website_link"
             android:textColorLink="@android:color/white"
             android:autoLink="web"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Website" />
 
         <View
-            android:id="@+id/divider1"
+            android:id="@+id/divider0"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
@@ -62,7 +62,7 @@
             android:text="@string/discord"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider1" />
+            app:layout_constraintTop_toBottomOf="@id/divider0" />
 
         <TextView
             android:id="@+id/DiscordText"
@@ -70,11 +70,46 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="https://www.myhush.org/discord/"
+            android:text="@string/discord_link"
             android:textColorLink="@android:color/white"
             android:autoLink="web"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Discord" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/listDivider"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DiscordText" />
+
+        <TextView
+            android:id="@+id/Telegram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/telegram"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <TextView
+            android:id="@+id/TelegramText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/telegram_link"
+            android:textColorLink="@android:color/white"
+            android:autoLink="web"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Telegram" />
 
         <View
             android:id="@+id/divider2"
@@ -86,7 +121,7 @@
             android:background="?android:attr/listDivider"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DiscordText" />
+            app:layout_constraintTop_toBottomOf="@+id/TelegramText" />
 
         <TextView
             android:id="@+id/Twitter"
@@ -105,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="https://www.myhush.org/twitter/"
+            android:text="@string/twitter_link"
             android:textColorLink="@android:color/white"
             android:autoLink="web"
             app:layout_constraintStart_toStartOf="parent"
@@ -140,7 +175,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
-            android:text="https://github.com/MyHush/SilentDragonAndroid"
+            android:text="@string/github_link"
             android:textColorLink="@android:color/white"
             android:autoLink="web"
             app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +213,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="16dp"
-            android:text="http://www.myhush.org/credits_SDA/"
+            android:text="@string/credits_link"
             android:textColorLink="@android:color/white"
             android:autoLink="web"
             app:layout_constraintEnd_toEndOf="parent"
@@ -196,7 +231,6 @@
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CreditText" />
-            tools:layout_editor_absoluteY="56dp" />
 
         <TextView
             android:id="@+id/License"
