@@ -21,6 +21,15 @@
         tools:replace="android:allowBackup">
 
         <activity
+            android:name="org.myhush.silentdragon.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name="org.myhush.silentdragon.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName="org.myhush.silentdragon.SendActivity"
@@ -62,7 +71,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
