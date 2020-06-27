@@ -108,9 +108,13 @@ This will produce an apk file in the following directory.
 
     SilentDragonAndroid/app/build/output/apk/release/app-release.apk
 
+and also copy it to the current directory with the filename SilentDragonAndroid-1.2.3.apk
+
 This build can be directly uploaded to Google Play.
 
 ### Building a release APK for F-Droid
+
+We should do this!
 
 ...
 
