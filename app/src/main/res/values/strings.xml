@@ -89,11 +89,13 @@
     <string name="discord">Join our Discord</string>
     <string name="discord_link" translatable="false">https://www.myhush.org/discord/</string>
     <string name="telegram">Visit our Telegram</string>
-    <string name="telegram_link" translatable="false">https://t.me/Hush_Coin</string>
+    <string name="telegram_link" translatable="false">https://www.myhush.org/telegram/</string>
     <string name="twitter">Twitter</string>
     <string name="twitter_link" translatable="false">https://www.myhush.org/twitter/</string>
     <string name="github">GitHub</string>
     <string name="github_link" translatable="false">https://github.com/MyHush/SilentDragonAndroid</string>
+    <string name="bugreports">Bug Reports</string>
+    <string name="bugreports_link" translatable="false">https://github.com/MyHush/SilentDragonAndroid/issues/new</string>
     <string name="credits">Credits</string>
     <string name="credits_link" translatable="false">http://www.myhush.org/credits_SDA/</string>
     <string name="license">License</string>
