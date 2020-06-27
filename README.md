@@ -7,7 +7,7 @@ SilentDragon Android is an Android frontend for the desktop SilentDragon that le
 ## When will it be in my favorite app store?
 
 The application is already available on the Google Play store here:
-https://play.google.com/store/apps/details?id=org.myhush.silentdragon&hl=fr
+https://play.google.com/store/apps/details?id=org.myhush.silentdragon
 
 ### Running SilentDragon
 
@@ -114,7 +114,7 @@ This build can be directly uploaded to Google Play.
 
 ### Building a release APK for F-Droid
 
-We should do this!
+We should do this & will plan to using [this](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)
 
 ...
 
