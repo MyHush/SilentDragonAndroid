@@ -98,7 +98,11 @@ the Play Store will reject the build.
 
 To create a release build navigate to the project directory in terminal and run
 
-`./gradlew clean assembleRelease`
+```
+    ./new_binary.sh 1.2.3
+```
+
+where 1.2.3 is the version number, which must match the codebase to be accepted to Google Play.
 
 This will produce an apk file in the following directory.
 
