@@ -10,7 +10,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.os.StrictMode
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
 import androidx.core.text.HtmlCompat
@@ -28,8 +27,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.myhush.silentdragon.DataModel.ConnectionStatus
 import org.myhush.silentdragon.DataModel.connStatus
+import org.myhush.silentdragon.ui.AboutActivity
+import org.myhush.silentdragon.ui.SettingsActivity
 import java.text.DecimalFormat
-
 
 class MainActivity : AppCompatActivity(),
     TransactionItemFragment.OnFragmentInteractionListener,
@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity(),
 
         // When creating, clear all the data first
         setMainStatus("")
-
 
         DataModel.init()
 
@@ -86,7 +85,6 @@ class MainActivity : AppCompatActivity(),
         }
 
         txtMainBalanceUSD.setOnClickListener {
-
 
             if(DataModel.selectedCurrency == "BTC")
                 Toast.makeText(applicationContext, "1 HUSH = ${DataModel.currencySymbols[DataModel.selectedCurrency]}${DecimalFormat(" #,##0.00000000")
@@ -130,7 +128,6 @@ class MainActivity : AppCompatActivity(),
         lblBalance.text = ""
         txtMainBalanceUSD.text = ""
         txtMainBalance.text = status
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -304,7 +301,6 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
-
     var mReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             // We've received a signal
@@ -395,7 +391,5 @@ class MainActivity : AppCompatActivity(),
         updateUI(true)
     }
 
-
     private val TAG = "MainActivity"
-
 }

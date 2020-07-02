@@ -26,12 +26,6 @@ object Deps {
         const val PAGING = "androidx.paging:paging-runtime-ktx:2.1.2"
         const val VECTOR_DRAWABLE = "androidx.vectordrawable:vectordrawable:1.0.0"
 
-        // for camera function
-        object CameraX : Version("1.0.0-beta04") {
-            val CAMERA2 = "androidx.camera:camera-camera2:1.0.0-beta04"
-            val CORE = "androidx.camera:camera-core:1.0.0-beta04"
-        }
-
         object Navigation : Version("2.1.0") {
             val FRAGMENT_KTX = "androidx.navigation:navigation-fragment-ktx:$version"
             val UI_KTX = "androidx.navigation:navigation-ui-ktx:$version"
