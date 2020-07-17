@@ -72,19 +72,20 @@ class TransactionItemFragment : Fragment() {
         amt.text = (if (tx?.type == "send") "" else "+") +  DecimalFormat("#0.00########").format(amtzec) + " " + DataModel.mainResponseData?.tokenName
 
         if (tx?.type == "send") {
-            col.setImageResource(R.color.colorAccent)
             amt.setTextColor(ContextCompat.getColor(view.context,
-                R.color.colorAccent
+                R.color.white_selected
             ))
         } else {
-            col.setImageResource(R.color.white_selected)
             amt.setTextColor(ContextCompat.getColor(view.context,
                 R.color.white_selected
             ))
         }
 
         if (param2 == "odd")
-            view.findViewById<ConstraintLayout>(R.id.outlineLayout).background = null
+            col.setBackgroundColor(ContextCompat.getColor(view.context,
+                R.color.colorPrimaryDark
+            ))
+
         return view
     }
 
