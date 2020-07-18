@@ -5,26 +5,28 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/activity_main"
         tools:context="org.myhush.silentdragon.MainActivity">
 
     <ImageView
-            android:layout_width="0dp"
-            android:layout_height="150dp" app:srcCompat="?attr/colorPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView2"
-            app:layout_constraintHorizontal_bias="0.524"
-            app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        app:srcCompat="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintTop_toTopOf="parent"/>
     <TextView
-            android:text="@string/balance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblBalance" android:layout_marginTop="24dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/txtMainBalance" android:textColor="@color/light_grey"/>
+        android:text="@string/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblBalance" android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtMainBalance" android:textColor="@color/light_grey"/>
 
     <TextView
         android:id="@+id/txtMainBalance"
@@ -61,11 +63,12 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_dragon_foreground" />
+        app:srcCompat="@mipmap/ic_dragon" />
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swiperefresh"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/bottomNav">
@@ -78,44 +81,54 @@
                 android:fillViewport="true" android:clipToPadding="false"
                 android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="parent">
             <LinearLayout android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:id="@+id/txList" android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:id="@+id/txList" android:orientation="vertical">
                 <TextView
                         android:text="@string/past_transactions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textView2" android:textStyle="bold"
-                        android:textSize="18sp" android:padding="16dp"/>
+                        android:textSize="18sp" android:padding="8dp"/>
             </LinearLayout>
         </ScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="364dp" app:layout_constraintTop_toBottomOf="@+id/imageView3"
+
             android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="32dp" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
             android:id="@+id/layoutConnect">
 
-        <ImageView
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:src="@mipmap/ic_silent_dragon_round"
-                android:id="@+id/imageView5" app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.22000003" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp"/>
+
+
+        <TextView
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblConnectionHush"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.22000003" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+
+
         <Button
                 android:text="@string/scan_qr_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@color/colorPrimaryDark"
                 android:id="@+id/btnConnect" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5"/>
+                app:layout_constraintTop_toBottomOf="@+id/lblConnectionHush"/>
         <TextView
                 android:text="@string/or"
                 android:layout_width="0dp"
@@ -128,10 +141,13 @@
                 android:text="@string/reconnect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:background="@color/colorPrimaryDark"
                 android:id="@+id/btnReconnect" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/lblConnectionOr" app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginEnd="8dp" android:textAlignment="center"/>
 
         <Button
             android:id="@+id/btnHelp"
@@ -139,6 +155,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="@string/help"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -147,6 +165,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
+            android:background="@color/colorPrimaryDark"
             android:layout_height="0dp" app:menu="@menu/menu_nav"
             android:id="@+id/bottomNav"
             app:itemIconTint="@null"

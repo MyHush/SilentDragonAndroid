@@ -50,7 +50,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/unconfirmed_transaction"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/txtUnconfirmedTx"
             app:layout_constraintTop_toBottomOf="@+id/txtUnconfirmedTx" />

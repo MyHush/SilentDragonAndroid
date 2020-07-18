@@ -177,18 +177,25 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView14" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <Button
-                    android:text="@string/view_on_block_explorer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/btnExternal"
-                    android:layout_marginTop="24dp"
-                    app:layout_constraintTop_toBottomOf="@+id/layoutMemo"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginBottom="16dp" app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp" app:layout_constraintVertical_bias="0.0"
-                    android:background="@color/colorAccent" android:textColor="@android:color/white"
-                    android:paddingLeft="10dp" android:paddingRight="10dp"/>
+                android:id="@+id/btnExternal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/colorPrimaryDark"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/view_on_block_explorer"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutMemo"
+                app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

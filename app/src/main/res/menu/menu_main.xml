@@ -4,15 +4,12 @@
       xmlns:compat="http://schemas.android.com/apk/res-auto"
       tools:context="org.myhush.silentdragon.MainActivity">
     <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          app:showAsAction="never"/>
+          android:title="@string/action_settings"/>
     <item android:id="@+id/action_about"
         android:title="@string/action_about"
         android:orderInCategory="100"
         app:showAsAction="never"/>
     <item android:title="@string/refresh" android:id="@+id/action_refresh"
           compat:showAsAction="ifRoom"
-
           android:icon="@drawable/refresh"/>
 </menu>
