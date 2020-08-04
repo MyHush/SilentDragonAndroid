@@ -11,7 +11,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.0'    // does this need 4.0 or another version?
+        classpath 'com.android.tools.build:gradle:3.6.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${Deps.kotlinVersion}"
         classpath 'io.fabric.tools:gradle:1.31.2'
 

@@ -52,7 +52,8 @@
 
         <activity
             android:name="org.myhush.silentdragon.QrReaderActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
         <activity
             android:name="org.myhush.silentdragon.TxDetailsActivity"
             android:label="@string/title_activity_tx_details"

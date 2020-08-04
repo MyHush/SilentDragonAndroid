@@ -14,23 +14,16 @@ import android.text.Html
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Button
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.text.HtmlCompat
 import com.beust.klaxon.Klaxon
 import com.google.android.material.snackbar.Snackbar
-import com.google.zxing.client.android.Intents
-import com.google.zxing.client.android.Intents.Scan.QR_CODE_MODE
-import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_qr_reader.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.myhush.silentdragon.DataModel.ConnectionStatus
 import org.myhush.silentdragon.DataModel.connStatus
@@ -45,9 +38,6 @@ class MainActivity : AppCompatActivity(),
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    // IntentIntegrator is part of zxing-android-embedded to read QR codes
-    private lateinit var intentIntegrator: IntentIntegrator
-
     override fun onCreate(savedInstanceState: Bundle?) {
         //StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build()) // TESTING
 
@@ -60,20 +50,17 @@ class MainActivity : AppCompatActivity(),
 
         // When creating, clear all the data first
         setMainStatus("")
+
         DataModel.init()
 
-        intentIntegrator = IntentIntegrator(this)
-
         btnConnect.setOnClickListener {
-            //startActivity(Intent(this@MainActivity, QrReaderActivity::class.java))
-            run {
-                intentIntegrator.setDesiredBarcodeFormats(QR_CODE_MODE)
-                intentIntegrator.setCameraId(0)     // set to back camera
-                intentIntegrator.setBeepEnabled(true)
-                intentIntegrator.setOrientationLocked(false)    // trying to force portrait here, but it's not working
-                intentIntegrator.setPrompt("Go to Apps -> Connect mobile app on your desktop wallet and scan the QR Code to connect")
-                intentIntegrator.initiateScan()
-            }
+            val intent = Intent(this, QrReaderActivity::class.java)
+            intent.putExtra("REQUEST_CODE",
+                QrReaderActivity.REQUEST_CONNDATA
+            )
+            startActivityForResult(intent,
+                QrReaderActivity.REQUEST_CONNDATA
+            )
         }
 
         btnReconnect.setOnClickListener {
@@ -353,39 +340,49 @@ class MainActivity : AppCompatActivity(),
         super.onDestroy()
     }
 
-    // the toasts work here so commenting out
-    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-        var result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-
-        if(result != null){
-
-            if(result.contents != null){
-                //Toast.makeText(applicationContext, result.contents,Toast.LENGTH_LONG).show()
-                Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show();
-            } else {
-                //Toast.makeText(applicationContext,"scan failed",Toast.LENGTH_SHORT).show()
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data)
-        }
-    }*/
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        var result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        when (requestCode) {
+            QrReaderActivity.REQUEST_CONNDATA -> {
+                if (resultCode == Activity.RESULT_OK) {
+                    Log.i(TAG, "Main Activity got result for QrCode: ${data?.dataString}")
 
-        if(result != null){
-            if(result.contents != null){
-                Log.d("MainActivity", "Scanned" + result.contents)
-                Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show();
-                processMobileConnectorText(result.contents)
-            } else {
-                Log.d("MainActivity", "Cancelled scan")
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
+                    // Check to make sure that the result is an actual address
+                    if (!(data?.dataString ?: "").startsWith("ws")) {
+                        Toast.makeText(
+                            applicationContext,
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        return
+                    }
+
+                    val conComponents = data?.dataString?.split(",")
+                    if (conComponents?.size ?: 0 < 2 || conComponents?.size ?: 0 > 3) {
+                        Toast.makeText(
+                            applicationContext,
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        return
+                    }
+
+                    val conString = conComponents!![0]
+                    val secretHex = conComponents[1]
+                    val allowInternetConnections =
+                        if (conComponents.size == 3) conComponents[2] == "1" else false
+
+                    DataModel.setSecretHex(secretHex)
+                    DataModel.setConnString(
+                        conString,
+                        applicationContext
+                    )
+                    DataModel.setAllowInternet(
+                        allowInternetConnections
+                    )
+
+                    ConnectionManager.refreshAllData()
+                }
             }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
@@ -398,16 +395,6 @@ class MainActivity : AppCompatActivity(),
         DataModel.clear()
         swiperefresh.isRefreshing = false
         updateUI(true)
-    }
-
-    private fun processMobileConnectorText(qrcodeInfo: String) {
-        if (qrcodeInfo.startsWith("ws")) {
-            Log.i(TAG, "It's a ws connection")
-            //Toast.makeText(this, "YEAH " + qrcodeInfo.toString(), Toast.LENGTH_SHORT).show();
-        } else {
-            Log.i(TAG, "Not a ws connection")
-            //Toast.makeText(this, "Not a ws connection", Toast.LENGTH_SHORT).show();
-        }
     }
 
     private val TAG = "MainActivity"

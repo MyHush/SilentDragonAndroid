@@ -9,23 +9,15 @@
     tools:context="org.myhush.silentdragon.QrReaderActivity"
     tools:showIn="@layout/activity_qr_reader">
 
-    <SurfaceView
-        android:id="@+id/camera_view"
-        android:layout_width="0dp"
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/barcodeView"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtQrCodeHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:src="#ee000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:zxing_scanner_layout="@layout/custom_qrcode_layout" />
 
     <TextView
         android:id="@+id/txtQrCodeHelp"
