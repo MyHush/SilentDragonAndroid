@@ -1,5 +1,5 @@
 // Copyright 2019-2020 The Hush developers
-package org.myhush.silentdragon
+package org.myhush.silentdragon.ui
 
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,10 @@ import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_settings.*
+import org.myhush.silentdragon.ConnectionManager
+import org.myhush.silentdragon.DataModel
+import org.myhush.silentdragon.R
+import org.myhush.silentdragon.SilentDragonApp
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -19,7 +23,10 @@ class SettingsActivity : AppCompatActivity() {
         updateUI()
 
         btnDisconnect.setOnClickListener {
-            DataModel.setConnString(null, applicationContext)
+            DataModel.setConnString(
+                null,
+                applicationContext
+            )
             DataModel.clear()
             ConnectionManager.closeConnection()
 
@@ -47,7 +54,9 @@ class SettingsActivity : AppCompatActivity() {
                 var pref: SharedPreferences = getSharedPreferences("MainFile",0)
 
                 var editor: SharedPreferences.Editor = pref.edit()
-                editor.putString("currency", DataModel.selectedCurrency)
+                editor.putString("currency",
+                    DataModel.selectedCurrency
+                )
 
                 editor.commit()
             }
@@ -79,11 +88,15 @@ class SettingsActivity : AppCompatActivity() {
 
     fun updateUI() {
         fillSpinner()
-        txtSettingsConnString.text = DataModel.getConnString(SilentDragonApp.appContext!!)
+        txtSettingsConnString.text = DataModel.getConnString(
+            SilentDragonApp.appContext!!
+        )
             ?: getString(R.string.not_connected)
 
         chkDisallowInternet.isChecked = !DataModel.getGlobalAllowInternet()
 
-        lblServerVersion.text = DataModel.mainResponseData?.serverversion ?: getString(R.string.not_connected)
+        lblServerVersion.text = DataModel.mainResponseData?.serverversion ?: getString(
+            R.string.not_connected
+        )
     }
 }

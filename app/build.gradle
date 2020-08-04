@@ -1,18 +1,22 @@
 // Copyright 2019-2020 The Hush developers
 // Released under the GPLv3
+import org.myhush.silentdragon.Deps
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    ndkVersion "21.1.6352462"
+    compileSdkVersion Deps.compileSdkVersion
+    buildToolsVersion Deps.buildToolsVersion
 
     defaultConfig {
         applicationId "org.myhush.silentdragon"
-        minSdkVersion 17
-        targetSdkVersion 29
+        minSdkVersion Deps.minSdkVersion
+        targetSdkVersion Deps.targetSdkVersion
+        multiDexEnabled true
         versionCode 4
         versionName "0.5.16"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -29,6 +33,15 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
 }
@@ -51,19 +64,48 @@ if (secretsPropertiesFile.exists()) {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation Deps.Kotlin.STDLIB
+    implementation Deps.Kotlin.Coroutines.ANDROID
+    implementation Deps.Kotlin.Coroutines.CORE
+
+    implementation Deps.AndroidX.APPCOMPAT
+    implementation Deps.AndroidX.CONSTRAINT_LAYOUT
+    implementation Deps.AndroidX.CORE_KTX
+    implementation Deps.AndroidX.FRAGMENT_KTX
+    implementation Deps.AndroidX.LEGACY
+    implementation Deps.AndroidX.MULTIDEX
+    implementation Deps.AndroidX.PAGING
+    implementation Deps.AndroidX.VECTOR_DRAWABLE
+    implementation Deps.AndroidX.Navigation.FRAGMENT_KTX
+    implementation Deps.AndroidX.Navigation.UI_KTX
+
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.3'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.beust:klaxon:5.0.1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.gms:play-services-vision:17.0.2'
-    implementation 'androidx.vectordrawable:vectordrawable:1.0.0'
     implementation 'com.github.joshjdevl.libsodiumjni:libsodium-jni-aar:2.0.1'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    //implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0@aar'
+    implementation 'com.google.zxing:core:3.3.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+    // from Demo App SDK
+    implementation Deps.Hush.ANDROID_WALLET_PLUGINS
+    implementation Deps.Hush.Sdk.MAINNET
+    implementation Deps.Hush.KOTLIN_BIP39
+    implementation Deps.Grpc.ANDROID
+    implementation Deps.Grpc.OKHTTP
+    implementation Deps.Grpc.PROTOBUG
+    implementation Deps.Grpc.STUB
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    implementation Deps.AndroidX.Room.ROOM_KTX
+    implementation Deps.AndroidX.PAGING
+    implementation 'com.google.guava:guava:27.0.1-android'
+    kapt           Deps.AndroidX.Room.ROOM_COMPILER
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
 }

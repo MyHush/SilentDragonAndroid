@@ -1,11 +1,13 @@
 // Copyright 2019-2020 The Hush developers
 // Released under the GPLv3
-package org.myhush.silentdragon
+package org.myhush.silentdragon.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import org.myhush.silentdragon.MainActivity
+import org.myhush.silentdragon.R
 
 class SplashActivity : AppCompatActivity() {
 
@@ -18,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             // This method will be executed once the timer is over
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
 
             // close this activity
             finish()

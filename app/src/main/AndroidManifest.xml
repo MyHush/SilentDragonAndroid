@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="org.myhush.silentdragon">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -21,7 +22,7 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name="org.myhush.silentdragon.SplashActivity"
+            android:name="org.myhush.silentdragon.ui.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +31,7 @@
         </activity>
 
         <activity
-            android:name="org.myhush.silentdragon.SettingsActivity"
+            android:name="org.myhush.silentdragon.ui.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:parentActivityName="org.myhush.silentdragon.SendActivity"
             android:screenOrientation="portrait">
@@ -40,7 +41,7 @@
         </activity>
 
         <activity
-            android:name="org.myhush.silentdragon.AboutActivity"
+            android:name="org.myhush.silentdragon.ui.AboutActivity"
             android:label="@string/title_activity_about"
             android:parentActivityName="org.myhush.silentdragon.SendActivity"
             android:screenOrientation="portrait">
@@ -51,7 +52,8 @@
 
         <activity
             android:name="org.myhush.silentdragon.QrReaderActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
         <activity
             android:name="org.myhush.silentdragon.TxDetailsActivity"
             android:label="@string/title_activity_tx_details"
@@ -70,7 +72,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

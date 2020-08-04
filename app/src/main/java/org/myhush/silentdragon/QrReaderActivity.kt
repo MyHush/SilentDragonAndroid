@@ -2,29 +2,26 @@
 package org.myhush.silentdragon
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.appcompat.app.AppCompatActivity
+import android.text.InputType
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.SurfaceHolder
-import android.view.SurfaceView
-import com.google.android.gms.vision.CameraSource
-import com.google.android.gms.vision.Detector
-import com.google.android.gms.vision.barcode.Barcode
-import com.google.android.gms.vision.barcode.BarcodeDetector
-import kotlinx.android.synthetic.main.activity_qr_reader.*
-import java.io.IOException
-import android.app.AlertDialog
-import android.text.InputType
 import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.zxing.ResultPoint
+import com.journeyapps.barcodescanner.BarcodeCallback
+import com.journeyapps.barcodescanner.BarcodeResult
+import com.journeyapps.barcodescanner.CaptureManager
+import kotlinx.android.synthetic.main.activity_qr_reader.*
 
 class QrReaderActivity : AppCompatActivity() {
+    lateinit var captureManager: CaptureManager
 
     companion object {
         const val REQUEST_ADDRESS = 1
@@ -43,7 +40,26 @@ class QrReaderActivity : AppCompatActivity() {
 
         lblErrorMsg.text = ""
 
-        setupCamera()
+        btnQrCodeCancel.setOnClickListener {
+            setResult(Activity.RESULT_CANCELED)
+            finish()
+        }
+
+        captureManager = CaptureManager(this, barcodeView)
+        captureManager.initializeFromIntent(intent, savedInstanceState)
+
+        barcodeView.decodeSingle(object: BarcodeCallback{
+            override fun barcodeResult(result: BarcodeResult?) {
+                result?.let {
+                    if (result.text != null) {
+                        processQrCodeText(result.text)
+                    }
+                }
+            }
+            override fun possibleResultPoints(resultPoints: MutableList<ResultPoint>?) {
+            }
+        })
+
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
@@ -92,63 +108,19 @@ class QrReaderActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupCamera() {
-        val cameraView = findViewById<SurfaceView>(R.id.camera_view)
+    override fun onPause() {
+        super.onPause()
+        captureManager.onPause()
+    }
 
-        val barcodeDetector = BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build()
-        val cameraSource = CameraSource.Builder(this, barcodeDetector)
-                                .setAutoFocusEnabled(true)
-                                .setRequestedPreviewSize(640, 480)
-                                .build()
+    override fun onResume() {
+        super.onResume()
+        captureManager.onResume()
+    }
 
-
-        cameraView.holder.addCallback(object : SurfaceHolder.Callback {
-            override fun surfaceCreated(holder: SurfaceHolder) {
-                try {
-                    if (ContextCompat.checkSelfPermission(applicationContext, android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(this@QrReaderActivity, arrayOf(android.Manifest.permission.CAMERA), 50)
-                    } else {
-                        cameraSource.start(cameraView.holder)
-
-                        val w = cameraView.width
-                        val h = cameraView.height
-                        val scale = cameraSource.previewSize.width.toDouble() / cameraSource.previewSize.height.toDouble()
-
-                        val scaleWidth = (h.toDouble() / scale).toInt()
-
-                        cameraView.layout((w - scaleWidth)/2, 0, scaleWidth , h)
-                        println("Preview size: ${cameraSource.previewSize}")
-                    }
-                } catch (ie: IOException) {
-                    Log.e("CAMERA SOURCE", ie.toString())
-                }
-            }
-
-            override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {}
-
-            override fun surfaceDestroyed(holder: SurfaceHolder) {
-                cameraSource.stop()
-            }
-        })
-
-        btnQrCodeCancel.setOnClickListener {
-            setResult(Activity.RESULT_CANCELED)
-            finish()
-        }
-
-        barcodeDetector.setProcessor(object : Detector.Processor<Barcode> {
-            override fun release() {}
-
-            override fun receiveDetections(detections: Detector.Detections<Barcode>) {
-                val barcodes = detections.detectedItems
-                if (barcodes.size() != 0) {
-                    runOnUiThread {
-                        val barcodeInfo = barcodes.valueAt(0).displayValue
-                        processText(barcodeInfo)
-                    }
-                }
-            }
-        })
+    override fun onDestroy() {
+        super.onDestroy()
+        captureManager.onDestroy()
     }
 
     private fun processText(barcodeInfo: String) {
@@ -174,15 +146,13 @@ class QrReaderActivity : AppCompatActivity() {
                 err = err.substring(0, 22) + "...." + err.substring(err.length - 22, err.length)
             }
             lblErrorMsg.text = getString(R.string.is_not_a_valid_hush_address, err)
-
             return
         }
-
 
         // The data seems valid, so return it.
         val data = Intent()
 
-        // Payment URIs are often formatted as "hush:<addr>", but this casuses parsing problems.
+        // Payment URIs are often formatted as "hush:<addr>", but this causes parsing problems.
         // So change it to hush://<addr>, so that it parses properly
         if (barcodeInfo.startsWith("hush:") && !barcodeInfo.startsWith("hush://")) {
             data.data = Uri.parse(barcodeInfo.replaceFirst("hush:", "hush://"))
@@ -192,6 +162,23 @@ class QrReaderActivity : AppCompatActivity() {
 
         setResult(Activity.RESULT_OK, data)
         finish()
+    }
+
+    private fun processQrCodeText(qrcodeInfo: String) {
+        if (qrcodeInfo.startsWith("ws")) {
+            Log.i(TAG, "It's a ws connection")
+            //Toast.makeText(this, "YEAH: " + qrcodeInfo, Toast.LENGTH_SHORT).show();
+
+            val data = Intent()     // The data seems valid, so return it
+            data.data = Uri.parse(qrcodeInfo)
+            setResult(Activity.RESULT_OK, data)
+            finish()
+        } else {
+            Log.i(TAG, "Not a ws connection")
+            //Toast.makeText(this, "Not a ws connection", Toast.LENGTH_SHORT).show();
+            setResult(Activity.RESULT_CANCELED)
+            finish()
+        }
     }
 
     private val TAG = "QrReader"

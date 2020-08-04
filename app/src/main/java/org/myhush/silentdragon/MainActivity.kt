@@ -10,11 +10,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.os.StrictMode
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.android.material.snackbar.Snackbar
-import androidx.core.text.HtmlCompat
-import androidx.appcompat.app.AppCompatActivity
 import android.text.Html
 import android.util.Log
 import android.view.Menu
@@ -23,13 +18,18 @@ import android.widget.Button
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.text.HtmlCompat
 import com.beust.klaxon.Klaxon
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.myhush.silentdragon.DataModel.ConnectionStatus
 import org.myhush.silentdragon.DataModel.connStatus
+import org.myhush.silentdragon.ui.AboutActivity
+import org.myhush.silentdragon.ui.SettingsActivity
 import java.text.DecimalFormat
-
 
 class MainActivity : AppCompatActivity(),
     TransactionItemFragment.OnFragmentInteractionListener,
@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity(),
 
         // When creating, clear all the data first
         setMainStatus("")
-
 
         DataModel.init()
 
@@ -86,7 +85,6 @@ class MainActivity : AppCompatActivity(),
         }
 
         txtMainBalanceUSD.setOnClickListener {
-
 
             if(DataModel.selectedCurrency == "BTC")
                 Toast.makeText(applicationContext, "1 HUSH = ${DataModel.currencySymbols[DataModel.selectedCurrency]}${DecimalFormat(" #,##0.00000000")
@@ -130,7 +128,6 @@ class MainActivity : AppCompatActivity(),
         lblBalance.text = ""
         txtMainBalanceUSD.text = ""
         txtMainBalance.text = status
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -297,13 +294,11 @@ class MainActivity : AppCompatActivity(),
             R.id.action_refresh -> {
                 swiperefresh.isRefreshing = true
                 ConnectionManager.refreshAllData()
-
                 return true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 
     var mReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -346,28 +341,35 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        when(requestCode) {
+        when (requestCode) {
             QrReaderActivity.REQUEST_CONNDATA -> {
                 if (resultCode == Activity.RESULT_OK) {
                     Log.i(TAG, "Main Activity got result for QrCode: ${data?.dataString}")
 
                     // Check to make sure that the result is an actual address
                     if (!(data?.dataString ?: "").startsWith("ws")) {
-                        Toast.makeText(applicationContext,
-                            getString(R.string.is_not_a_valid_connection_string, data?.dataString), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            applicationContext,
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString),
+                            Toast.LENGTH_SHORT
+                        ).show()
                         return
                     }
 
                     val conComponents = data?.dataString?.split(",")
                     if (conComponents?.size ?: 0 < 2 || conComponents?.size ?: 0 > 3) {
-                        Toast.makeText(applicationContext,
-                            getString(R.string.is_not_a_valid_connection_string, data?.dataString), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            applicationContext,
+                            getString(R.string.is_not_a_valid_connection_string, data?.dataString),
+                            Toast.LENGTH_SHORT
+                        ).show()
                         return
                     }
 
                     val conString = conComponents!![0]
                     val secretHex = conComponents[1]
-                    val allowInternetConnections = if (conComponents.size == 3) conComponents[2] == "1" else false
+                    val allowInternetConnections =
+                        if (conComponents.size == 3) conComponents[2] == "1" else false
 
                     DataModel.setSecretHex(secretHex)
                     DataModel.setConnString(
@@ -395,7 +397,5 @@ class MainActivity : AppCompatActivity(),
         updateUI(true)
     }
 
-
     private val TAG = "MainActivity"
-
 }

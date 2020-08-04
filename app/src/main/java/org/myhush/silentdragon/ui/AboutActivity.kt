@@ -1,9 +1,11 @@
 // Copyright 2019-2020 The Hush developers
-package org.myhush.silentdragon
+package org.myhush.silentdragon.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_about.lblVersionName
+import org.myhush.silentdragon.BuildConfig
+import org.myhush.silentdragon.R
 
 class AboutActivity : AppCompatActivity() {
 

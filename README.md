@@ -63,6 +63,10 @@ Make sure you have Gradle 5.4.x or higher, 5.4.1 is known to work:
 
     ./gradlew wrapper --gradle-version=5.4.1
 
+Or you can use Android Studio on Linux, OS X, or Windows:
+
+    Make sure to install ndkVersion 21.1.6352462
+
 ## Release Build Process
 
 The first time you create a release build you'll need to create a keystore file and prepare a properties file. The
@@ -114,7 +118,7 @@ This build can be directly uploaded to Google Play.
 
 ### Building a release APK for F-Droid
 
-We should do this & will plan to using [this](https://gitlab.com/fdroid/fdroiddata/blob/master/CONTRIBUTING.md)
+This will be pursued once lite wallet functionality exists in the SilentDragonAndroid wallet.
 
 ...
 
