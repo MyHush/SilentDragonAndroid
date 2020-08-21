@@ -1,15 +1,18 @@
-# SilentDragon Android - Android frontend for SilentDragon
+# SilentDragon Android
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-green)](https://github.com/MyHush/SilentDragonAndroid/blob/master/LICENSE)
 
 SilentDragon Android is an Android frontend for the desktop SilentDragon that lets you send and receive shielded payments from your mobile phone.
 
 <img height=50% width=50% src="https://raw.githubusercontent.com/MyHush/SilentDragonAndroid/master/SDA.jpg">
 
-## When will it be in my favorite app store?
+## Installation
 
-The application is already available on the Google Play store here:
-https://play.google.com/store/apps/details?id=org.myhush.silentdragon
+The minimum supported Android version is 4.4.x KitKat. There are two ways to install:
 
-### Running SilentDragon
+1. Via the [Google Play Store](https://play.google.com/store/apps/details?id=org.myhush.silentdragon).
+1. Direct APK install available at the [Releases page](https://github.com/MyHush/SilentDragonAndroid/releases). You will need to allow `Install from untrusted sources` on your Android phone in order to install from this source.
+
+## Running SilentDragon
 
 In order to let your Android phone connect to your desktop, you need to run the desktop [SilentDragon](https://github.com/MyHush/SilentDragon), and sync fully. This is not a full node
 on your Android (your poor battery!). It's a remote control for your full node.
@@ -21,21 +24,15 @@ is about 900MB on disk.
 After your node is synced, go to `Apps -> Connect Mobile App` to view the
 connection QR Code, which you can scan from the Android App.
 
-## Dev Download
-
-You can also head over to the [Releases page](https://github.com/MyHush/SilentDragonAndroid/releases) to download an APK. Please report bugs if you see any!
-
-### Install the Android APK directly
-
-If you're installing the APK directly, you'll need to allow `Install from untrusted sources` on your Android phone.
-
 ### Bugs???
 
 You can file issues in the [issues tab](https://github.com/MyHush/SilentDragonAndroid/issues).
 
 We appreciate them! Please follow the Github issue template, when reasonable.
 
-### Compiling from source
+## Compiling from source
+
+You can also compile and run from source.
 
 On OS X:
 
@@ -65,7 +62,10 @@ Make sure you have Gradle 5.4.x or higher, 5.4.1 is known to work:
 
 Or you can use Android Studio on Linux, OS X, or Windows:
 
-    Make sure to install ndkVersion 21.1.6352462
+    Make sure to install ndkVersion 21.1.6352462.
+    Clone the repository and open the project in Android Studio.
+    Android Studio will automatically run the initial build process.
+    Click the Run button to launch the app after the build process is complete.
 
 ## Release Build Process
 
@@ -120,9 +120,11 @@ This build can be directly uploaded to Google Play.
 
 This will be pursued once lite wallet functionality exists in the SilentDragonAndroid wallet.
 
-...
+## Contributing
 
+Contributions to this project are welcome and encouraged.
 
-# License
+## License
 
-GNU Public License v3
+This project is under the GNU Public License v3. For the full license, see [LICENSE](LICENSE).
+
