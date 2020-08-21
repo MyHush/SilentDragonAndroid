@@ -18,7 +18,7 @@ android {
         targetSdkVersion Deps.targetSdkVersion
         multiDexEnabled true
         versionCode 4
-        versionName "0.5.16"
+        versionName "0.5.17"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
