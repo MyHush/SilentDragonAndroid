@@ -1,13 +1,24 @@
 # SilentDragon Android
-[![GitHub license](https://img.shields.io/badge/license-GPLv3-green)](https://github.com/MyHush/SilentDragonAndroid/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://github.com/MyHush/SilentDragonAndroid/blob/master/LICENSE)
+[![GitHub version](https://badge.fury.io/gh/jahway603%2FSilentDragonAndroid.svg)](https://badge.fury.io/gh/jahway603%2FSilentDragonAndroid)
+[![Github All Releases](https://img.shields.io/github/downloads/MyHush/SilentDragonAndroid/total.svg)]()
 
 <p align="center">
+    <a href="https://twitter.com/MyHushTeam">
+        <img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fmyhushteam"
+            alt="MyHushTeam's Twitter"></a>
     <a href="https://twitter.com/intent/follow?screen_name=MyHushTeam">
         <img src="https://img.shields.io/twitter/follow/MyHushTeam?style=social&logo=twitter"
             alt="follow on Twitter"></a>
+    <a href="https://fosstodon.org/@myhushteam">
+        <img src="https://img.shields.io/badge/Mastodon-MyHushTeam-blue"
+            alt="follow on Mastodon"></a>
+    <a href="https://www.reddit.com/r/Myhush/">
+        <img src="https://img.shields.io/reddit/subreddit-subscribers/Myhush?style=social"
+            alt="MyHushTeam's Reddit"></a>
 </p>
 
-SilentDragon Android is an Android frontend for the desktop SilentDragon that lets you send and receive shielded payments from your mobile phone.
+SilentDragon Android is an Android frontend for the desktop SilentDragon that lets you send and receive shielded payments from your mobile phone. We are currently working on implementing Hush Lite Wallet and HushChat functionality, so follow us on Twitter or Mastodon to stay updated.
 
 <img height=50% width=50% src="https://raw.githubusercontent.com/MyHush/SilentDragonAndroid/master/SDA.jpg">
 
