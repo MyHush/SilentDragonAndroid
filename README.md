@@ -18,7 +18,7 @@
             alt="MyHushTeam's Reddit"></a>
 </p>
 
-SilentDragon Android is an Android frontend for the desktop SilentDragon that lets you send and receive shielded payments from your mobile phone. We are currently working on implementing Hush Lite Wallet and HushChat functionality, so follow us on Twitter or Mastodon to stay updated. After this functionality is implemented, we are planning on making an F-Droid release.
+SilentDragon Android is an Android frontend for the desktop [SilentDragon](https://github.com/MyHush/SilentDragon) or [SilentDragonLite](https://github.com/MyHush/SilentDragonLite) that lets you send and receive shielded payments from your mobile phone. We are currently working on implementing Lite Wallet and HushChat functionality on Android, so follow us on our [Twitter](https://twitter.com/MyHushTeam) or [Mastodon](https://fosstodon.org/@myhushteam) to stay updated. After this functionality is implemented, we are planning on making an F-Droid release.
 
 <img height=50% width=50% src="https://raw.githubusercontent.com/MyHush/SilentDragonAndroid/master/SDA.jpg">
 
