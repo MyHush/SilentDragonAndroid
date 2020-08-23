@@ -77,7 +77,9 @@
 
     <!-- activity_settings -->
     <string name="disconnect">Disconnect</string>
+    <string name="change_wormhole">Change Wormhole</string>
     <string name="silentDragon_connection_address">SilentDragon connection address</string>
+    <string name="wormhole_settings">Wormhole Settings</string>
     <string name="disallow_routing_over_external_service">Disallow routing over external service/internet</string>
     <string name="only_attempts_direct_connection">If checked, the app will only attempt a direct connection to SilentDragon, and not route traffic over the internet via the WormHole service at wormhole.myhush.org . Please see the https://myhush.org/silentdragon for more details</string>
     <string name="currency">Currency</string>
