@@ -96,7 +96,7 @@ the Google Play Store. For further information, [click here](release_build_proce
 
 Contributions to this project are welcome and encouraged.
 
-## License
+## Support
 
-This project is under the GNU Public License v3. For the full license, see [LICENSE](LICENSE).
+For support or other questions, join us on [Discord](https://myhush.org/discord), or tweet at [@MyHushTeam](https://twitter.com/MyHushTeam), or toot at our [Mastodon](https://fosstodon.org/@myhushteam), or join [Telegram](http://myhush.org/telegram) or [file an issue](https://github.com/MyHush/SilentDragonAndroid/issues).
 
