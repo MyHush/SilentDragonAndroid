@@ -94,6 +94,8 @@
     <string name="telegram_link" translatable="false">https://www.myhush.org/telegram/</string>
     <string name="twitter">Twitter</string>
     <string name="twitter_link" translatable="false">https://www.myhush.org/twitter/</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="mastodon_link" translatable="false">https://fosstodon.org/@myhushteam/</string>
     <string name="github">GitHub</string>
     <string name="github_link" translatable="false">https://github.com/MyHush/SilentDragonAndroid</string>
     <string name="bugreports">Bug Reports</string>

@@ -159,6 +159,41 @@
             app:layout_constraintTop_toBottomOf="@+id/TwitterText" />
 
         <TextView
+            android:id="@+id/Mastodon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/mastodon"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+        <TextView
+            android:id="@+id/MastodonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="@string/mastodon_link"
+            android:textColorLink="@android:color/white"
+            android:autoLink="web"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Mastodon" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/listDivider"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MastodonText" />
+
+        <TextView
             android:id="@+id/Github"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -167,7 +202,7 @@
             android:text="@string/github"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider3" />
+            app:layout_constraintTop_toBottomOf="@id/divider4" />
 
         <TextView
             android:id="@+id/GithubText"
@@ -182,7 +217,7 @@
             app:layout_constraintTop_toBottomOf="@+id/Github" />
 
         <View
-            android:id="@+id/divider4"
+            android:id="@+id/divider5"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
@@ -204,7 +239,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider4" />
+            app:layout_constraintTop_toBottomOf="@id/divider5" />
 
         <TextView
             android:id="@+id/BugReportsText"
@@ -221,7 +256,7 @@
             app:layout_constraintTop_toBottomOf="@id/BugReports" />
 
         <View
-            android:id="@+id/divider9"
+            android:id="@+id/divider6"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
@@ -243,7 +278,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider9" />
+            app:layout_constraintTop_toBottomOf="@id/divider6" />
 
         <TextView
             android:id="@+id/CreditText"
@@ -260,7 +295,7 @@
             app:layout_constraintTop_toBottomOf="@id/Credit" />
 
         <View
-            android:id="@+id/divider5"
+            android:id="@+id/divider7"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
@@ -282,7 +317,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider5" />
+            app:layout_constraintTop_toBottomOf="@id/divider7" />
 
         <TextView
             android:id="@+id/LicenseText"
@@ -297,7 +332,7 @@
             app:layout_constraintTop_toBottomOf="@+id/License" />
 
         <View
-            android:id="@+id/divider6"
+            android:id="@+id/divider8"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="2dp"
@@ -308,7 +343,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/LicenseText" />
 
-
         <TextView
             android:id="@+id/Version"
             android:layout_width="wrap_content"
@@ -318,7 +352,7 @@
             android:text="@string/sda_version"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider6" />
+            app:layout_constraintTop_toBottomOf="@id/divider8" />
 
         <TextView
             android:id="@+id/lblVersionName"
@@ -332,7 +366,7 @@
             app:layout_constraintTop_toBottomOf="@+id/Version" />
 
         <View
-            android:id="@+id/divider7"
+            android:id="@+id/divider9"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
@@ -354,7 +388,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider7" />
+            app:layout_constraintTop_toBottomOf="@id/divider9" />
 
         <TextView
             android:id="@+id/CopyrightText"
@@ -369,7 +403,7 @@
             app:layout_constraintTop_toBottomOf="@+id/Copyright" />
 
         <View
-            android:id="@+id/divider8"
+            android:id="@+id/divider_last"
             android:layout_width="0dp"
             android:layout_height="2dp"
             android:layout_marginStart="8dp"
