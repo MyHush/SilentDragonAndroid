@@ -2,12 +2,10 @@
 package org.myhush.silentdragon.ui
 
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Adapter
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_settings.*
 import org.myhush.silentdragon.ConnectionManager
 import org.myhush.silentdragon.DataModel
@@ -21,6 +19,9 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         updateUI()
+
+        val result = findViewById<View>(R.id.currentWormhole) as TextView
+        val myhush_default_wormhole : String = "https://wormhole.myhush.org"
 
         btnDisconnect.setOnClickListener {
             DataModel.setConnString(
@@ -43,6 +44,20 @@ class SettingsActivity : AppCompatActivity() {
             updateUI()
         }
 
+        btnSetWormhole.setOnClickListener {
+            val inputText = findViewById<View>(R.id.wormholeInput) as EditText
+            val customWormhole = inputText.getText().toString()
+
+            // set to default if nothing in wormhole entry EditText object
+            if (inputText.text.isBlank()) {
+                result.setText(myhush_default_wormhole)
+                Toast.makeText(this, "YEAH: " + myhush_default_wormhole, Toast.LENGTH_SHORT).show()
+            } else {
+                result.setText(customWormhole)
+                Toast.makeText(this, "YEAH: " + customWormhole, Toast.LENGTH_SHORT).show()
+            }
+        }
+
         spinnerCurrency!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
@@ -51,10 +66,11 @@ class SettingsActivity : AppCompatActivity() {
                 DataModel.selectedCurrency = cur // Set cur as selected
 
                 // Save currency
-                var pref: SharedPreferences = getSharedPreferences("MainFile",0)
+                var pref: SharedPreferences = getSharedPreferences("MainFile", 0)
 
                 var editor: SharedPreferences.Editor = pref.edit()
-                editor.putString("currency",
+                editor.putString(
+                    "currency",
                     DataModel.selectedCurrency
                 )
 
@@ -79,7 +95,11 @@ class SettingsActivity : AppCompatActivity() {
         }
 
 
-        var adapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_spinner_item, items)
+        var adapter: ArrayAdapter<String> = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            items
+        )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinnerCurrency.adapter = adapter

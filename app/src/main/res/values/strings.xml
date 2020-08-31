@@ -14,6 +14,8 @@
     <string name="address">Address</string>
     <string name="cancel">Cancel</string>
     <string name="amount">Amount</string>
+    <string name="wormhole">Wormhole</string>
+    <string name="test_string" translatable="false">Test String</string>
 
     <!-- TxDetailsActivity.kt -->
     <string name="reply">Reply</string>
@@ -82,8 +84,12 @@
     <string name="wormhole_settings">Wormhole Settings</string>
     <string name="disallow_routing_over_external_service">Disallow routing over external service/internet</string>
     <string name="only_attempts_direct_connection">If checked, the app will only attempt a direct connection to SilentDragon, and not route traffic over the internet via the WormHole service at wormhole.myhush.org . Please see the https://myhush.org/silentdragon for more details</string>
+    <string name="wormhole_custom_title">Current Wormhole:</string>
+    <string name="wormhole_custom">Set custom Wormhole</string>
+    <string name="myhush_default_wormhole" translatable="false">https://wormhole.myhush.org</string>
     <string name="currency">Currency</string>
     <string name="silentdragon_version">SilentDragon version</string>
+    <string name="change_below">Enter wormhole link here and click below to set</string>
 
     <!-- activity_about.xml -->
     <string name="website">Visit our website</string>
