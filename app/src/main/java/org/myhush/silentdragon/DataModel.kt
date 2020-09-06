@@ -12,6 +12,7 @@ import org.libsodium.jni.NaCl
 import org.libsodium.jni.Sodium
 import java.math.BigInteger
 
+
 object DataModel {
     class MainResponse(val balance: Double, val maxspendable: Double, val maxzspendable: Double? = null,
                        val saplingAddress: String, val tAddress: String, val tokenName: String,
@@ -33,8 +34,7 @@ object DataModel {
     }
 
     var ws : WebSocket? = null
-
-
+    
     enum class ConnectionStatus(val status: Int) {
         DISCONNECTED(1),
         CONNECTING(2),
@@ -329,7 +329,27 @@ object DataModel {
         Sodium.crypto_hash_sha256(tobin2, tobin1, tobin1.size)
 
         return tobin2.toHexString()
+    }
 
+    /* functions to set custom wormhole value from Settings tab */
+    fun setWormholeServer(customWormHole: String) {
+        val settings = SilentDragonApp.appContext!!.getSharedPreferences("Secret", 0)
+        val editor = settings.edit()
+        editor.putString("wormhole", customWormHole)
+        //editor.apply()
+        editor.commit()
+    }
+
+    /* functions to get custom wormhole value */
+    fun getWormholeServer() : String? {
+        val settings = SilentDragonApp.appContext!!.getSharedPreferences("Secret", 0)
+        val wormHole = settings.getString("secret", "")
+
+        if (wormHole.isNullOrEmpty()) {
+            return settings.getString("wormhole", "https://wormhole.myhush.org:443" )
+        }
+
+        return settings.getString("wormhole", "" )
     }
 
     fun setSecretHex(secretHex: String) {

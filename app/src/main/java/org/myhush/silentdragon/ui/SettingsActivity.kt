@@ -20,9 +20,6 @@ class SettingsActivity : AppCompatActivity() {
 
         updateUI()
 
-        val result = findViewById<View>(R.id.currentWormhole) as TextView
-        val myhush_default_wormhole : String = "https://wormhole.myhush.org"
-
         btnDisconnect.setOnClickListener {
             DataModel.setConnString(
                 null,
@@ -46,18 +43,22 @@ class SettingsActivity : AppCompatActivity() {
 
         btnSetWormhole.setOnClickListener {
             val inputText = findViewById<View>(R.id.wormholeInput) as EditText
+            val result = findViewById<View>(R.id.lblCurrentWormhole) as TextView
+            val myhushDefaultWormhole : String = "wormhole.myhush.org:443"
             val customWormhole = inputText.getText().toString()
 
-            // set to default if nothing in wormhole entry EditText object
+            // set to myhushDefaultWormhole if nothing in EditText (wormholeInput)
             if (inputText.text.isBlank()) {
-                result.setText(myhush_default_wormhole)
-                Toast.makeText(this, "YEAH: " + myhush_default_wormhole, Toast.LENGTH_SHORT).show()
+                result.text = myhushDefaultWormhole
+                Toast.makeText(this, "Defaulting to: " + myhushDefaultWormhole, Toast.LENGTH_SHORT).show()
+                DataModel.setWormholeServer(myhushDefaultWormhole)
             } else {
-                result.setText(customWormhole)
-                Toast.makeText(this, "YEAH: " + customWormhole, Toast.LENGTH_SHORT).show()
+                result.text = customWormhole
+                Toast.makeText(this, "Wormhole set to: " + customWormhole, Toast.LENGTH_SHORT).show()
+                DataModel.setWormholeServer(customWormhole)
             }
         }
-
+        
         spinnerCurrency!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
@@ -78,7 +79,6 @@ class SettingsActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<out Adapter>?) {}
-
         }
 
     }
@@ -93,7 +93,6 @@ class SettingsActivity : AppCompatActivity() {
                 break
             selectedIndex++
         }
-
 
         var adapter: ArrayAdapter<String> = ArrayAdapter(
             this,
@@ -118,5 +117,7 @@ class SettingsActivity : AppCompatActivity() {
         lblServerVersion.text = DataModel.mainResponseData?.serverversion ?: getString(
             R.string.not_connected
         )
+        
+        lblCurrentWormhole.text = DataModel.getWormholeServer()
     }
 }

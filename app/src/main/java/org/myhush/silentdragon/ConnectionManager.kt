@@ -33,8 +33,8 @@ object ConnectionManager {
         initCurrencies()
     }
 
-    // Attempt a connection to the server. If there is no saved connection, we'll set the connection status
-    // to None
+    // Attempt a connection to the server
+    // If there is no saved connection, we'll set the connection status to None
     private fun makeConnection(directConn : Boolean = true) {
         val connString =
             DataModel.getConnString(SilentDragonApp.appContext!!)
@@ -79,11 +79,14 @@ object ConnectionManager {
             DataModel.connStatus =
                 DataModel.ConnectionStatus.CONNECTING
 
+            val wormHoleValue = DataModel.getWormholeServer()
+
             println("Connstatus = connecting")
 
             val client = OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).build()
-            val request = Request.Builder().url("wss://wormhole.myhush.org:443").build()
-            //val request = Request.Builder().url("ws://192.168.5.187:7070").build()
+            //val request = Request.Builder().url("wss://wormhole.myhush.org:443").build()
+            val request = Request.Builder().url("wss://" + wormHoleValue).build()
+
             val listener = WebsocketClient(false)
 
             DataModel.ws = client.newWebSocket(request, listener)
@@ -115,6 +118,7 @@ object ConnectionManager {
         i.putExtra("doDisconnect", doDisconnect)
         SilentDragonApp.appContext?.sendBroadcast(i)
     }
+
     fun initCurrencies(){
         try {
             DataModel.currencySymbols["AUD"] = "$"
@@ -156,9 +160,7 @@ object ConnectionManager {
                     }
                 }
             }.start()
-
-
-
+            
         }catch (e: Exception){
             e.printStackTrace()
         }
