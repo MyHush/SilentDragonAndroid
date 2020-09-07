@@ -14,6 +14,8 @@
     <string name="address">Address</string>
     <string name="cancel">Cancel</string>
     <string name="amount">Amount</string>
+    <string name="wormhole">Wormhole</string>
+    <string name="test_string" translatable="false">Test String</string>
 
     <!-- TxDetailsActivity.kt -->
     <string name="reply">Reply</string>
@@ -82,8 +84,12 @@
     <string name="wormhole_settings">Wormhole Settings</string>
     <string name="disallow_routing_over_external_service">Disallow routing over external service/internet</string>
     <string name="only_attempts_direct_connection">If checked, the app will only attempt a direct connection to SilentDragon, and not route traffic over the internet via the WormHole service at wormhole.myhush.org . Please see the https://myhush.org/silentdragon for more details</string>
+    <string name="current_wormhole_title">Current Wormhole:</string>
+    <string name="myhush_default_wormhole" translatable="false">wormhole.myhush.org:443</string>
+    <string name="wormhole_custom">Set custom Wormhole</string>
     <string name="currency">Currency</string>
     <string name="silentdragon_version">SilentDragon version</string>
+    <string name="change_below">Enter wormhole\'s server:port here and click below</string>
 
     <!-- activity_about.xml -->
     <string name="website">Visit our website</string>
@@ -94,6 +100,8 @@
     <string name="telegram_link" translatable="false">https://www.myhush.org/telegram/</string>
     <string name="twitter">Twitter</string>
     <string name="twitter_link" translatable="false">https://www.myhush.org/twitter/</string>
+    <string name="mastodon">Mastodon</string>
+    <string name="mastodon_link" translatable="false">https://www.myhush.org/mastodon/</string>
     <string name="github">GitHub</string>
     <string name="github_link" translatable="false">https://github.com/MyHush/SilentDragonAndroid</string>
     <string name="bugreports">Bug Reports</string>
@@ -133,7 +141,8 @@
     <string name="error_sending_transaction">Error Sending Transaction!</string>
     <string name="memo_field_over_512">Memo field is too long! Must be at most 512 bytes.</string>
     <string name="more_than_shielded_address">%1$s %2$s is more than the balance in your shielded address. This Tx will have to be sent from a transparent address, and will not be private.\n\nAre you absolutely sure?</string>
-    <string name="max_spend_in_a_single_tx">Can\'t spend more than %1$d %2$s in a single Tx"</string>
+    <!-- <string name="max_spend_in_a_single_tx">Can\'t spend more than %1$d %2$s in a single Tx"</string> -->
+    <string name="max_spend_in_a_single_tx">You tried to spend %1$d %2$s, but there is not enough HUSH in this single address currently. You might need to sweep funds into one address or wait for some funds to confirm.</string>
     <string name="reply_to">Reply to</string>
 
     <!-- content_send -->
